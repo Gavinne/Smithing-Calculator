@@ -1798,30 +1798,33 @@ table {
     color: #ffffff;
 }
 
-/* All table cells */
+/* Table cells */
 th, td {
-    background: #444444;
-    color: #ffffff;
-    border: 1px solid #666666;
+    border: 1px solid #555555;
     padding: 4px 2px;
     text-align: center;
     font-size: 10px;
+    color: #ffffff;
     overflow-wrap: anywhere;
 }
 
-/* Keep headers a slightly lighter grey */
+/* Column headings */
 th {
     background: #666666;
     color: #ffffff;
 }
 
-/* Keep every row the same grey */
-tbody tr:nth-child(even),
-tbody tr:nth-child(odd) {
-    background: #444444;
+/* Dark grey rows */
+tbody tr:nth-child(odd) td {
+    background: #333333;
 }
 
-/* Hover highlight */
+/* Lighter grey rows */
+tbody tr:nth-child(even) td {
+    background: #505050;
+}
+
+/* Highlight when hovering over a row */
 tbody tr:hover td {
     background: #777777;
 }
