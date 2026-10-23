@@ -1781,26 +1781,29 @@ HTML
         border-radius: 5px;
     }
 
-    .table-container {
-        overflow-x: auto;
-        margin-bottom: 25px;
-        background: white;
-        border-radius: 5px;
-    }
+.table-container {
+    width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 25px;
+    background: #000000;
+    border-radius: 5px;
+}
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        min-width: 1100px;
-        background: white;
-    }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    background: #000000;
+    color: #ffffff;
+}
 
-    th, td {
-        border: 1px solid #ccc;
-        padding: 8px 10px;
-        text-align: center;
-        white-space: nowrap;
-    }
+th, td {
+    border: 1px solid #444444;
+    padding: 4px 2px;
+    text-align: center;
+    font-size: 10px;
+    overflow-wrap: anywhere;
+}
 
     th {
         background: #555;
