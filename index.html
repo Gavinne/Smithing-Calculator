@@ -1798,33 +1798,33 @@ table {
     color: #ffffff;
 }
 
+/* All table cells */
 th, td {
-    border: 1px solid #444444;
+    background: #444444;
+    color: #ffffff;
+    border: 1px solid #666666;
     padding: 4px 2px;
     text-align: center;
     font-size: 10px;
     overflow-wrap: anywhere;
 }
 
-    th {
-        background: #555;
-        color: white;
-        position: sticky;
-        top: 0;
-    }
+/* Keep headers a slightly lighter grey */
+th {
+    background: #666666;
+    color: #ffffff;
+}
 
-    th:first-child, td:first-child {
-        text-align: left;
-        font-weight: bold;
-    }
+/* Keep every row the same grey */
+tbody tr:nth-child(even),
+tbody tr:nth-child(odd) {
+    background: #444444;
+}
 
-    tbody tr:nth-child(even) {
-        background: #eee;
-    }
-
-    tbody tr:hover {
-        background: #dcecff;
-    }
+/* Hover highlight */
+tbody tr:hover td {
+    background: #777777;
+}
 
     .note {
         font-size: 0.9em;
