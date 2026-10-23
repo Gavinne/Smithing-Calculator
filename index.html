@@ -1752,3 +1752,202 @@ calculate();
 </script>
 </body>
 </html>
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Properties</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #f4f4f4;
+        color: #222;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 30px;
+        background: #333;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin-bottom: 25px;
+        background: white;
+        border-radius: 5px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        min-width: 1100px;
+        background: white;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px 10px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    th {
+        background: #555;
+        color: white;
+        position: sticky;
+        top: 0;
+    }
+
+    th:first-child, td:first-child {
+        text-align: left;
+        font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+        background: #eee;
+    }
+
+    tbody tr:hover {
+        background: #dcecff;
+    }
+
+    .note {
+        font-size: 0.9em;
+        font-style: italic;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Metal Properties Reference</h1>
+
+<div id="metals"></div>
+
+<p class="note">* Value is per volume, at 99 purity.</p>
+
+<script>
+const columns = [
+    "Metal", "Hardness", "Durability", "Workability",
+    "Electrical", "Thermal", "Physical", "Ductility",
+    "Capacity", "Density", "Value"
+];
+
+const categories = {
+    "Common Metals": [
+        ["Acenite",25,15,50,30,25,25,90,50,6,"3,750 Kronars"],
+        ["Brass",40,25,60,30,40,40,90,28,5.8,"150 Kronars"],
+        ["Bronze",80,65,70,35,55,80,85,40,6.2,"125 Kronars"],
+        ["Coal",5,5,50,80,80,5,1,15,1,"12.5 Kronars"],
+        ["Copper",25,40,70,10,15,25,80,30,7,"125 Kronars"],
+        ["Covellite",35,80,65,25,85,80,80,30,2,"62.5 Kronars"],
+        ["Iron",70,40,50,30,50,75,50,25,5,"125 Kronars"],
+        ["Lead (material)",20,30,80,40,70,20,75,30,8,"50 Kronars"],
+        ["Nickel",25,15,50,30,25,25,90,30,6,"100 Kronars"],
+        ["Oravir",40,20,70,95,15,25,15,50,1,"50 Kronars"],
+        ["Pewter",25,45,70,40,70,25,30,50,5.0,"275 Kronars"],
+        ["Platinum (metal)",20,15,20,30,10,20,85,50,9,"12,500 Kronars"],
+        ["Silver",15,25,50,5,10,15,75,50,8,"2,500 Kronars"],
+        ["Steel (HCS)",90,25,35,30,50,90,20,5,5,"250 Kronars"],
+        ["Steel (LCS)",80,80,40,30,50,80,75,10,5,"250 Kronars"],
+        ["Steel (MCS)",85,60,50,30,50,85,70,20,5,"187 Kronars"],
+        ["Tin",25,75,40,35,25,25,80,50,3,"37.5 Kronars"],
+        ["Yellow gold",10,20,40,15,15,10,80,50,9,"6,250 Kronars"],
+        ["Zinc",25,20,60,50,25,25,75,45,4,"87.5 Kronars"]
+    ],
+
+    "Rare Metals": [
+        ["Animite",15,10,10,65,65,15,90,50,4,"43,750 Kronars"],
+        ["Audrualm",92,40,5,55,90,95,85,7,3,"15,000 Kronars"],
+        ["Coralite",99,65,40,40,99,99,35,6,5.9,"77,500 Kronars"],
+        ["Damite",80,70,10,90,40,95,25,4,6,"13,750 Kronars"],
+        ["Darkstone (metal)",85,50,75,70,35,75,20,50,5.1,"875 Kronars"],
+        ["Electrum",20,20,30,20,20,20,80,55,8,"5,625 Kronars"],
+        ["Glaes",95,50,10,60,40,75,95,10,4,"16,250 Kronars"],
+        ["Haralun",95,60,20,70,75,80,90,5,8,"13,750 Kronars"],
+        ["Icesteel",90,75,20,80,95,85,95,40,4.5,"25,000 Kronars"],
+        ["Kelpzyte",99,75,38,60,80,99,35,5,3.6,"63,750 Kronars"],
+        ["Kertig",95,70,5,40,55,90,90,6,7,"18,750 Kronars"],
+        ["Krakenite",99,85,30,65,75,99,60,35,6.3,"87,500 Kronars"],
+        ["Loimic",99,70,35,99,40,99,20,7,3.5,"81,250 Kronars"],
+        ["Lumium",75,50,15,60,75,90,90,12,3,"6,500 Kronars"],
+        ["Muracite",70,55,70,55,55,85,85,50,4.7,"1,125 Kronars"],
+        ["Niello",5,5,15,85,25,25,40,60,8,"22,500 Kronars"],
+        ["Niniam",80,70,20,75,75,70,90,60,5,"6,250 Kronars"],
+        ["Orichalcum",30,50,10,40,40,30,35,80,6,"17,500 Kronars"],
+        ["Silversteel",95,90,2,20,80,95,90,10,2.2,"27,500 Kronars"],
+        ["Tomiek",80,45,40,35,55,70,80,75,5,"25,000 Kronars"],
+        ["Tyrium",99,80,40,70,70,99,40,4,6,"62,500 Kronars"]
+    ],
+
+    "Special Metals": [
+        ["Agonite",95,65,75,20,99,85,90,5,7.5,"25,000 Kronars"],
+        ["Atheldalm",90,75,20,80,95,85,95,40,4.5,"21,875 Kronars"],
+        ["Haledroth",96,75,35,15,20,97,95,6,6.2,"35,000 Kronars"],
+        ["Indurium",82,64,50,12,34,22,20,70,3.9,"47,500 Kronars"],
+        ["Kadepa",85,80,95,40,80,94,90,12,5.2,"20,625 Kronars"],
+        ["Kiralan",70,80,35,90,80,99,12,4,7,"93,750 Kronars"],
+        ["Quelium",92,20,45,65,65,92,90,20,7.2,"18,750 Kronars"],
+        ["Selatila",15,10,10,65,65,15,90,60,4,"25,000 Kronars"],
+        ["Telothian",104,80,25,90,70,45,90,5,6.4,"87,500 Kronars"],
+        ["Vardite",88,75,45,80,45,99,30,4,6.1,"27,500 Kronars"]
+    ]
+};
+
+const container = document.getElementById("metals");
+
+for (const [category, metals] of Object.entries(categories)) {
+    const heading = document.createElement("h2");
+    heading.textContent = category;
+    container.appendChild(heading);
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-container";
+
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+
+    columns.forEach(column => {
+        const th = document.createElement("th");
+        th.textContent = column;
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    metals.forEach(metal => {
+        const row = document.createElement("tr");
+
+        metal.forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value;
+            row.appendChild(td);
+        });
+
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    wrapper.appendChild(table);
+    container.appendChild(wrapper);
+}
+</script>
+
+</body>
+</html>
