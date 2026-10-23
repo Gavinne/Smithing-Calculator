@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gavinne's Smithing Calculator</title>
-    <style>
+<html lang="en" itemscope="" itemtype="http://schema.org/WebPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Gavinnes%20Smithing%20Calculator_files/cb=gapi_wJtN.loaded_1" nonce="" async=""></script><script src="Gavinnes%20Smithing%20Calculator_files/cb=gapi_wJtN.loaded_0" nonce="" async=""></script><script nonce="">window['ppConfig'] = {productName: '6b8ce7c01e3dacd3d2c7a8cd322ff979', deleteIsEnforced:  false , sealIsEnforced:  false , heartbeatRate:  0.5 , periodicReportingRateMillis:  60000.0 , disableAllReporting:  false };(function(){'use strict';function k(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function l(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:k(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function m(a,b){var c;b&&!b.done&&(c=a["return"])&&c.call(a)}
+var n=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};function p(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var q=p(this);
+function r(a,b){if(b)a:{var c=q;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&n(c,a,{configurable:!0,writable:!0,value:b})}}r("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});
+r("Array.prototype.includes",function(a){return a?a:function(b,c){var d=this;d instanceof String&&(d=String(d));var e=d.length;c=c||0;for(c<0&&(c=Math.max(c+e,0));c<e;c++){var f=d[c];if(f===b||Object.is(f,b))return!0}return!1}});
+r("String.prototype.includes",function(a){return a?a:function(b,c){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(b,c||0)!==-1}});function t(a,b,c){a("https://csp.withgoogle.com/csp/proto/"+encodeURIComponent(b),JSON.stringify(c))}function u(){var a;if((a=window.ppConfig)==null?0:a.disableAllReporting)return function(){};var b,c,d,e;return(e=(b=window)==null?void 0:(c=b.navigator)==null?void 0:(d=c.sendBeacon)==null?void 0:d.bind(navigator))!=null?e:v}function v(a,b){var c=new XMLHttpRequest;c.open("POST",a);c.send(b)}
+function w(){var a=(x=Object.prototype)==null?void 0:x.__lookupGetter__("__proto__"),b=y,c=z;return function(){var d=a.call(this),e,f,g,h;t(c,b,{type:"ACCESS_GET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}
+function A(){var a=(B=Object.prototype)==null?void 0:B.__lookupSetter__("__proto__"),b=y,c=z;return function(d){d=a.call(this,d);var e,f,g,h;t(c,b,{type:"ACCESS_SET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}function C(a,b){D(a.productName,b);setInterval(function(){D(a.productName,b)},a.periodicReportingRateMillis)}
+var E="constructor __defineGetter__ __defineSetter__ hasOwnProperty __lookupGetter__ __lookupSetter__ isPrototypeOf propertyIsEnumerable toString valueOf __proto__ toLocaleString x_ngfn_x".split(" "),F=E.concat,G=navigator.userAgent.match(/Firefox\/([0-9]+)\./),H=(!G||G.length<2?0:Number(G[1])<75)?["toSource"]:[],I;if(H instanceof Array)I=H;else{for(var J=l(H),K,L=[];!(K=J.next()).done;)L.push(K.value);I=L}var M=F.call(E,I),N=[];
+function D(a,b){var c=[],d=l(Object.getOwnPropertyNames(Object.prototype)),e=d.next();try{for(;!e.done;e=d.next()){var f=e.value;M.includes(f)||N.includes(f)||c.push(f)}}finally{m(d,e)}e=Object.prototype;d=[];for(f=0;f<c.length;f++){var g=c[f];d[f]={name:g,descriptor:Object.getOwnPropertyDescriptor(Object.prototype,g),type:typeof e[g]}}if(d.length!==0){c=l(d);e=c.next();try{for(;!e.done;e=c.next())N.push(e.value.name)}finally{m(c,e)}var h;t(b,a,{type:"SEAL",origin:(h=window.location.origin)!=null?
+h:"unknown",report:{blockers:d}})}};var O=Math.random(),P=u(),Q=window.ppConfig;Q&&(Q.disableAllReporting||Q.deleteIsEnforced&&Q.sealIsEnforced||O<Q.heartbeatRate&&t(P,Q.productName,{origin:window.location.origin,type:"HEARTBEAT"}));var z=u(),R=window.ppConfig;if(R)if(R.deleteIsEnforced)delete Object.prototype.__proto__;else if(!R.disableAllReporting){var y=R.productName;try{var x,B;Object.defineProperty(Object.prototype,"__proto__",{enumerable:!1,get:w(),set:A()})}catch(a){}}
+(function(){var a=u(),b=window.ppConfig;b&&(b.sealIsEnforced?Object.seal(Object.prototype):b.disableAllReporting||(document.readyState!=="loading"?C(b,a):document.addEventListener("DOMContentLoaded",function(){C(b,a)})))})();}).call(this);
+</script><meta charset="utf-8"><script nonce="">var DOCS_timing={}; DOCS_timing['sl']=new Date().getTime();</script><script nonce="">function _DumpException(e) {throw e;}</script><script data-id="_gd" nonce="">window.WIZ_global_data = {"K1cgmc":"%.@.[null,null,null,[1,1,[1792602538,999965000],4],null,25]]","gnD3ee":"%.@.null,null,null,\"https://drive.google.com/viewer/main\"]","nQyAE":{}};</script><script nonce="">_docs_flag_initialData={"docs-enpi2":true,"atari-emtpr":false,"atari-eosv2":false,"atari-eibrm":false,"atari-eipim":false,"atari-etm":false,"atari-mfsnd":10,"docs-text-usc":true,"docs-text-elsmk":false,"docs-text-elsms":false,"atari-bae":false,"docs-text-etsrdpn":false,"docs-text-etsrds":false,"docs-text-endes":false,"docs-text-escpv":true,"docs-text-ecfs":false,"docs-text-eetxp":false,"docs-text-ettctvs":false,"docs-text-escoubs":false,"docs-text-escivs":false,"docs-text-escitrbs":false,"docs-text-eosm":false,"docs-text-epsi":false,"docs-text-esic":false,"docs-text-elss":false,"docs-text-ebrfs":false,"docs-text-etocs":false,"docs-text-eeds":false,"docs-text-esbefr":false,"docs-etshc":false,"docs-efsmsdl":false,"docs-text-eiosmc":false,"docs-text-ebrmkc":false,"docs-text-ehlb":false,"docs-text-dwit":false,"docs-text-elawp":true,"docs-eec":true,"docs-eecac":true,"docs-elsp":false,"docs-text-eoblor":false,"docs-esff":false,"docs-text-esprooc":false,"docs-ets":false,"docs-text-eurlsilu":false,"docs-idu":false,"docs-sup":"","docs-dli":false,"docs-liap":"/naLogImpressions","ilcm":{"eui":"AHKXmL21kzfZkKX3X2BvEpAPossA2QAxG4zRcha5C9Li8G-BrPdZtwS9YrO8fXzZI4mVh-Nb3-tT","je":1,"sstu":1792782360282021,"si":"CKWH-t3q0JcDFTxENwgdja4vsA","gsc":null,"ei":[5703839,5704621,5706832,5706836,5738513,5738529,5743108,5743124,5767835,5767851,5776501,5776517,14101306,14101502,14101510,14101534,49472063,49472071,49644015,49644023,49769337,49769345,49822921,49822929,49833462,49833470,49842855,49842863,49924706,49924714,50223641,50223649,50266222,50266230,50273528,50273536,50297076,50297084,50561343,50561351,50586962,50586970,71079938,71079946,71085241,71085249,71120968,71120976,71387889,71387897,71465947,71465955,71528597,71528605,71530083,71530091,71544834,71544842,71546425,71546433,71652641,71658040,71658048,71659813,71659821,71689860,71689868,71710040,71710048,71798420,71798436,71825383,71825391,71855010,71855018,71897827,71897835,71960540,71960548,94327671,94327679,94353368,94353376,94386871,94386879,94434257,94434265,94629757,94629765,94661802,94661810,94692298,94692306,94785229,94785237,94818995,94819000,94819465,94819470,94904089,94904097,94918952,94918960,94940194,95087186,95087194,95111985,95111993,95112873,95112881,95182361,95182367,95314802,95314810,99251983,99251991,99368792,99368800,99402331,99402339,99440853,99440861,99457807,99457815,101492731,101492739,101519280,101519288,101562406,101562414,101631191,101631199,101687117,101687125,101836971,101836979,101837416,101837424,101860667,101860675,101887674,101887682,101889043,101889051,101917185,101917193,101922739,101922747,101922880,101922888,101933491,101933499,102030642,102030650,102059541,102059549,102070930,102070938,102146687,102146695,102161447,102161455,102178402,102178410,102198282,102198290,102244489,102244497,102280628,102280636,102343380,102343388,102402679,102402687,102469860,102469868,102517339,102517344,102548521,102548529,102673375,102685384,102685389,102685929,102685934,102691157,102691162,102691290,102691295,102718396,102721215,102721220,102727402,102727407,102761474,102761479,102762315,102762323,102783509,102783517,102787563,102807790,102807798,102867835,102867843,102883758,102883766,102902848,102902856,102903660,102903668,102909750,102909755,102925819,102925827,102926523,102926531,102932587,102932595,102944189,102944194,102944268,102944273,102944503,102944508,102944582,102944587,102944680,102944685,102944785,102944790,102956685,102956693,102972669,102972677,102987007,102987015,102988272,102988277,102988402,102988407,102988695,102988700,102988929,102988934,103011418,103011426,103020635,103020643,103163044,103163052,103176010,103176018,103209425,103209433,103276092,103285966,103285974,103286444,103286452,103288306,103288314,103289103,103289108,103289273,103289278,103326407,103326415,103343830,103343838,104530130,104573899,104573907,104575332,104575337,104575491,104575496,104575691,104575696,104575894,104615595,104615603,104699504,104699512,104761751,104761759,104794443,104794451,104842348,104842353,104907811,104907819,104976617,104976625,104983169,104983177,105082097,105082105,105083748,105083756,105087788,105087796,105125317,105125325,105180894,105180902,105283687,105283695,105292835,105292843,105346285,105346293,105360418,105360426,105371923,105371931,105373824,105373832,105393811,105393819,105439171,105439179,115511323,115511328,115525294,115525302,115601129,115601137,115626258,115626266,115626439,115626447,115669258,115669266,115779821,115779829,115780458,115780466,115818444,115818449,115821407,115821415,115822445,115822453,115854768,115854776,115909741,115909749,116062710,116062718,116068898,116068906,116176809,116176817,116221334,116221342,116250605,116250613,116276461,116276469,116372477,116372485,116416034,116416042,116418147,116418155,116425642,116538516,116538524,116567571,116567576,116609471,116609479,116699509,116699517,116714309,116714313,116756943,116756951,116783822,116783827,116840681,116840686,116929775,116929783,116930116,116930124,116980487,116980495,116981005,116981013,116981367,116981375,116981668,116981676,116981709,116981717,116982512,116982520,116982753,116982761,116982974,116982982,116983416,116983424,116984628,116984636,116986230,116986238,116988124,116988132,117010933,117010941,117037068,117037076,117145772,117145780,117223999,117224007,117268957,117268965,117283949,117283954,117286791,117286799,117290330,117290338,117309374,117309382,117310090,117310098,117410074,117457958,117457966,117503217,117503225,117504383,117504391,117547661,117547669,117668252,117668260,117683635,117728353,117728361,117848254,117895900,117895908,118094558,118094563,118098249,118098257,118110574,118110582,118144992,118145000,118171121,118237135,118237143,118281144,118281152,118285275,118291756,118291764,118367937,118367945,118368676,118368684,118417364,118417372,118484679,118484687,118599461,118599469,118961008,118961016,119022332,119022340,119038638,119038646,119077135,119077143,119109774,119109782,119208439,119208447,119209378,119346325,119367357,119367362,119389357,119389365,119474894,119474902,119528382,119528390,119530260,119530268,119566028,119566036,119593000,119593008,119595147,119595155,119605190,119605198,119651586,119651594,119667272,119667280,119671790,119671798,119702549,119702557,119770545,119770553,119771791,119771799,119870000,119870008,119941461,119941469,119942872,120049151,120049159,120050650,120050658,120120566,120140755,120175627,120175635,120465877,120465885,120493132,120493140,120619846,120619851,120730671,120730676,120735852,120735857,120773177,120773182,120797077,120797085,120812978,120864327,120900452,120900460,120963614,120963622,120982382,120982390,121110331,121110336,121172911,121286207,121286215,121339424,121339429,121345854,121372721,121381303,121381308,121381960,121383007,121406244,121406252,123364526,123477306],"crc":0,"cvi":[]},"docs-ccdil":false,"docs-eil":true,"info_params":{"token":"AHL0AtIF1m_-Vwu4rFq9WsvB2WNEhdbMxw:1792782360254"},"buildLabel":"editors.sites-viewer-frontend_20261019.02_p0","docs-show_debug_info":false,"atari-jefp":"/_/view/jserror","docs-jern":"view","atari-rhpp":"/_/view","docs-ciusdft":false,"docs-ecuach":false,"docs-cclt":2033,"docs-ecci":true,"docs-esi":false,"docs-efypr":true,"docs-eyprp":true,"docs-li":"104240","docs-trgthnt":"","docs-etmhn":false,"docs-thnt":"","docs-hdet":["nMX17M8pQ0kLUkpsP190WPbQDRJQ","17hED8kG50kLUkpsP190TThQn3DA","BDNZR4PXx0kLUkpsP190SJtNPkYt","Etj5wJCQk0kLUkpsP190NwiL8UMa","xCLbbDUPA0kLUkpsP190XkGJiPUm","2NUkoZehW0kLUkpsP190UUNLiXW9","yuvYtd5590kLUkpsP190Qya5K4UR","ZH4rzt2uk0kLUkpsP190UDkF5Bkq","uQUQhn57A0kLUkpsP190WHoihP41","93w8zoRF70kLUkpsP190TxXbtSeV","fAPatjr1X0kLUkpsP190SaRjNRjw","T4vgqqjK70kLUkpsP190ScPehgAW","JyFR2tYWZ0kLUkpsP190Rn3HzkxT","ufXj7vmeJ0kLUkpsP190QURhvJn2","KFks7UeZ30kLUkpsP190UUMR6cvh","LcTa6EjeC0kLUkpsP190RKgvW5qi","s3UFcjGjt0kLUkpsP190Z45ftWRr","o99ewBQXy0kLUkpsP190Nq2qr6tf","PHVyy5uSS0kLUkpsP190SUsYo8gQ","yZn21akid0iSFTCbiEB0WPiGEST3","h2TtqzmQF0kLUkpsP190YPJiQt7p","MZi9vb5UC0kLUkpsP190ReUhvVjy","dSR6SPjB80kLUkpsP190Y3xHa9qA","Bz6B7VmLu0kLUkpsP190W3FeobP7","AiLoubzsd0kLUkpsP190XtYNPgYT","2J3DVQoVh0kLUkpsP190R5wShSrC","MLmbZasLS0kLUkpsP190YHf6Zjsf","LjsdWFqUn0kLUkpsP190TwXBLtsw","S1T4ezMsZ0kLUkpsP190U6GfQUxi","LwAAPYPwi0kLUkpsP190TR4aaiFR","zZpS7TtwA0kLUkpsP190SJfhmHn8","LqadmuFLc0kLUkpsP190VqMgRe9G","PyRpJWvnF0kLUkpsP190X6czxBQU","oiu5UhKXt0kLUkpsP190XWFatA4U","m3m67mpQU0kLUkpsP190RpzeM6tt","WKyXQmUiJ0kLUkpsP190WtAghmdt","Nf2nd9NhF0kLUkpsP190REtRKaUF","fjqF9C7Mg0kLUkpsP190WGtWAuX2","cb1fdvu6p0kLUkpsP190U5AywQpZ","43PL8e9wN0kLUkpsP190PfUhabvT","q4iJ7XzP90kLUkpsP190TZxmiBwc","N5u4VeWhx0iSFTCbiEB0VUTNdX6g","XM16tjwrD0iSFTCbiEB0NfzvTeuU","ybYTJk1eD0iSFTCbiEB0QV4rkzSF","TgXar1TSG0iSFTCbiEB0SsXMaKuP","JYfGDkExa0iSFTCbiEB0TTQnEDtH","2i9JBUZ3w0iSFTCbiEB0RytbUoNq","pgvTVXNKa0iSFTCbiEB0ShqmBTMR","NsVnd81bW0iSFTCbiEB0RhcXEK9M","rTQirATnb0iSFTCbiEB0W5cPcA7D","wNyww2Syr0iSFTCbiEB0Pzsbemba","DVdpfbqGj0iSFTCbiEB0RP4dMdFg","WKN3dsuG20iSFTCbiEB0NtEYhMK7","S5iPRteXX0iSFTCbiEB0YkMazE6h","6hmou1AcB0iSFTCbiEB0R9rZWXdz","wvo4NcLUj0iSFTCbiEB0Tt7mcVxE","rMLvYG5Cd0iSFTCbiEB0VMB6o5sk","EnxXFzAMR0iSFTCbiEB0NxWnFJEU","4SFrbzo420iSFTCbiEB0W7wu3rzt","Nr7mDWodK0iSFTCbiEB0Ruynrudk","pSnfxxWWp0iSFTCbiEB0RaiP6PBc","WMpW1Q5dP0iSFTCbiEB0WLWPn6Po","jcCQV72Dw0iSFTCbiEB0XjAwaUST","rTcCMw3BM0mHq3jmV6o0RHeAExRK","HUYzfGVRa0mHq3jmV6o0Uxe2caXK","1XYMmM1Cu0mHq3jmV6o0Z3pEi8xm","xHhMJiXiV0mHq3jmV6o0WB8WinyM","xwSFpxEiU0mHq3jmV6o0PcnvcKmd","4MBkBg26q0mHq3jmV6o0QeKPRMpY","y5g8iW2T80mHq3jmV6o0Nr8SAj4C","W9YRKy3Lb0iSFTCbiEB0Xfs1EfPr","Ed3nhrN8D0iSFTCbiEB0RN4bJ53y","zxDKY7PC10iSFTCbiEB0UDYPJwDZ","bhEyDmbwi0mHq3jmV6o0TngCF1v2","6rKYZ6uHA0mHq3jmV6o0TeDZjgB8","71Deousgx0mHq3jmV6o0WXBQiyzi","sVEZbUAa70mHq3jmV6o0TNq1M7FF","8ZPFZT5nG0mHq3jmV6o0PJ5yoVh4","LDuvzP2Bd0mHq3jmV6o0TwNPVpW8","P55v8p4Lk0mHq3jmV6o0VjggjHMV","QqnZoz9ko0mHq3jmV6o0QskzBcHn","Nq8mdjdGg0mHq3jmV6o0WShxQA39","iQNA6mEJy0mHq3jmV6o0Q2iGT9fW","sNcbk2hJ80mHq3jmV6o0VbqaovQb","Th1mzDL8q0mHq3jmV6o0Sm16yc1b","6nr31z9Wv0mERqSGkGf0VhuvAXWC","RLHeYNm410mERqSGkGf0Y817EUFK","vmx68XtfJ0mERqSGkGf0RCUBfsQr","687J7yD1q0mERqSGkGf0RVmMYHo1","qwhWQy8Zi0mERqSGkGf0W2tdypUF","wF8Sk241e0mERqSGkGf0YNtN6gpV","ijUhdx2QN0mERqSGkGf0TSD26iBJ","3iBLaMnuG0mERqSGkGf0VdY8XuLS","cFR77YEGo0iSFTCbiEB0PcMDWjX2","evUYuNCS80mERqSGkGf0Psi8j3Dw","soWncRV7C0mERqSGkGf0PZheXrWA","TvjoiCaar0mERqSGkGf0S9qS5adj","txL54xWLC0mERqSGkGf0XoEGTvCu","MP3EsW1un0mERqSGkGf0QDkfTxat","N1q4Y3fqz0mERqSGkGf0W1oPWWoc","pnKWhXiJi0mERqSGkGf0RDJejrBm","uLoGBsxEp0mERqSGkGf0Umz4HBC5","zu73Bdvrn0mERqSGkGf0P7FS5ZnG","KwaNot15n0mERqSGkGf0UnBhGVoK","eCHWxyhvo0mERqSGkGf0RJfZmQ1f","aWZA9kUWi0mERqSGkGf0RtY99iNR","ffZmMGtYT0suK1NZr2K0QUxSzEMN","NagbcZWyB0suK1NZr2K0SJmfmJ3n","KMcLKvubv0suK1NZr2K0PLMUJ7zr","a13ejFS5i0suK1NZr2K0WzewY5tP","pZ1hXv7ve0suK1NZr2K0U5qoNhyU","pwLDucJZU0ezFcgqx310NgtmYpbV","TCKDVQ6J0Bn3gbW4AcZC0PQKypCa","Z7vabQzZ0Bn3gbW4AcZC0TfvmSab","UUNcLtsso0mERqSGkGf0Uwg2tMZa","fznmScpy0Bn3gbW4AcZC0Vie7eK1","6GS1wg3f0Bn3gbW4AcZC0Sr5APMj","wYCZkqoz10fBWirfAym0S1sADKbJ"],"docs-hunds":false,"docs-hae":"PROD","docs-ehn":true,"docs-epq":true,"docs-upap":"/_/view/prefs","docs-eupub":true}; _docs_flag_cek= null ; if (window['DOCS_timing']) {DOCS_timing['ifdld']=new Date().getTime();}</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="https://sites.google.com/u/0/sitesv-images-rt/AMxu72tZz85UqolSwre-gSDsBfTGzcBbwUibk0idix6AvJPkNMmsqF6d7CHoRPGzv5O6Y9SuviOKQX4drhWDRrmoue4TWpGJTg30IGBLc2pUjC1PX2WvHNSCPXaGjA_KFTeORolojYIdmQW_wz4uXaNRIaVam-skuWjPaGOl33rUI-tmIwF7-aFtM6nNnrvVmc4EbuLHT6MYjJeEFJDYcqeDJMY"><meta property="og:title" content="Gavinnes Smithing Calculator"><meta property="og:type" content="website"><meta property="og:url" content="https://sites.google.com/view/gavinnes-forging-calculator/home"><meta property="og:description" content="You can download a similar spreadsheet so that you can use this tool locally here.
+"><meta itemprop="name" content="Gavinnes Smithing Calculator"><meta itemprop="description" content="You can download a similar spreadsheet so that you can use this tool locally here.
+"><meta itemprop="url" content="https://sites.google.com/view/gavinnes-forging-calculator/home"><meta itemprop="thumbnailUrl" content="https://sites.google.com/u/0/sitesv-images-rt/AMxu72viiX-6vfJcRPWruH4AhcHFEslamPjjlgZMPRg6o81xQhNYZq-h75st7fyyonfIKB30RgChbmNAjNu6kS9j6ArUgQLxzv9JbAbmJ-8s3jN-iVUjZg5NnvEr2m-KZOdu1mSD7g7EEy9LJPb-pcT2C_iMZU0jiiK6FdtIIDAN8Nv0hx9YTRCLpybSN8CPf6c=w16383"><meta itemprop="image" content="https://sites.google.com/u/0/sitesv-images-rt/AMxu72viiX-6vfJcRPWruH4AhcHFEslamPjjlgZMPRg6o81xQhNYZq-h75st7fyyonfIKB30RgChbmNAjNu6kS9j6ArUgQLxzv9JbAbmJ-8s3jN-iVUjZg5NnvEr2m-KZOdu1mSD7g7EEy9LJPb-pcT2C_iMZU0jiiK6FdtIIDAN8Nv0hx9YTRCLpybSN8CPf6c=w16383"><meta itemprop="imageUrl" content="https://sites.google.com/u/0/sitesv-images-rt/AMxu72viiX-6vfJcRPWruH4AhcHFEslamPjjlgZMPRg6o81xQhNYZq-h75st7fyyonfIKB30RgChbmNAjNu6kS9j6ArUgQLxzv9JbAbmJ-8s3jN-iVUjZg5NnvEr2m-KZOdu1mSD7g7EEy9LJPb-pcT2C_iMZU0jiiK6FdtIIDAN8Nv0hx9YTRCLpybSN8CPf6c=w16383"><meta property="og:image" content="https://sites.google.com/u/0/sitesv-images-rt/AMxu72viiX-6vfJcRPWruH4AhcHFEslamPjjlgZMPRg6o81xQhNYZq-h75st7fyyonfIKB30RgChbmNAjNu6kS9j6ArUgQLxzv9JbAbmJ-8s3jN-iVUjZg5NnvEr2m-KZOdu1mSD7g7EEy9LJPb-pcT2C_iMZU0jiiK6FdtIIDAN8Nv0hx9YTRCLpybSN8CPf6c=w16383"><link href="Gavinnes%20Smithing%20Calculator_files/css_002_wJtN.css" rel="stylesheet" nonce=""><link href="Gavinnes%20Smithing%20Calculator_files/css_wJtN.css" rel="stylesheet" nonce=""><link href="Gavinnes%20Smithing%20Calculator_files/css_003_wJtN.css" rel="stylesheet" nonce=""><link rel="stylesheet" href="Gavinnes%20Smithing%20Calculator_files/rs=AGEqA5kfXo0Bp0miDHRwcxhRaw6euDBRVQ_wJtN.css" data-id="_cl" nonce=""><script nonce=""></script><title>Gavinnes Smithing Calculator</title><style jsname="ptDGoc" nonce="">.M63kCb{background-color: rgba(255,255,255,1);}.OUGEr{color: rgba(33,33,33,1);}.duRjpb .OUGEr{color: rgba(55,71,79,1);}.JYVBee .OUGEr{color: rgba(55,71,79,1);}.OmQG5e .OUGEr{color: rgba(33,33,33,1);}.iwQgFb{background-color: rgba(0,0,0,0.150000006);}.ySLm4c{font-family: Lato, sans-serif;}.CbiMKe{background-color: rgba(50,50,50,1);}.qeLZfd .zfr3Q{color: rgba(33,33,33,1);}.qeLZfd .qnVSj{color: rgba(33,33,33,1);}.qeLZfd .Glwbz{color: rgba(33,33,33,1);}.qeLZfd .duRjpb{color: rgba(55,71,79,1);}.qeLZfd .qLrapd{color: rgba(55,71,79,1);}.qeLZfd .JYVBee{color: rgba(55,71,79,1);}.qeLZfd .aHM7ed{color: rgba(55,71,79,1);}.qeLZfd .OmQG5e{color: rgba(33,33,33,1);}.qeLZfd .NHD4Gf{color: rgba(33,33,33,1);}.qeLZfd .aw5Odc{color: rgba(71,92,102,1);}.qeLZfd .dhtgD:hover{color: rgba(90,112,122,1);}.qeLZfd .dhtgD:visited{color: rgba(71,92,102,1);}.qeLZfd .iwQgFb{background-color: rgba(0,0,0,0.150000006);}.qeLZfd .OUGEr{color: rgba(33,33,33,1);}.qeLZfd .duRjpb .OUGEr{color: rgba(55,71,79,1);}.qeLZfd .JYVBee .OUGEr{color: rgba(55,71,79,1);}.qeLZfd .OmQG5e .OUGEr{color: rgba(33,33,33,1);}.qeLZfd:before{background-color: rgba(242,242,242,1); display: block;}.lQAHbd .zfr3Q{color: rgba(255,255,255,1);}.lQAHbd .qnVSj{color: rgba(255,255,255,1);}.lQAHbd .Glwbz{color: rgba(255,255,255,1);}.lQAHbd .duRjpb{color: rgba(255,255,255,1);}.lQAHbd .qLrapd{color: rgba(255,255,255,1);}.lQAHbd .JYVBee{color: rgba(255,255,255,1);}.lQAHbd .aHM7ed{color: rgba(255,255,255,1);}.lQAHbd .OmQG5e{color: rgba(255,255,255,1);}.lQAHbd .NHD4Gf{color: rgba(255,255,255,1);}.lQAHbd .aw5Odc{color: rgba(255,255,255,1);}.lQAHbd .dhtgD:hover{color: rgba(255,255,255,0.6999999881);}.lQAHbd .dhtgD:visited{color: rgba(255,255,255,1);}.lQAHbd .iwQgFb{background-color: rgba(255,255,255,0.150000006);}.lQAHbd .OUGEr{color: rgba(255,255,255,1);}.lQAHbd .duRjpb .OUGEr{color: rgba(255,255,255,1);}.lQAHbd .JYVBee .OUGEr{color: rgba(255,255,255,1);}.lQAHbd .OmQG5e .OUGEr{color: rgba(255,255,255,1);}.lQAHbd .CbiMKe{background-color: rgba(255,255,255,1);}.lQAHbd:before{background-color: rgba(50,50,50,1); display: block;}.cJgDec .zfr3Q{color: rgba(255,255,255,1);}.cJgDec .zfr3Q .OUGEr{color: rgba(255,255,255,1);}.cJgDec .qnVSj{color: rgba(255,255,255,1);}.cJgDec .Glwbz{color: rgba(255,255,255,1);}.cJgDec .qLrapd{color: rgba(255,255,255,1);}.cJgDec .aHM7ed{color: rgba(255,255,255,1);}.cJgDec .NHD4Gf{color: rgba(255,255,255,1);}.cJgDec .IFuOkc:before{background-color: rgba(33,33,33,1); opacity: 0; display: block;}.O13XJf{height: 340px; padding-bottom: 60px; padding-top: 60px;}.O13XJf .IFuOkc{background-color: rgba(55,71,79,1); background-image: url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png);}.O13XJf .IFuOkc:before{background-color: rgba(33,33,33,1); opacity: 0.4; display: block;}.O13XJf .zfr3Q{color: rgba(255,255,255,1);}.O13XJf .qnVSj{color: rgba(255,255,255,1);}.O13XJf .Glwbz{color: rgba(255,255,255,1);}.O13XJf .duRjpb{color: rgba(255,255,255,1);}.O13XJf .qLrapd{color: rgba(255,255,255,1);}.O13XJf .JYVBee{color: rgba(255,255,255,1);}.O13XJf .aHM7ed{color: rgba(255,255,255,1);}.O13XJf .OmQG5e{color: rgba(255,255,255,1);}.O13XJf .NHD4Gf{color: rgba(255,255,255,1);}.tpmmCb .zfr3Q{color: rgba(33,33,33,1);}.tpmmCb .zfr3Q .OUGEr{color: rgba(33,33,33,1);}.tpmmCb .qnVSj{color: rgba(33,33,33,1);}.tpmmCb .Glwbz{color: rgba(33,33,33,1);}.tpmmCb .qLrapd{color: rgba(33,33,33,1);}.tpmmCb .aHM7ed{color: rgba(33,33,33,1);}.tpmmCb .NHD4Gf{color: rgba(33,33,33,1);}.tpmmCb .IFuOkc:before{background-color: rgba(255,255,255,1); display: block;}.tpmmCb .Wew9ke{fill: rgba(33,33,33,1);}.aw5Odc{color: rgba(71,92,102,1);}.dhtgD:hover{color: rgba(90,112,122,1);}.dhtgD:active{color: rgba(90,112,122,1);}.dhtgD:visited{color: rgba(71,92,102,1);}.Zjiec{color: rgba(255,255,255,1); font-family: Lato, sans-serif; font-size: 19pt; font-weight: 300; letter-spacing: 1px; line-height: 1.3; padding-bottom: 62.5px; padding-left: 48px; padding-right: 36px; padding-top: 11.5px;}.XMyrgf{margin-top: 0px; margin-left: 48px; margin-bottom: 24px; margin-right: 24px;}.TlfmSc{color: rgba(255,255,255,1); font-family: Lato, sans-serif; font-size: 15pt; font-weight: 300; line-height: 1.333;}.Mz8gvb{color: rgba(255,255,255,1);}.zDUgLc{background-color: rgba(33,33,33,1);}.QTKDff.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}.YTv4We{color: rgba(178,178,178,1);}.YTv4We:hover:before{background-color: rgba(255,255,255,0.1199999973); display: block;}.YTv4We.chg4Jd:focus:before{border-color: rgba(255,255,255,0.3600000143); display: block;}.eWDljc{background-color: rgba(33,33,33,1);}.eWDljc .hDrhEe{padding-left: 8px;}.ZXW7w{color: rgba(255,255,255,1); opacity: 1;}.PsKE7e{color: rgba(255,255,255,1); font-family: Lato, sans-serif; font-size: 12pt; font-weight: 300;}.lhZOrc{color: rgba(125,182,177,1);}.hDrhEe:hover{color: rgba(125,182,177,1);}.M9vuGd{color: rgba(125,182,177,1); font-weight: 400;}.jgXgSe:hover{color: rgba(125,182,177,1);}.j10yRb:hover{color: rgba(125,182,177,1);}.j10yRb.chg4Jd:focus:before{border-color: rgba(255,255,255,0.3600000143); display: block;}.tCHXDc{color: rgba(255,255,255,1);}.iWs3gf.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}.wgxiMe{background-color: rgba(33,33,33,1);}.fOU46b .TlfmSc{color: rgba(255,255,255,1);}.fOU46b .KJll8d{background-color: rgba(255,255,255,1);}.fOU46b .Mz8gvb{color: rgba(255,255,255,1);}.fOU46b .Mz8gvb.chg4Jd:focus:before{border-color: rgba(255,255,255,1); display: block;}.fOU46b .qV4dIc{color: rgba(255,255,255,0.8700000048);}.fOU46b .jgXgSe:hover{color: rgba(255,255,255,1);}.fOU46b .M9vuGd{color: rgba(255,255,255,1);}.fOU46b .tCHXDc{color: rgba(255,255,255,0.8700000048);}.fOU46b .iWs3gf.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}.fOU46b .G8QRnc .Mz8gvb{color: rgba(0,0,0,0.8000000119);}.fOU46b .G8QRnc .Mz8gvb.chg4Jd:focus:before{border-color: rgba(0,0,0,0.8000000119); display: block;}.fOU46b .G8QRnc .ZXW7w{color: rgba(0,0,0,0.8000000119);}.fOU46b .G8QRnc .TlfmSc{color: rgba(0,0,0,0.8000000119);}.fOU46b .G8QRnc .KJll8d{background-color: rgba(0,0,0,0.8000000119);}.fOU46b .G8QRnc .qV4dIc{color: rgba(0,0,0,0.6399999857);}.fOU46b .G8QRnc .jgXgSe:hover{color: rgba(0,0,0,0.8199999928);}.fOU46b .G8QRnc .M9vuGd{color: rgba(0,0,0,0.8199999928);}.fOU46b .G8QRnc .tCHXDc{color: rgba(0,0,0,0.6399999857);}.fOU46b .G8QRnc .iWs3gf.chg4Jd:focus{background-color: rgba(0,0,0,0.1199999973);}.fOU46b .usN8rf .Mz8gvb{color: rgba(0,0,0,0.8000000119);}.fOU46b .usN8rf .Mz8gvb.chg4Jd:focus:before{border-color: rgba(0,0,0,0.8000000119); display: block;}.fOU46b .usN8rf .ZXW7w{color: rgba(0,0,0,0.8000000119);}.fOU46b .usN8rf .TlfmSc{color: rgba(0,0,0,0.8000000119);}.fOU46b .usN8rf .KJll8d{background-color: rgba(0,0,0,0.8000000119);}.fOU46b .usN8rf .qV4dIc{color: rgba(0,0,0,0.6399999857);}.fOU46b .usN8rf .jgXgSe:hover{color: rgba(0,0,0,0.8199999928);}.fOU46b .usN8rf .M9vuGd{color: rgba(0,0,0,0.8199999928);}.fOU46b .usN8rf .tCHXDc{color: rgba(0,0,0,0.6399999857);}.fOU46b .usN8rf .iWs3gf.chg4Jd:focus{background-color: rgba(0,0,0,0.1199999973);}.fOU46b .aCIEDd .qV4dIc{color: rgba(33,33,33,1);}.fOU46b .aCIEDd .TlfmSc{color: rgba(33,33,33,1);}.fOU46b .aCIEDd .KJll8d{background-color: rgba(33,33,33,1);}.fOU46b .aCIEDd .ZXW7w{color: rgba(33,33,33,1);}.fOU46b .aCIEDd .jgXgSe:hover{color: rgba(33,33,33,1); opacity: 0.82;}.fOU46b .aCIEDd .Mz8gvb{color: rgba(33,33,33,1);}.fOU46b .aCIEDd .tCHXDc{color: rgba(33,33,33,1);}.fOU46b .aCIEDd .iWs3gf.chg4Jd:focus{background-color: rgba(33,33,33,0.1199999973);}.fOU46b .a3ETed .qV4dIc{color: rgba(255,255,255,1);}.fOU46b .a3ETed .TlfmSc{color: rgba(255,255,255,1);}.fOU46b .a3ETed .KJll8d{background-color: rgba(255,255,255,1);}.fOU46b .a3ETed .ZXW7w{color: rgba(255,255,255,1);}.fOU46b .a3ETed .jgXgSe:hover{color: rgba(255,255,255,1); opacity: 0.82;}.fOU46b .a3ETed .Mz8gvb{color: rgba(255,255,255,1);}.fOU46b .a3ETed .tCHXDc{color: rgba(255,255,255,1);}.fOU46b .a3ETed .iWs3gf.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}@media only screen and (min-width: 1280px){.XeSM4.b2Iqye.fOU46b .LBrwzc .tCHXDc{color: rgba(255,255,255,0.8700000048);}}.XeSM4.b2Iqye.fOU46b .LBrwzc .iWs3gf.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}@media only screen and (min-width: 1280px){.KuNac.b2Iqye.fOU46b .tCHXDc{color: rgba(0,0,0,0.6399999857);}}.KuNac.b2Iqye.fOU46b .iWs3gf.chg4Jd:focus{background-color: rgba(0,0,0,0.1199999973);}.fOU46b .zDUgLc{opacity: 0;}.LBrwzc .ZXW7w{color: rgba(0,0,0,1);}.LBrwzc .KJll8d{background-color: rgba(0,0,0,1);}.GBy4H .ZXW7w{color: rgba(255,255,255,1);}.GBy4H .KJll8d{background-color: rgba(255,255,255,1);}.eBSUbc{background-color: rgba(33,33,33,1); color: rgba(0,188,212,0.6999999881);}.BFDQOb:hover{color: rgba(125,182,177,1);}.ImnMyf{background-color: rgba(255,255,255,1); color: rgba(33,33,33,1);}.Vs12Bd{background-color: rgba(242,242,242,1); color: rgba(33,33,33,1);}.S5d9Rd{background-color: rgba(50,50,50,1); color: rgba(255,255,255,1);}.zfr3Q{color: rgba(33,33,33,1); font-family: Lato, sans-serif; font-size: 11pt; font-weight: 400; line-height: 1.6667; margin-top: 12px;}.qnVSj{color: rgba(33,33,33,1);}.Glwbz{color: rgba(33,33,33,1);}.duRjpb{color: rgba(55,71,79,1); font-family: Lato, sans-serif; font-size: 34pt; font-weight: 300; letter-spacing: 0.5px; line-height: 1.2; margin-top: 30px;}.Ap4VC{margin-bottom: -30px;}.qLrapd{color: rgba(55,71,79,1);}.JYVBee{color: rgba(55,71,79,1); font-family: Lato, sans-serif; font-size: 19pt; font-weight: 400; line-height: 1.4; margin-top: 20px;}.CobnVe{margin-bottom: -20px;}.aHM7ed{color: rgba(55,71,79,1);}.OmQG5e{color: rgba(33,33,33,1); font-family: Lato, sans-serif; font-size: 15pt; font-style: normal; font-weight: 400; line-height: 1.25; margin-top: 16px;}.GV3q8e{margin-bottom: -16px;}.NHD4Gf{color: rgba(33,33,33,1);}.LB7kq .duRjpb{font-size: 64pt; letter-spacing: 2px; line-height: 1; margin-top: 40px;}.LB7kq .JYVBee{font-size: 25pt; font-weight: 300; line-height: 1.1; margin-top: 25px;}@media only screen and (max-width: 479px){.LB7kq .duRjpb{font-size: 40pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.LB7kq .duRjpb{font-size: 53pt;}}@media only screen and (max-width: 479px){.LB7kq .JYVBee{font-size: 19pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.LB7kq .JYVBee{font-size: 22pt;}}.O13XJf{height: 340px; padding-bottom: 60px; padding-top: 60px;}@media only screen and (min-width: 480px) and (max-width: 767px){.O13XJf{height: 280px; padding-bottom: 40px; padding-top: 40px;}}@media only screen and (max-width: 479px){.O13XJf{height: 250px; padding-bottom: 30px; padding-top: 30px;}}.SBrW1{height: 520px;}@media only screen and (min-width: 480px) and (max-width: 767px){.SBrW1{height: 520px;}}@media only screen and (max-width: 479px){.SBrW1{height: 400px;}}.Wew9ke{fill: rgba(255,255,255,1);}.gk8rDe{height: 180px; padding-bottom: 32px; padding-top: 60px;}.gk8rDe .zfr3Q{color: rgba(0,0,0,1);}.gk8rDe .duRjpb{color: rgba(55,71,79,1); font-size: 45pt; line-height: 1.1;}.gk8rDe .qLrapd{color: rgba(55,71,79,1);}.gk8rDe .JYVBee{color: rgba(55,71,79,1); font-size: 27pt; line-height: 1.35; margin-top: 15px;}.gk8rDe .aHM7ed{color: rgba(55,71,79,1);}.gk8rDe .OmQG5e{color: rgba(33,33,33,1);}.gk8rDe .NHD4Gf{color: rgba(33,33,33,1);}@media only screen and (max-width: 479px){.gk8rDe .duRjpb{font-size: 30pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.gk8rDe .duRjpb{font-size: 38pt;}}@media only screen and (max-width: 479px){.gk8rDe .JYVBee{font-size: 20pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.gk8rDe .JYVBee{font-size: 24pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.gk8rDe{padding-top: 45px;}}@media only screen and (max-width: 479px){.gk8rDe{padding-bottom: 0px; padding-top: 30px;}}.dhtgD{text-decoration: underline;}.JzO0Vc{background-color: rgba(33,33,33,1); font-family: Lato, sans-serif; width: 250px;}@media only screen and (min-width: 1280px){.JzO0Vc{padding-top: 48.5px;}}.TlfmSc{font-family: Lato, sans-serif; font-size: 15pt; font-weight: 300; line-height: 1.333;}.PsKE7e{font-family: Lato, sans-serif; font-size: 12pt;}.IKA38e{line-height: 1.21;}.hDrhEe{padding-bottom: 11.5px; padding-top: 11.5px;}.zDUgLc{opacity: 1;}.QmpIrf{background-color: rgba(50,50,50,1); border-color: rgba(255,255,255,1); color: rgba(255,255,255,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.xkUom{border-color: rgba(50,50,50,1); color: rgba(50,50,50,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.xkUom:hover{background-color: rgba(50,50,50,0.1000000015);}.KjwKmc{color: rgba(50,50,50,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal; line-height: normal;}.KjwKmc:hover{background-color: rgba(50,50,50,0.1000000015);}.lQAHbd .QmpIrf{background-color: rgba(255,255,255,1); border-color: rgba(55,71,79,1); color: rgba(55,71,79,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.lQAHbd .xkUom{border-color: rgba(242,242,242,1); color: rgba(242,242,242,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.lQAHbd .xkUom:hover{background-color: rgba(255,255,255,0.1000000015);}.lQAHbd .KjwKmc{color: rgba(242,242,242,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.lQAHbd .KjwKmc:hover{background-color: rgba(255,255,255,0.1000000015);}.lQAHbd .Mt0nFe{border-color: rgba(255,255,255,0.200000003);}.cJgDec .QmpIrf{background-color: rgba(255,255,255,1); border-color: rgba(55,71,79,1); color: rgba(55,71,79,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.cJgDec .xkUom{border-color: rgba(242,242,242,1); color: rgba(242,242,242,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.cJgDec .xkUom:hover{background-color: rgba(255,255,255,0.1000000015);}.cJgDec .KjwKmc{color: rgba(242,242,242,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.cJgDec .KjwKmc:hover{background-color: rgba(255,255,255,0.1000000015);}.tpmmCb .QmpIrf{background-color: rgba(255,255,255,1); border-color: rgba(55,71,79,1); color: rgba(55,71,79,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.tpmmCb .xkUom{border-color: rgba(50,50,50,1); color: rgba(50,50,50,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.tpmmCb .xkUom:hover{background-color: rgba(50,50,50,0.1000000015);}.tpmmCb .KjwKmc{color: rgba(50,50,50,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.tpmmCb .KjwKmc:hover{background-color: rgba(50,50,50,0.1000000015);}.gk8rDe .QmpIrf{background-color: rgba(50,50,50,1); border-color: rgba(255,255,255,1); color: rgba(255,255,255,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.gk8rDe .xkUom{border-color: rgba(50,50,50,1); color: rgba(50,50,50,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.gk8rDe .xkUom:hover{background-color: rgba(50,50,50,0.1000000015);}.gk8rDe .KjwKmc{color: rgba(50,50,50,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.gk8rDe .KjwKmc:hover{background-color: rgba(50,50,50,0.1000000015);}.O13XJf .QmpIrf{background-color: rgba(255,255,255,1); border-color: rgba(55,71,79,1); color: rgba(55,71,79,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.O13XJf .xkUom{border-color: rgba(242,242,242,1); color: rgba(242,242,242,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.O13XJf .xkUom:hover{background-color: rgba(255,255,255,0.1000000015);}.O13XJf .KjwKmc{color: rgba(242,242,242,1); font-family: Lato, sans-serif; font-size: 11pt; line-height: normal;}.O13XJf .KjwKmc:hover{background-color: rgba(255,255,255,0.1000000015);}.Y4CpGd{font-family: Lato, sans-serif; font-size: 11pt;}.CMArNe{background-color: rgba(242,242,242,1);}.LBrwzc .TlfmSc{color: rgba(0,0,0,0.8000000119);}.LBrwzc .YTv4We{color: rgba(0,0,0,0.6399999857);}.LBrwzc .YTv4We.chg4Jd:focus:before{border-color: rgba(0,0,0,0.6399999857); display: block;}.LBrwzc .Mz8gvb{color: rgba(0,0,0,0.6399999857);}.LBrwzc .tCHXDc{color: rgba(0,0,0,0.6399999857);}.LBrwzc .iWs3gf.chg4Jd:focus{background-color: rgba(0,0,0,0.1199999973);}.LBrwzc .wgxiMe{background-color: rgba(255,255,255,1);}.LBrwzc .qV4dIc{color: rgba(0,0,0,0.6399999857);}.LBrwzc .M9vuGd{color: rgba(0,0,0,0.8000000119); font-weight: bold;}.LBrwzc .Zjiec{color: rgba(0,0,0,0.8000000119);}.LBrwzc .IKA38e{color: rgba(0,0,0,0.6399999857);}.LBrwzc .lhZOrc.IKA38e{color: rgba(0,0,0,0.8000000119); font-weight: bold;}.LBrwzc .j10yRb:hover{color: rgba(0,0,0,0.8000000119);}.LBrwzc .eBSUbc{color: rgba(0,0,0,0.8000000119);}.LBrwzc .hDrhEe:hover{color: rgba(0,0,0,0.8000000119);}.LBrwzc .jgXgSe:hover{color: rgba(0,0,0,0.8000000119);}.LBrwzc .M9vuGd:hover{color: rgba(0,0,0,0.8000000119);}.LBrwzc .zDUgLc{border-bottom-color: rgba(204,204,204,1); border-bottom-width: 1px; border-bottom-style: solid;}.fOU46b .LBrwzc .M9vuGd{color: rgba(0,0,0,0.8000000119);}.fOU46b .LBrwzc .jgXgSe:hover{color: rgba(0,0,0,0.8000000119);}.fOU46b .LBrwzc .zDUgLc{opacity: 1; border-bottom-style: none;}.fOU46b .LBrwzc .tCHXDc{color: rgba(0,0,0,0.6399999857);}.fOU46b .LBrwzc .iWs3gf.chg4Jd:focus{background-color: rgba(0,0,0,0.1199999973);}.fOU46b .GBy4H .M9vuGd{color: rgba(255,255,255,1);}.fOU46b .GBy4H .jgXgSe:hover{color: rgba(255,255,255,1);}.fOU46b .GBy4H .zDUgLc{opacity: 1;}.fOU46b .GBy4H .tCHXDc{color: rgba(255,255,255,0.8700000048);}.fOU46b .GBy4H .iWs3gf.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}.XeSM4.G9Qloe.fOU46b .LBrwzc .tCHXDc{color: rgba(0,0,0,0.6399999857);}.XeSM4.G9Qloe.fOU46b .LBrwzc .iWs3gf.chg4Jd:focus{background-color: rgba(0,0,0,0.1199999973);}.GBy4H .lhZOrc.IKA38e{color: rgba(255,255,255,1);}.GBy4H .eBSUbc{color: rgba(255,255,255,0.8700000048);}.GBy4H .hDrhEe:hover{color: rgba(255,255,255,1);}.GBy4H .j10yRb:hover{color: rgba(255,255,255,1);}.GBy4H .YTv4We{color: rgba(255,255,255,1);}.GBy4H .YTv4We.chg4Jd:focus:before{border-color: rgba(255,255,255,1); display: block;}.GBy4H .tCHXDc{color: rgba(255,255,255,0.8700000048);}.GBy4H .iWs3gf.chg4Jd:focus{background-color: rgba(255,255,255,0.1199999973);}.GBy4H .jgXgSe:hover{color: rgba(255,255,255,1);}.GBy4H .jgXgSe:hover{color: rgba(255,255,255,1);}.GBy4H .M9vuGd{color: rgba(255,255,255,1);}.GBy4H .M9vuGd:hover{color: rgba(255,255,255,1);}.QcmuFb{padding-left: 20px;}.vDPrib{padding-left: 40px;}.TBDXjd{padding-left: 60px;}.bYeK8e{padding-left: 80px;}.CuqSDe{padding-left: 100px;}.Havqpe{padding-left: 120px;}.JvDrRe{padding-left: 140px;}.o5lrIf{padding-left: 160px;}.yOJW7c{padding-left: 180px;}.rB8cye{padding-left: 200px;}.RuayVd{padding-right: 20px;}.YzcKX{padding-right: 40px;}.reTV0b{padding-right: 60px;}.vSYeUc{padding-right: 80px;}.PxtZIe{padding-right: 100px;}.ahQMed{padding-right: 120px;}.rzhcXb{padding-right: 140px;}.PBhj0b{padding-right: 160px;}.TlN46c{padding-right: 180px;}.GEdNnc{padding-right: 200px;}.TMjjoe{font-family: Lato, sans-serif; font-size: 9pt; line-height: 1.2; margin-top: 0px;}@media only screen and (min-width: 1280px){.yxgWrb{margin-left: 250px;}}@media only screen and (max-width: 479px){.Zjiec{font-size: 15pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.Zjiec{font-size: 17pt;}}@media only screen and (max-width: 479px){.TlfmSc{font-size: 13pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.TlfmSc{font-size: 14pt;}}@media only screen and (max-width: 479px){.PsKE7e{font-size: 12pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.PsKE7e{font-size: 12pt;}}@media only screen and (max-width: 479px){.duRjpb{font-size: 24pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.duRjpb{font-size: 29pt;}}@media only screen and (max-width: 479px){.JYVBee{font-size: 15pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.JYVBee{font-size: 17pt;}}@media only screen and (max-width: 479px){.OmQG5e{font-size: 13pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.OmQG5e{font-size: 14pt;}}@media only screen and (max-width: 479px){.TlfmSc{font-size: 13pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.TlfmSc{font-size: 14pt;}}@media only screen and (max-width: 479px){.PsKE7e{font-size: 12pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.PsKE7e{font-size: 12pt;}}@media only screen and (max-width: 479px){.TMjjoe{font-size: 9pt;}}@media only screen and (min-width: 480px) and (max-width: 767px){.TMjjoe{font-size: 9pt;}}section[id="h.INITIAL_GRID.16fllza6spj5"] .IFuOkc:before{opacity: 0.0;}</style><script nonce="">_at_config = [null,"AIzaSyChg3MFqzdi1P5J-YvEyakkSA1yU7HRcDI","897606708560-a63d8ia0t9dhtpdt4i3djab2m42see7o.apps.googleusercontent.com",null,null,null,null,null,null,null,null,null,null,null,"SITES_%s",null,null,null,null,null,null,null,null,null,["AHKXmL21kzfZkKX3X2BvEpAPossA2QAxG4zRcha5C9Li8G-BrPdZtwS9YrO8fXzZI4mVh-Nb3-tT",1,"CKWH-t3q0JcDFTxENwgdja4vsA",1792782360282021,[5703839,5704621,5706832,5706836,5738513,5738529,5743108,5743124,5767835,5767851,5776501,5776517,14101306,14101502,14101510,14101534,49472063,49472071,49644015,49644023,49769337,49769345,49822921,49822929,49833462,49833470,49842855,49842863,49924706,49924714,50223641,50223649,50266222,50266230,50273528,50273536,50297076,50297084,50561343,50561351,50586962,50586970,71079938,71079946,71085241,71085249,71120968,71120976,71387889,71387897,71465947,71465955,71528597,71528605,71530083,71530091,71544834,71544842,71546425,71546433,71652641,71658040,71658048,71659813,71659821,71689860,71689868,71710040,71710048,71798420,71798436,71825383,71825391,71855010,71855018,71897827,71897835,71960540,71960548,94327671,94327679,94353368,94353376,94386871,94386879,94434257,94434265,94629757,94629765,94661802,94661810,94692298,94692306,94785229,94785237,94818995,94819000,94819465,94819470,94904089,94904097,94918952,94918960,94940194,95087186,95087194,95111985,95111993,95112873,95112881,95182361,95182367,95314802,95314810,99251983,99251991,99368792,99368800,99402331,99402339,99440853,99440861,99457807,99457815,101492731,101492739,101519280,101519288,101562406,101562414,101631191,101631199,101687117,101687125,101836971,101836979,101837416,101837424,101860667,101860675,101887674,101887682,101889043,101889051,101917185,101917193,101922739,101922747,101922880,101922888,101933491,101933499,102030642,102030650,102059541,102059549,102070930,102070938,102146687,102146695,102161447,102161455,102178402,102178410,102198282,102198290,102244489,102244497,102280628,102280636,102343380,102343388,102402679,102402687,102469860,102469868,102517339,102517344,102548521,102548529,102673375,102685384,102685389,102685929,102685934,102691157,102691162,102691290,102691295,102718396,102721215,102721220,102727402,102727407,102761474,102761479,102762315,102762323,102783509,102783517,102787563,102807790,102807798,102867835,102867843,102883758,102883766,102902848,102902856,102903660,102903668,102909750,102909755,102925819,102925827,102926523,102926531,102932587,102932595,102944189,102944194,102944268,102944273,102944503,102944508,102944582,102944587,102944680,102944685,102944785,102944790,102956685,102956693,102972669,102972677,102987007,102987015,102988272,102988277,102988402,102988407,102988695,102988700,102988929,102988934,103011418,103011426,103020635,103020643,103163044,103163052,103176010,103176018,103209425,103209433,103276092,103285966,103285974,103286444,103286452,103288306,103288314,103289103,103289108,103289273,103289278,103326407,103326415,103343830,103343838,104530130,104573899,104573907,104575332,104575337,104575491,104575496,104575691,104575696,104575894,104615595,104615603,104699504,104699512,104761751,104761759,104794443,104794451,104842348,104842353,104907811,104907819,104976617,104976625,104983169,104983177,105082097,105082105,105083748,105083756,105087788,105087796,105125317,105125325,105180894,105180902,105283687,105283695,105292835,105292843,105346285,105346293,105360418,105360426,105371923,105371931,105373824,105373832,105393811,105393819,105439171,105439179,115511323,115511328,115525294,115525302,115601129,115601137,115626258,115626266,115626439,115626447,115669258,115669266,115779821,115779829,115780458,115780466,115818444,115818449,115821407,115821415,115822445,115822453,115854768,115854776,115909741,115909749,116062710,116062718,116068898,116068906,116176809,116176817,116221334,116221342,116250605,116250613,116276461,116276469,116372477,116372485,116416034,116416042,116418147,116418155,116425642,116538516,116538524,116567571,116567576,116609471,116609479,116699509,116699517,116714309,116714313,116756943,116756951,116783822,116783827,116840681,116840686,116929775,116929783,116930116,116930124,116980487,116980495,116981005,116981013,116981367,116981375,116981668,116981676,116981709,116981717,116982512,116982520,116982753,116982761,116982974,116982982,116983416,116983424,116984628,116984636,116986230,116986238,116988124,116988132,117010933,117010941,117037068,117037076,117145772,117145780,117223999,117224007,117268957,117268965,117283949,117283954,117286791,117286799,117290330,117290338,117309374,117309382,117310090,117310098,117410074,117457958,117457966,117503217,117503225,117504383,117504391,117547661,117547669,117668252,117668260,117683635,117728353,117728361,117848254,117895900,117895908,118094558,118094563,118098249,118098257,118110574,118110582,118144992,118145000,118171121,118237135,118237143,118281144,118281152,118285275,118291756,118291764,118367937,118367945,118368676,118368684,118417364,118417372,118484679,118484687,118599461,118599469,118961008,118961016,119022332,119022340,119038638,119038646,119077135,119077143,119109774,119109782,119208439,119208447,119209378,119346325,119367357,119367362,119389357,119389365,119474894,119474902,119528382,119528390,119530260,119530268,119566028,119566036,119593000,119593008,119595147,119595155,119605190,119605198,119651586,119651594,119667272,119667280,119671790,119671798,119702549,119702557,119770545,119770553,119771791,119771799,119870000,119870008,119941461,119941469,119942872,120049151,120049159,120050650,120050658,120120566,120140755,120175627,120175635,120465877,120465885,120493132,120493140,120619846,120619851,120730671,120730676,120735852,120735857,120773177,120773182,120797077,120797085,120812978,120864327,120900452,120900460,120963614,120963622,120982382,120982390,121110331,121110336,121172911,121286207,121286215,121339424,121339429,121345854,121372721,121381303,121381308,121381960,121383007,121406244,121406252,123364526,123477306]],"AHL0AtIF1m_-Vwu4rFq9WsvB2WNEhdbMxw:1792782360254",null,null,null,0,null,null,null,null,null,null,null,null,null,"https://drive.google.com",null,null,null,null,null,null,null,null,null,0,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"v2internal","https://docs.google.com",null,null,null,null,null,null,"https://sites.google.com/new/?authuser\u003d0",null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,"",null,null,null,null,null,null,null,null,null,null,null,null,6,null,null,"https://accounts.google.com/o/oauth2/auth","https://accounts.google.com/o/oauth2/postmessageRelay",null,null,null,null,78,"https://sites.google.com/new/?authuser\u003d0\u0026usp\u003dviewer_footer\u0026authuser\u003d0",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"https://www.gstatic.com/atari/embeds/91f5b13c6c3a9a326512ed25cf57c9b4/intermediate-frame-minified.html",0,null,"v2beta",null,null,null,null,null,null,null,"https://accounts.google.com/o/oauth2/iframe",null,null,null,null,null,null,"https://57392249-atari-embeds.googleusercontent.com/embeds/7b1fab8145be131e22969eee9027b9ad/inner-frame-minified.html",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"https://sites.google.com/view/gavinnes-forging-calculator/home",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,0,null,"",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,0,"[{\"keyPath\":[\"syncMap\",\"preferences\",\"atari-asp\",\"8\"],\"state\":{\"timestamp\":1787027999343862},\"data\":{\"informed-publishing-overlay-promo-id\":{\"dismissed\":true,\"shownCount\":0}}},{\"keyPath\":[\"syncMap\",\"preferences\",\"atari-estpsc\"],\"state\":{\"timestamp\":1792782360290007},\"data\":{\"value\":0}},{\"keyPath\":[\"syncMap\",\"preferences\",\"atari-sipsc\"],\"state\":{\"timestamp\":1792782360290007},\"data\":{\"value\":0}}]",null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,[1792782360290,"editors.sites-viewer-frontend_20261019.02_p0","1002194072","0",0,1,""],null,null,null,null,1,null,null,0,null,null,null,null,null,null,null,null,null,null,"https://domains.google.com",null,0,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,0,1,0,0,0,0,null,null,null,null,null,"https://www.google.com/calendar/embed",null,null,null,null,0,null,null,1,0,null,null,0,null,null,null,0,null,0,null,null,null,null,null,1,null,null,null,null,0,"PROD",null,null,null,0,null,null,0,"wYCZkqoz10fBWirfAym0S1sADKbJ",1,1,0,null,0,0,0,0,0,0,null,1,null,null,null,null,null,0,0,0,0]; window.globals = {"enableAnalytics":true,"webPropertyId":"","showDebug":false,"hashedSiteId":"4e9410cc15f64a025f49a86f45e1c2d0705060e1c2b933e3d8fdfa72e244615f","normalizedPath":"view/gavinnes-forging-calculator/home","pageTitle":"Home"}; function gapiLoaded() {if (globals.gapiLoaded == undefined) {globals.gapiLoaded = true;} else {globals.gapiLoaded();}}window.messages = []; window.addEventListener && window.addEventListener('message', function(e) {if (window.messages && e.data && e.data.magic == 'SHIC') {window.messages.push(e);}});</script><script src="Gavinnes%20Smithing%20Calculator_files/client_wJtN.js" nonce="" gapi_processed="true"></script><script nonce="">(function(){var aa=typeof Object.create=="function"?Object.create:function(a){var b=function(){};b.prototype=a;return new b},l=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a},ba=function(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");
+},ca=ba(this),p=function(a,b){if(b)a:{var c=ca;a=a.split(".");for(var d=0;d<a.length-1;d++){var f=a[d];if(!(f in c))break a;c=c[f]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&l(c,a,{configurable:!0,writable:!0,value:b})}},da;if(typeof Object.setPrototypeOf=="function")da=Object.setPrototypeOf;else{var ea;a:{var fa={a:!0},ha={};try{ha.__proto__=fa;ea=ha.a;break a}catch(a){}ea=!1}da=ea?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+var ia=da,ja=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},q=function(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ja(a)};throw Error(String(a)+" is not an iterable or ArrayLike");},r=function(a){if(!(a instanceof Array)){a=q(a);for(var b,c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a},ka=function(a){return t(a,a)},t=function(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),
+Object.freeze(b));return a},v=function(a,b){var c;b&&!b.done&&(c=a["return"])&&c.call(a)},w=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},la=typeof Object.assign=="function"?Object.assign:function(a,b){if(a==null)throw new TypeError("No nullish arg");a=Object(a);for(var c=1;c<arguments.length;c++){var d=arguments[c];if(d)for(var f in d)w(d,f)&&(a[f]=d[f])}return a};p("Object.assign",function(a){return a||la});
+var ma=function(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b};p("globalThis",function(a){return a||ca});p("Symbol",function(a){if(a)return a;var b=function(h,m){this.V=h;l(this,"description",{configurable:!0,writable:!0,value:m})};b.prototype.toString=function(){return this.V};var c="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",d=0,f=function(h){if(this instanceof f)throw new TypeError("Symbol is not a constructor");return new b(c+(h||"")+"_"+d++,h)};return f});
+p("Symbol.iterator",function(a){if(a)return a;a=Symbol("Symbol.iterator");l(Array.prototype,a,{configurable:!0,writable:!0,value:function(){return na(ja(this))}});return a});var na=function(a){var b=(typeof Iterator!="undefined"&&Iterator.prototype&&!Iterator.prototype.next?Iterator.prototype:null)||Object.prototype,c=aa(b);c.next=a;b[Symbol.iterator]||(c[Symbol.iterator]=function(){return this});return c};p("Symbol.dispose",function(a){return a?a:Symbol("Symbol.dispose")});
+var oa=function(a,b){a instanceof String&&(a+="");var c=0,d=!1;return na(function(){if(!d&&c<a.length){var f=c++;return{value:b(f,a[f]),done:!1}}d=!0;return{done:!0,value:void 0}})};p("Array.prototype.keys",function(a){return a?a:function(){return oa(this,function(b){return b})}});
+p("WeakMap",function(a){function b(){}function c(g){var k=typeof g;return k==="object"&&g!==null||k==="function"}function d(g){if(!w(g,h)){var k=new b;l(g,h,{value:k})}}function f(g){var k=Object[g];k&&(Object[g]=function(n){if(n instanceof b)return n;Object.isExtensible(n)&&d(n);return k(n)})}if(function(){if(!a||!Object.seal)return!1;try{var g=Object.seal({}),k=Object.seal({}),n=new a([[g,2],[k,3]]);if(n.get(g)!=2||n.get(k)!=3)return!1;n.delete(g);n.set(k,4);return!n.has(g)&&n.get(k)==4}catch(u){return!1}}())return a;
+var h="$jscomp_hidden_"+Math.random();f("freeze");f("preventExtensions");f("seal");var m=0,e=function(g){this.v=(m+=Math.random()+1).toString();if(g){g=q(g);for(var k;!(k=g.next()).done;)k=k.value,this.set(k[0],k[1])}};e.prototype.set=function(g,k){if(!c(g))throw Error("Invalid WeakMap key");d(g);if(!w(g,h))throw Error("WeakMap key fail: "+g);g[h][this.v]=k;return this};e.prototype.get=function(g){return c(g)&&w(g,h)?g[h][this.v]:void 0};e.prototype.has=function(g){return c(g)&&w(g,h)&&w(g[h],this.v)};
+e.prototype.delete=function(g){return c(g)&&w(g,h)&&w(g[h],this.v)?delete g[h][this.v]:!1};return e});
+p("Map",function(a){if(function(){if(!a||typeof a!="function"||!a.prototype.entries||typeof Object.seal!="function")return!1;try{var e=Object.seal({x:4}),g=new a(q([[e,"s"]]));if(g.get(e)!="s"||g.size!=1||g.get({x:4})||g.set({x:4},"t")!=g||g.size!=2)return!1;var k=g.entries(),n=k.next();if(n.done||n.value[0]!=e||n.value[1]!="s")return!1;n=k.next();return n.done||n.value[0].x!=4||n.value[1]!="t"||!k.next().done?!1:!0}catch(u){return!1}}())return a;var b=new WeakMap,c=function(e){this[0]={};this[1]=
+h();this.size=0;if(e){e=q(e);for(var g;!(g=e.next()).done;)g=g.value,this.set(g[0],g[1])}};c.prototype.set=function(e,g){e=e===0?0:e;var k=d(this,e);k.list||(k.list=this[0][k.id]=[]);k.entry?k.entry.value=g:(k.entry={next:this[1],l:this[1].l,head:this[1],key:e,value:g},k.list.push(k.entry),this[1].l.next=k.entry,this[1].l=k.entry,this.size++);return this};c.prototype.delete=function(e){e=d(this,e);return e.entry&&e.list?(e.list.splice(e.index,1),e.list.length||delete this[0][e.id],e.entry.l.next=
+e.entry.next,e.entry.next.l=e.entry.l,e.entry.head=null,this.size--,!0):!1};c.prototype.clear=function(){this[0]={};this[1]=this[1].l=h();this.size=0};c.prototype.has=function(e){return!!d(this,e).entry};c.prototype.get=function(e){return(e=d(this,e).entry)&&e.value};c.prototype.entries=function(){return f(this,function(e){return[e.key,e.value]})};c.prototype.keys=function(){return f(this,function(e){return e.key})};c.prototype.values=function(){return f(this,function(e){return e.value})};c.prototype.forEach=
+function(e,g){for(var k=this.entries(),n;!(n=k.next()).done;)n=n.value,e.call(g,n[1],n[0],this)};c.prototype[Symbol.iterator]=c.prototype.entries;var d=function(e,g){var k=g&&typeof g;k=="object"||k=="function"?b.has(g)?k=b.get(g):(k=""+ ++m,b.set(g,k)):k="p_"+g;var n=e[0][k];if(n&&w(e[0],k))for(e=0;e<n.length;e++){var u=n[e];if(g!==g&&u.key!==u.key||g===u.key)return{id:k,list:n,index:e,entry:u}}return{id:k,list:n,index:-1,entry:void 0}},f=function(e,g){var k=e[1];return na(function(){if(k){for(;k.head!=
+e[1];)k=k.l;for(;k.next!=k.head;)return k=k.next,{done:!1,value:g(k)};k=null}return{done:!0,value:void 0}})},h=function(){var e={};return e.l=e.next=e.head=e},m=0;return c});
+p("Set",function(a){if(function(){if(!a||typeof a!="function"||!a.prototype.entries||typeof Object.seal!="function")return!1;try{var c=Object.seal({x:4}),d=new a(q([c]));if(!d.has(c)||d.size!=1||d.add(c)!=d||d.size!=1||d.add({x:4})!=d||d.size!=2)return!1;var f=d.entries(),h=f.next();if(h.done||h.value[0]!=c||h.value[1]!=c)return!1;h=f.next();return h.done||h.value[0]==c||h.value[0].x!=4||h.value[1]!=h.value[0]?!1:f.next().done}catch(m){return!1}}())return a;var b=function(c){this.j=new Map;if(c){c=
+q(c);for(var d;!(d=c.next()).done;)this.add(d.value)}this.size=this.j.size};b.prototype.add=function(c){c=c===0?0:c;this.j.set(c,c);this.size=this.j.size;return this};b.prototype.delete=function(c){c=this.j.delete(c);this.size=this.j.size;return c};b.prototype.clear=function(){this.j.clear();this.size=0};b.prototype.has=function(c){return this.j.has(c)};b.prototype.entries=function(){return this.j.entries()};b.prototype.values=function(){return this.j.values()};b.prototype.keys=b.prototype.values;
+b.prototype[Symbol.iterator]=b.prototype.values;b.prototype.forEach=function(c,d){var f=this;this.j.forEach(function(h){return c.call(d,h,h,f)})};return b});p("Array.prototype.entries",function(a){return a?a:function(){return oa(this,function(b,c){return[b,c]})}});p("Object.entries",function(a){return a?a:function(b){var c=[],d;for(d in b)w(b,d)&&c.push([d,b[d]]);return c}});
+p("Array.from",function(a){return a?a:function(b,c,d){c=c!=null?c:function(e){return e};var f=[],h=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(typeof h=="function"){b=h.call(b);for(var m=0;!(h=b.next()).done;)f.push(c.call(d,h.value,m++))}else for(h=b.length,m=0;m<h;m++)f.push(c.call(d,b[m],m));return f}});p("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});
+p("String.prototype.startsWith",function(a){return a?a:function(b,c){if(this==null)throw new TypeError("The 'this' value for String.prototype.startsWith must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.startsWith must not be a regular expression");var d=this+"";b+="";var f=d.length,h=b.length;c=Math.max(0,Math.min(c|0,d.length));for(var m=0;m<h&&c<f;)if(d[c++]!=b[m++])return!1;return m>=h}});
+p("Object.values",function(a){return a?a:function(b){var c=[],d;for(d in b)w(b,d)&&c.push(b[d]);return c}});p("Math.log2",function(a){return a?a:function(b){return Math.log(b)/Math.LN2}});p("Array.prototype.values",function(a){return a?a:function(){return oa(this,function(b,c){return c})}});p("Object.hasOwn",function(a){return a?a:function(b,c){return Object.prototype.hasOwnProperty.call(b,c)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var x=this||self,pa=function(a){a:{var b=["CLOSURE_FLAGS"];for(var c=x,d=0;d<b.length;d++)if(c=c[b[d]],c==null){b=null;break a}b=c}a=b&&b[a];return a!=null?a:!0},qa=function(a){var b=typeof a;return b!="object"?b:a?Array.isArray(a)?"array":b:"null"},ra=function(a,b){function c(){}c.prototype=b.prototype;a.fa=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.jb=function(d,f,h){for(var m=Array(arguments.length-2),e=2;e<arguments.length;e++)m[e-2]=arguments[e];return b.prototype[f].apply(d,m)}};/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var sa="src srcdoc codebase data href rel action formaction sandbox icon".split(" ");var ta={};function ua(){if(ta!==ta)throw Error("Bad secret");};var va=function(a){ua();this.da=a};va.prototype.toString=function(){return this.da};var wa=ka([""]),xa=t(["\x00"],["\\0"]),ya=t(["\n"],["\\n"]),za=t(["\x00"],["\\u0000"]),Aa=ka([""]),Ba=t(["\x00"],["\\0"]),Ca=t(["\n"],["\\n"]),Da=t(["\x00"],["\\u0000"]);function y(a){return Object.isFrozen(a)&&Object.isFrozen(a.raw)}function z(a){return a.toString().indexOf("`")===-1}var Ea=z(function(a){return a(wa)})||z(function(a){return a(xa)})||z(function(a){return a(ya)})||z(function(a){return a(za)}),Fa=y(Aa)&&y(Ba)&&y(Ca)&&y(Da);var Ga=function(a){ua();this.ea=a};Ga.prototype.toString=function(){return this.ea};new Ga("about:blank");new Ga("about:invalid#zClosurez");var Ha=[],Ia=function(a){console.warn("A URL with content '"+a+"' was sanitized away.")};Ha.indexOf(Ia)===-1&&Ha.push(Ia);var Ja=ka(["mica-"]);
+(function(a){if(!Array.isArray(a)||!Array.isArray(a.raw)||a.length!==a.raw.length||!Ea&&a===a.raw||!(Ea&&!Fa||y(a))||1!==a.length)throw new TypeError("\n    ############################## ERROR ##############################\n\n    It looks like you are trying to call a template tag function (fn`...`)\n    using the normal function syntax (fn(...)), which is not supported.\n\n    The functions in the safevalues library are not designed to be called\n    like normal functions, and doing so invalidates the security guarantees\n    that safevalues provides.\n\n    If you are stuck and not sure how to proceed, please reach out to us\n    instead through:\n     - go/ise-hardening-yaqs (preferred) // LINE-INTERNAL\n     - g/ise-hardening // LINE-INTERNAL\n     - https://github.com/google/safevalues/issues\n\n    ############################## ERROR ##############################");var b=
+a[0].toLowerCase();if(b.indexOf("on")===0||"on".indexOf(b)===0)throw Error("Prefix '"+a[0]+"' does not guarantee the attribute to be safe as it is also a prefix for event handler attributesPlease use 'addEventListener' to set event handlers.");sa.forEach(function(c){if(c.indexOf(b)===0)throw Error("Prefix '"+a[0]+"' does not guarantee the attribute to be safe as it is also a prefix for the security sensitive attribute '"+(c+"'. Please use native or safe DOM APIs to set the attribute."));});return new va(b)})(Ja);function A(a,b){if(Error.captureStackTrace)Error.captureStackTrace(this,A);else{var c=Error().stack;c&&(this.stack=c)}a&&(this.message=String(a));b!==void 0&&(this.cause=b)}ra(A,Error);A.prototype.name="CustomError";function B(a,b){a=a.split("%s");for(var c="",d=a.length-1,f=0;f<d;f++)c+=a[f]+(f<b.length?b[f]:"%s");A.call(this,c+a[d])}ra(B,A);B.prototype.name="AssertionError";function C(a,b,c,d){var f="Assertion failed";if(c){f+=": "+c;var h=d}else a&&(f+=": "+a,h=b);throw new B(""+f,h||[]);}
+var D=function(a,b,c){a||C("",null,b,Array.prototype.slice.call(arguments,2));return a},Ka=function(a,b,c){a==null&&C("Expected to exist: %s.",[a],b,Array.prototype.slice.call(arguments,2));return a},La=function(a,b){throw new B("Failure"+(a?": "+a:""),Array.prototype.slice.call(arguments,1));},Ma=function(a,b,c){typeof a!=="string"&&C("Expected string but got %s: %s.",[qa(a),a],b,Array.prototype.slice.call(arguments,2))},Na=function(a,b,c){Array.isArray(a)||C("Expected array but got %s: %s.",[qa(a),
+a],b,Array.prototype.slice.call(arguments,2));return a};var Oa;function E(a){var b;((b=Oa)!=null?b:Oa=[]).push(a)};var F=function(a,b,c,d){d=d===void 0?!1:d;D(a,"Invalid service id + "+a);c=c||[];for(var f=0;f<c.length;f++)D(c[f],"Invalid dependency "+c[f]+" (index in dependency array: "+f+") for service "+a);this.M=a;this.m=b||null;this.D=[];Pa(this,c,d);this.R=!1};F.prototype.toString=function(){return this.M};
+var Pa=function(a,b,c){c=c===void 0?!1:c;D(!a.R,"Error while adding dependencies. The dependencies cannot be changed after they were read.");a.D=a.D.concat(b);if(c){if(!a.m)throw Error("A module ID must be set on the Fava ServiceId "+a.M+" in order to modify extra edges.");b.map(function(d){return d.m}).forEach(function(d){E(function(f){f.N(D(a.m),d)})})}},Ra=function(){var a=G.o,b=[G.C],c=Qa;c=c===void 0?!1:c;D(!a.R,"Error while removing dependencies. The dependencies cannot be changed after they were read.");
+if(c){if(!a.m)throw Error("A module ID must be set on the Fava ServiceId "+a.M+" in order to modify extra edges.");b.map(function(d){return d.m}).forEach(function(d){E(function(f){f.wb(D(a.m),d)})})}a.D=a.D.filter(function(d){return b.indexOf(d)===-1})};new F("n73qwf","n73qwf");new F("MpJwZc","MpJwZc");function H(){this.F=this.F;this.G=this.G}H.prototype.F=!1;H.prototype.dispose=function(){this.F||(this.F=!0,this.aa())};H.prototype[Symbol.dispose]=function(){this.dispose()};H.prototype.aa=function(){if(this.G)for(;this.G.length;)this.G.shift()()};var Sa=pa(513659523),Ta=pa(928875398);function Ua(a){var b=Va,c;for(c in b)a.call(void 0,b[c],c,b)};function I(a,b){b=b===void 0?new Set:b;if(b.has(a))return"(Recursive reference)";switch(typeof a){case "object":if(a){var c=Object.getPrototypeOf(a);switch(c){case Map.prototype:case Set.prototype:case Array.prototype:b.add(a);var d="["+Array.from(a,function(f){return I(f,b)}).join(", ")+"]";b.delete(a);c!==Array.prototype&&(d=Wa(c.constructor)+"("+d+")");return d;case Object.prototype:return b.add(a),c="{"+Object.entries(a).map(function(f){var h=q(f);f=h.next().value;h=h.next().value;return f+": "+
+I(h,b)}).join(", ")+"}",b.delete(a),c;default:return d="Object",c&&c.constructor&&(d=Wa(c.constructor)),typeof a.toString==="function"&&a.toString!==Object.prototype.toString?d+"("+String(a)+")":"(object "+d+")"}}break;case "function":return"function "+Wa(a);case "number":if(!Number.isFinite(a))return String(a);break;case "bigint":return a.toString(10)+"n";case "symbol":return a.toString()}return JSON.stringify(a)}
+function Wa(a){var b=a.displayName;return b&&typeof b==="string"||(b=a.name)&&typeof b==="string"?b:(a=/function\s+([^\(]+)/m.exec(String(a)))?a[1]:"(Anonymous)"};function Xa(a,b){var c=Ya,d=[];Za(b,a,d)||$a.apply(null,[void 0,c,"Guard "+b.S().trim()+" failed:"].concat(r(d.reverse())))}function J(a){K(!0,a)}function K(a,b){var c=Ya;a||$a("Guard truthy failed:",b||c||"Expected truthy, got "+I(a))}function ab(a,b){a.tb=!0;a.S=typeof b==="function"?b:function(){return b};return a}function Za(a,b,c){var d=a(b,c);d||bb(c,function(){var f="";f.length>0&&(f+=": ");return f+"Expected "+a.S().trim()+", got "+I(b)});return d}
+function bb(a,b){a==null||a.push((typeof b==="function"?b():b).trim())}var Ya=void 0;function cb(a){return typeof a==="function"?a():a}function $a(){throw Error(ma.apply(0,arguments).map(cb).filter(Boolean).join("\n").trim().replace(/:$/,""));};try{var db,eb,fb=(eb=(db=window)==null?void 0:db.top)!=null?eb:x;fb.U3bHHf!=null||(fb.U3bHHf=0);fb.U3bHHf++}catch(a){x.U3bHHf!=null||(x.U3bHHf=0),x.U3bHHf++};var L=function(a,b){this.name=a;this.value=b};L.prototype.toString=function(){return this.name};var M=new L("OFF",Infinity),gb=new L("WARNING",900),hb=new L("CONFIG",700),ib=function(){this.B=0;this.clear()},jb;ib.prototype.clear=function(){this.O=Array(this.B);this.P=-1;this.U=!1};var nb=function(){this.reset(kb||M,lb,mb,void 0,void 0)};nb.prototype.reset=function(){};
+var ob=function(a,b){b=b===void 0?null:b;this.level=null;this.ba=[];this.parent=b||null;this.children=[];this.L={getName:function(){return a}}},pb=function(a){if(a.level)return a.level;if(a.parent)return pb(a.parent);La("Root logger has no level set.");return M},sb=function(){for(var a=qb,b=rb;b;)b.ba.forEach(function(c){c(a)}),b=b.parent},tb=function(){this.entries={};var a=new ob("");a.level=hb;this.entries[""]=a},ub,vb=function(a,b){var c=a.entries[b];if(c)return c;c=vb(a,b.slice(0,Math.max(b.lastIndexOf("."),
+0)));var d=new ob(b,c);a.entries[b]=d;c.children.push(d);return d},wb=function(){ub||(ub=new tb);return ub},N=function(a){return vb(wb(),a).L};var xb;if(x==null?0:(xb=x.Symbol)==null?0:xb.for){var yb=Symbol.for("google.goem");x[yb]||(x[yb]=new WeakMap)};var O=new Set;J("Event name <wZVHld> may not contain ':' or ';'");if(O.has("wZVHld"))throw Error("Event <wZVHld> has already been declared.");O.add("wZVHld");J("Event name <nDa8ic> may not contain ':' or ';'");if(O.has("nDa8ic"))throw Error("Event <nDa8ic> has already been declared.");O.add("nDa8ic");J("Event name <o07HZc> may not contain ':' or ';'");if(O.has("o07HZc"))throw Error("Event <o07HZc> has already been declared.");O.add("o07HZc");J("Event name <UjQMac> may not contain ':' or ';'");
+if(O.has("UjQMac"))throw Error("Event <UjQMac> has already been declared.");O.add("UjQMac");J("Event name <ti6hGc> may not contain ':' or ';'");if(O.has("ti6hGc"))throw Error("Event <ti6hGc> has already been declared.");O.add("ti6hGc");J("Event name <ZYIfFd> may not contain ':' or ';'");if(O.has("ZYIfFd"))throw Error("Event <ZYIfFd> has already been declared.");O.add("ZYIfFd");J("Event name <TGB85e> may not contain ':' or ';'");if(O.has("TGB85e"))throw Error("Event <TGB85e> has already been declared.");O.add("TGB85e");J("Event name <RXQi4b> may not contain ':' or ';'");
+if(O.has("RXQi4b"))throw Error("Event <RXQi4b> has already been declared.");O.add("RXQi4b");J("Event name <sn54Q> may not contain ':' or ';'");if(O.has("sn54Q"))throw Error("Event <sn54Q> has already been declared.");O.add("sn54Q");J("Event name <eQsQB> may not contain ':' or ';'");if(O.has("eQsQB"))throw Error("Event <eQsQB> has already been declared.");O.add("eQsQB");J("Event name <CGLD0d> may not contain ':' or ';'");if(O.has("CGLD0d"))throw Error("Event <CGLD0d> has already been declared.");O.add("CGLD0d");
+J("Event name <ZpywWb> may not contain ':' or ';'");if(O.has("ZpywWb"))throw Error("Event <ZpywWb> has already been declared.");O.add("ZpywWb");J("Event name <O1htCb> may not contain ':' or ';'");if(O.has("O1htCb"))throw Error("Event <O1htCb> has already been declared.");O.add("O1htCb");J("Event name <k9KYye> may not contain ':' or ';'");if(O.has("k9KYye"))throw Error("Event <k9KYye> has already been declared.");O.add("k9KYye");J("Event name <g6cJHd> may not contain ':' or ';'");
+if(O.has("g6cJHd"))throw Error("Event <g6cJHd> has already been declared.");O.add("g6cJHd");J("Event name <otb29e> may not contain ':' or ';'");if(O.has("otb29e"))throw Error("Event <otb29e> has already been declared.");O.add("otb29e");J("Event name <FNFY6c> may not contain ':' or ';'");if(O.has("FNFY6c"))throw Error("Event <FNFY6c> has already been declared.");O.add("FNFY6c");J("Event name <TvD9Pc> may not contain ':' or ';'");
+if(O.has("TvD9Pc"))throw Error("Event <TvD9Pc> has already been declared.");O.add("TvD9Pc");J("Event name <AHmuwe> may not contain ':' or ';'");if(O.has("AHmuwe"))throw Error("Event <AHmuwe> has already been declared.");O.add("AHmuwe");J("Event name <O22p3e> may not contain ':' or ';'");if(O.has("O22p3e"))throw Error("Event <O22p3e> has already been declared.");O.add("O22p3e");J("Event name <JIbuQc> may not contain ':' or ';'");
+if(O.has("JIbuQc"))throw Error("Event <JIbuQc> has already been declared.");O.add("JIbuQc");J("Event name <ih4XEb> may not contain ':' or ';'");if(O.has("ih4XEb"))throw Error("Event <ih4XEb> has already been declared.");O.add("ih4XEb");J("Event name <sPvj8e> may not contain ':' or ';'");if(O.has("sPvj8e"))throw Error("Event <sPvj8e> has already been declared.");O.add("sPvj8e");J("Event name <GvneHb> may not contain ':' or ';'");
+if(O.has("GvneHb"))throw Error("Event <GvneHb> has already been declared.");O.add("GvneHb");J("Event name <rcuQ6b> may not contain ':' or ';'");if(O.has("rcuQ6b"))throw Error("Event <rcuQ6b> has already been declared.");O.add("rcuQ6b");J("Event name <dyRcpb> may not contain ':' or ';'");if(O.has("dyRcpb"))throw Error("Event <dyRcpb> has already been declared.");O.add("dyRcpb");J("Event name <u0pjoe> may not contain ':' or ';'");
+if(O.has("u0pjoe"))throw Error("Event <u0pjoe> has already been declared.");O.add("u0pjoe");"#".replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g,"\\$1").replace(/\x08/g,"\\x08");/*
+
+ Copyright 2024 Google, Inc
+ SPDX-License-Identifier: MIT
+*/
+Object.create(null);var zb=[];var P=function(){this.J={}};P.prototype.register=function(a,b){K(a,"registerInterface() or atInterface() was called with a ServiceId that doesn't exist. The first parameter to this function must exactly match the class name which was passed to goog.module / goog.provide, but in ALL_CAPS and without the suffix. \nFor example, goog.module('ns.FooBarInterface') creates FOO_BAR as its ServiceId.\nSee http://go/wiz-ids");K(!this.J[a.toString()],"<"+a+"> is already registered.");this.J[a.toString()]=b};
+var Bb=function(a){var b=Ab().J[a.toString()];if(!b)throw K(b,"Could not find interface "+a+".Interface ServiceIds must exactly match the class name which was passed to goog.module / goog.provide, but with the Wiz.id suffix without the suffix.\nFor example, goog.module('ns.FooBarInterface') creates 'ns.FooBarInterfaceWiz.id' as its ServiceId.\nSee http://go/wiz-ids"),Error("Interface "+a+" cannot be retrieved.");return b},Ab=function(){D(!Object.isSealed(P),"Cannot use getInstance() with a sealed constructor.");
+var a="I";if(P.I&&P.hasOwnProperty(a))a=P.I;else{zb.push(P);var b=new P;P.I=b;D(P.hasOwnProperty(a),"Could not instantiate singleton.");a=b}return a};var Cb=new Map,Db=new Map,Eb=new Map,Fb=new Map;function Gb(a,b){b=Hb(a,b);(a=b.m)&&Ib(Fb,a,function(){return new Set}).add(b);return b}function Ib(a,b,c){var d=a.get(b);d||(d=c(b),a.set(b,d));return d}function Hb(a,b){var c=Eb.get(a);c||(c=b,Eb.set(a,c));return c};var Jb=["jscontroller","jsmodel","jsowner"];function Kb(a){a=a===void 0?"":a;return Jb.map(function(b){return a+" ["+b+"]"}).join(",")+","+(a+' [jsaction*="trigger."]')}Kb();["[jsname=coFSxe]","[mica-app-id]"].map(function(a){return Kb(a)});(function(){try{if(typeof window.EventTarget==="function")return new EventTarget}catch(a){}try{return document.createElement("div")}catch(a){}return null})();var Lb=typeof Symbol==="function"&&typeof Symbol()==="symbol";function Mb(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var Nb=Mb("jas",void 0,!0),Ob=Mb("destroyedStructure","destroyedStructure");D(Math.round(Math.log2(Math.max.apply(Math,r(Object.values({Ka:1,Ja:2,Ia:4,Ra:8,bb:16,Pa:32,ma:64,Ca:128,za:256,ab:512,Aa:1024,Da:2048,Qa:4096,La:8192})))))===13);var Pb=Lb?Ka(Nb):"sb",Qb=Object.getOwnPropertyDescriptor(Array.prototype,"ca");Object.defineProperties(Array.prototype,{ca:{get:function(){var a=Rb(this);return Qb?Qb.get.call(this)+"|"+a:a},configurable:!0,enumerable:!1}});
+function Rb(a){function b(f,h){f&c&&d.push(h)}var c=Na(a,"state is only maintained on arrays.")[Pb]|0,d=[];b(1,"IS_REPEATED_FIELD");b(2,"IS_IMMUTABLE_ARRAY");b(4,"IS_API_FORMATTED");b(512,"STRING_FORMATTED");b(1024,"GBIGINT_FORMATTED");b(1024,"BINARY");b(8,"ONLY_MUTABLE_VALUES");b(16,"UNFROZEN_SHARED");b(32,"MUTABLE_REFERENCES_ARE_OWNED");b(64,"CONSTRUCTED");b(128,"HAS_MESSAGE_ID");b(256,"FROZEN_ARRAY");b(2048,"HAS_WRAPPER");b(4096,"MUTABLE_SUBSTRUCTURES");b(8192,"KNOWN_MAP_ARRAY");c&64&&(D(c&64),
+a=c>>14&1023||536870912,a!==536870912&&d.push("pivot: "+a));return d.join(",")};var Sb=typeof Symbol!="undefined"&&typeof Symbol.hasInstance!="undefined";Object.freeze({});var Tb=ab(function(a){return typeof a==="boolean"},"boolean");function Ub(){var a=Vb;return ab(function(b){return b===a},function(){return I(a)})};var Wb=function(){throw Error("please construct maps as mutable then call toImmutable");};if(Sb){var Xb=function(){throw Error("Cannot perform instanceof checks on ImmutableMap: please use isImmutableMap or isMutableMap to assert on the mutability of a map. See go/jspb-api-gotchas#immutable-classes for more information");},Yb={};Object.defineProperties(Wb,(Yb[Symbol.hasInstance]={value:Xb,configurable:!1,writable:!1,enumerable:!1},Yb));D(Wb[Symbol.hasInstance]===Xb,"defineProperties did not work: was it monkey-patched?")};if(typeof Proxy!=="undefined"){var Q=Zb;new Proxy({},{getPrototypeOf:Q,setPrototypeOf:Q,isExtensible:Q,preventExtensions:Q,getOwnPropertyDescriptor:Q,defineProperty:Q,has:Q,get:Q,set:Q,deleteProperty:Q,apply:Q,construct:Q})}function Zb(a,b){if(b===Ob)return!0;throw Error("this array or object is owned by JSPB and should not be reused, did you mean to copy it with copyJspbArray? See go/jspb-api-gotchas#construct_from_array");};D(!0);N("wiz.inject.debug_injection_timeout_scheduler");var Vb=Symbol(),ac=function(){var a=Vb;this.K=new Map([[$b,!0]]);Xa(a,Ub())};ac.prototype.get=function(a){return this.K.get(a)};ac.prototype.has=function(a){return this.K.has(a)};ac.prototype.keys=function(a){Xa(a,Ub());return this.K.keys()};var bc=function(){this.T=Tb};bc.prototype.check=function(a){this.T!=null&&Xa(a,this.T)};var $b=new bc,cc=new Set;function dc(){return["No root trace was ever created in this execution context; There are ",cc.size," other active traces."]}var ec=globalThis;Object.hasOwn(ec,"traceContext")||Object.defineProperty(ec,"traceContext",{get:dc});new ac;Object.create(null);var fc=[].concat(r("click dblclick focus focusin blur error focusout keydown keyup keypress load mouseover mouseout mouseenter mouseleave mousemove submit toggle touchstart touchend touchmove touchcancel auxclick change compositionstart compositionupdate compositionend beforeinput input select selectstart textinput copy cut paste mousedown mouseup wheel contextmenu dragover dragenter dragleave drop dragstart dragend pointerdown pointermove pointerup pointercancel pointerenter pointerleave pointerover pointerout gotpointercapture lostpointercapture ended loadedmetadata pagehide pageshow visibilitychange beforematch".split(" ")),
+["transitionend","animationend","animationstart"]);Object.freeze(fc);function hc(a){return Ib(Cb,a.toString(),function(){return new Set})};hc("GmEyCb").add("qTnoBf");function ic(a,b,c,d){d=d===void 0?!1:d;b=new F(a,(b!=null?b:null)||void 0,c,d===void 0?!1:d);return Gb(a,b)};function jc(a){return ic(a,a,[])};var kc=new Set;function lc(a){if(kc.has(a.toString()))throw Error("ID "+a.toString()+" is already registered as a synchronous Wiz object.");kc.add(a.toString())};var R=jc("qTnoBf");lc(R);hc("GmEyCb").add("yGfSdd");var mc=jc("yGfSdd");lc(mc);var nc=RegExp("^(?:([^:/?#.]+):)?(?://(?:([^\\\\/?#]*)@)?([^\\\\/?#]*?)(?::([0-9]+))?(?=[\\\\/?#]|$))?([^?#]+)?(?:\\?([^#]*))?(?:#([\\s\\S]*))?$");function oc(a,b){if(a){a=a.split("&");for(var c=0;c<a.length;c++){var d=a[c].indexOf("="),f=null;if(d>=0){var h=a[c].substring(0,d);f=a[c].substring(d+1)}else h=a[c];b(h,f?decodeURIComponent(f.replace(/\+/g," ")):"")}}}
+function pc(a,b,c){Ma(a);if(Array.isArray(b)){Na(b);for(var d=0;d<b.length;d++)pc(a,String(b[d]),c)}else b!=null&&c.push(a+(b===""?"":"="+encodeURIComponent(String(b))))};var S=function(){this.i={};this.H="";this.A={}};S.prototype.toString=function(){var a=this.H+qc(this);var b=this.A;var c=[],d;for(d in b)pc(d,b[d],c);b=c.join("&");c="";b!=""&&(c="?"+b);return a+c};
+var rc=function(a){a=T(a,"md");return!!a&&a!=="0"},qc=function(a){var b=[];D(a.i.k!==void 0,"An SCS JS URL must have a row key.");var c=function(d){a.i[d]!==void 0&&b.push(d+"="+a.i[d])};rc(a)?(c("md"),c("k"),c("ck"),c("am"),c("rs"),c("gssmodulesetproto"),c("slk"),c("dti"),c("dbwh")):(c("sdch"),c("k"),c("ck"),c("am"),c("amc"),c("rt"),"d"in a.i||(a.i.d="0"),c("d"),c("exm"),c("excm"),(a.i.excm||a.i.exm)&&b.push("ed=1"),c("im"),c("dg"),c("sm"),T(a,"br")!="1"&&T(a,"br")!="0"||c("br"),c("br-d"),T(a,"rb")==
+"1"&&c("rb"),T(a,"zs")!=="0"&&c("zs"),sc(a)!==""&&c("wt"),c("gssmodulesetproto"),c("ujg"),c("sp"),c("ichc"),c("rs"),c("cb"),c("ccb"),c("ee"),c("slk"),c("dti"),c("dbwh"),c("ic"),a.i.cb&&c("pc"),c("m"));return b.join("/")},T=function(a,b){return a.i[b]?a.i[b]:null};S.prototype.getQueryParameter=function(a){return this.A[a]};
+var sc=function(a){switch(T(a,"wt")){case "0":return"0";case "1":return"1";case "2":return"2";default:return""}},tc=function(a){a=T(a,"ee");if(Ta){if(!a)return new Map;var b=new Map,c=q(a.split(";")),d=c.next();try{for(;!d.done;d=c.next()){var f=q(d.value.split(":")),h=f.next().value,m=f.next().value,e=new Set;b.set(h,e);var g=q(m.split(",")),k=g.next();try{for(;!k.done;k=g.next())e.add(k.value)}finally{v(g,k)}}}finally{v(c,d)}return b}if(!a)return{};f={};h=q(a.split(";"));m=h.next();try{for(;!m.done;m=
+h.next()){b=q(m.value.split(":"));c=b.next().value;d=b.next().value;f[c]={};var n=q(d.split(",")),u=n.next();try{for(;!u.done;u=n.next())f[c][u.value]=!0}finally{v(n,u)}}}finally{v(h,m)}return f};S.prototype.clone=function(){var a=new S;a.i=Object.assign({},this.i);a.H=this.H;a.A=Object.assign({},this.A);return a};
+var wc=function(a){var b=b===void 0?!0:b;var c=uc(a);D(vc(c),"URL is not a valid SCS JS URL.");var d=new S,f=c.match(nc)[5];Ua(function(m){var e=f.match("/"+m+"=([^/]+)");e&&((e=e[1])?d.i[m]=e:delete d.i[m])});var h="";h=a.indexOf("_/ss/")!=-1?"_/ss/":"_/js/";d.H=a.substr(0,a.indexOf(h)+h.length);if(!b)return d;(a=c.match(nc)[6]||null)&&oc(a,function(m,e){d.A[m]=e});return d},vc=function(a){a=(a=uc(a).match(nc)[5]||null)?decodeURI(a):a;return a===null?!1:RegExp("(/_/js/)|(/_/ss/)","g").test(a)?/\/k=/.test(a):
+!1},uc=function(a){return a.startsWith("https://uberproxy-pen-redirect.corp.google.com/uberproxy/pen?url=")?a.substr(65):a},Va={Ua:"k",na:"ck",Oa:"m",xa:"exm",va:"excm",ha:"am",ia:"amc",Ma:"mm",Ta:"rt",Fa:"d",wa:"ed",Za:"sv",oa:"deob",ja:"cb",la:"ccb",ka:"cbi",Xa:"rs",Va:"sdch",Ga:"im",pa:"dg",ta:"br",sa:"br-d",ua:"rb",hb:"zs",gb:"wt",ya:"ee",Ya:"sm",Na:"md",Ba:"gssmodulesetproto",fb:"ujg",eb:"sp",Ea:"ichc",Wa:"slk",ra:"dti",qa:"dbwh",Ha:"ic",Sa:"pc"};function xc(){var a=x._F_jsUrl?"":"base-js";a=a===void 0?"":a;var b="";var c=x._F_jsUrl;a:{if(typeof document!=="undefined"&&document&&document.getElementById&&(a=document.getElementById(a))){var d=a.tagName.toUpperCase();if(d=="SCRIPT"||d=="LINK")break a}a=null}a&&(b=a.src?a.src:a.getAttribute("href"));if(c&&b){if(c!=b)throw Error("Ambiguous base-js URL: found both _F_jsUrl "+c+" and base-js tag "+b);b=c}else b=c||b;if(!vc(b))throw Error("Unable to determine JS module path parameters.");return b}
+;var yc=!1,zc=!1;var Qa=!function(){if(yc)return zc;yc=!0;try{var a=xc()}catch(d){return!1}var b=tc(wc(a));if(b instanceof Map){if(b.size===0)return!1;E(function(d){var f=q(b.entries()),h=f.next();try{for(;!h.done;h=f.next()){var m=q(h.value),e=m.next().value,g=m.next().value,k=e,n=q(g),u=n.next();try{for(;!u.done;u=n.next())d.N(k,u.value)}finally{v(n,u)}}}finally{v(f,h)}})}else{var c=Object.keys(b);if(c.length===0)return!1;E(function(d){var f=q(c),h=f.next();try{for(;!h.done;h=f.next()){var m=h.value,e=q(Object.keys(b[m])),
+g=e.next();try{for(;!g.done;g=e.next())d.N(m,g.value)}finally{v(e,g)}}}finally{v(f,h)}})}return zc=!0}();var Ac=[],Bc=function(a,b){if((new Set([].concat(r(a.W),r(a.X)))).has(b.toString()))return!0;a=new Set([].concat(r(a.Y),r(a.Z)));a=q(a);var c=a.next();try{for(;!c.done;c=a.next())if(Bc(Bb(c.value),b))return!0}finally{v(a,c)}return!1};var U=ic("GmEyCb","NJ1rfe",mc?[mc]:void 0,Qa);Ab().register(U,new function(a,b,c,d,f,h){var m=this;h=h===void 0?null:h;this.o=a;this.W=b;this.X=c;this.Y=d;this.Z=f;this.C=h;this.u=null;this.ga=!1;this.L=N("wiz.interface.Interface");Ac.push(this);this.toString=function(){var e,g,k=(g=(e=m.u)!=null?e:m.C)!=null?g:"no default implementation";return m.o+" <"+k+">"}}(U,hc(U),new Set,Ib(Db,U.toString(),function(){return new Set}),new Set,mc));lc(U);var G=Bb(U);
+if(G.u!==R){if(G.u!==R){K(!G.u,"Failed to set the default implementation to <"+R+">: The default implementation of a wiz.atInterface may only be overridden once, and it was already overridden by <"+(G.u+">"));K(!G.ga,"The defaultImplementationId for <"+G.o+"> was already read. Make sure to only set it from your base module. It is currently set to <"+(G.C+">"));K(R instanceof F,"serviceId <"+R+"> should be a fava.services.ServiceId");if(kc.has(G.o.toString())){var Cc=kc.has(R.toString());K(Cc,"The default implementation ("+
+R+") passed to setDefaultImplementationId is not a synchronous Wiz object and cannot be used with a synchronously instantiable interface ("+(G.o+")."))}if(!Bc(G,R)){var V=G.L;if(V){var Dc="serviceId <"+R+"> doesn't implement <"+G.o+">",W=gb,Ec;if(Ec=V){var Fc;if(Fc=V&&W){var Gc=W.value,Hc;Hc=V?pb(vb(wb(),V.getName())):M;Fc=Gc>=Hc.value}Ec=Fc}if(Ec){W=W||M;var rb=vb(wb(),V.getName());typeof Dc==="function"&&(Dc=Dc());var X;jb||(jb=new ib);X=jb;var qb;var kb=W,lb=Dc,mb=V.getName();if(X.B>0){var Ic=
+(X.P+1)%X.B;X.P=Ic;if(X.U){var Jc=X.O[Ic];Jc.reset(kb,lb,mb);qb=Jc}else X.U=Ic==X.B-1,qb=X.O[Ic]=new nb}else qb=new nb;sb()}}}G.C&&Ra();G.u=R}Pa(G.o,[R],Qa)};var Y=function(){H.call(this)};Y.prototype=aa(H.prototype);Y.prototype.constructor=Y;if(ia)ia(Y,H);else for(var Z in H)if(Z!="prototype")if(Object.defineProperties){var Kc=Object.getOwnPropertyDescriptor(H,Z);Kc&&Object.defineProperty(Y,Z,Kc)}else Y[Z]=H[Z];Y.fa=H.prototype;Y.prototype.init=function(){};N("fava.debug.ErrorReporter");new Y;N("goog.net.XhrIo");N("goog.debug.ErrorReporter");N("fava.debug.DebugService");Object.assign({},{attributes:{},handleError:function(a){throw a;}},{lb:!0,nb:!1,ob:Sa,pb:Sa,qb:!1,ib:!1,mb:!0,rb:!1,ub:!1,kb:!1});new F("a");}).call(this);
+</script><script nonce="">const imageUrl = 'https:\/\/sites.google.com\/u\/0\/sitesv-images-rt\/AMxu72sC53rd4QXD5v0w_y7DLR9hrP2JNQEIi-LHtEHW6qf1wvkmBAfJVtwBvUtuTCII0vfQ9zBQ1dNAGUcLymJcrks8-h8lGRodLbgNsU-1x4SnVPKm-8DEawAq4UNgOwD5RGYDk1tRCpQTytldSR5n3oUjHtfxPywO2hFh5QpXMT5vu2NAUBIPwq9waXemCMM\x3dw16383';
+      function bgImgLoaded() {
+        if (!globals.headerBgImgLoaded) {
+          globals.headerBgImgLoaded = new Date().getTime();
+        } else {
+          globals.headerBgImgLoaded();
+        }
+      }
+      if (imageUrl) {
+        const img = new Image();
+        img.src = imageUrl;
+        img.onload = bgImgLoaded;
+        globals.headerBgImgExists = true;
+      } else {
+        globals.headerBgImgExists = false;
+      }
+      </script><script async="" src="Gavinnes%20Smithing%20Calculator_files/lazy.min_wJtN.js" nonce=""></script></head><body dir="ltr" class="EIlDfe" itemscope="" itemtype="http://schema.org/WebPage" id="yDmH0d" css="yDmH0d" jsaction="u0pjoe:.CLIENT;c7OXCd:.CLIENT;GvneHb:.CLIENT;xO31ue:.CLIENT"><div jscontroller="pc62j" jsmodel="iTeaXe" jsaction="rcuQ6b:WYd;GvneHb:og1FDd;vbaUQc:uAM5ec;"><div jscontroller="X4BaPc" jsaction="rcuQ6b:WYd;o6xM5b:Pg9eo;HuL2Hd:mHeCvf;VMhF5:FFYy5e;sk3Qmb:HI1Mdd;JIbuQc:rSzFEd(z2EeY),aSaF6e(ilzYPe);"><div jscontroller="o1L5Wb" data-sitename="gavinnes-forging-calculator" data-search-scope="1" data-universe="1" jsmodel="fNFZH" jsaction="Pe9H6d:cZFEp;O0t7nc:cC5KLb;WyADff:AQk9Jb;WMZaJ:VsGN3;hJluRd:UADL7b;zuqEgd:HI9w0;tr6QDd:Y8aXB;MxH79b:xDkBfb;JIbuQc:SPXMTb(uxAMZ),LjG1Ed(a6mxbb);BNPLhd:TbIyBd;fGqJod:Tb1xee;" jsname="G0jgYd"><div jsname="gYwusb" class="p9b27"></div><div jscontroller="RrXLpc" jsname="XeeWQc" role="banner" jsaction="keydown:uiKYid(OH0EC);rcuQ6b:WYd;zuqEgd:ufqpf;JIbuQc:XfTnxb(lfEfFf),AlTiYc(GeGHKb),AlTiYc(m1xNUe),zZlNMe(pZn8Oc);YqO5N:ELcyfe;"><div jsname="bF1uUb" class="BuY5Fd" jsaction="click:xVuwSc;"></div><div jsname="MVsrn" class="TbNlJb"><div role="button" class="U26fgb mUbCce fKz7Od h3nfre M9Bg4d" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;" jsshadow="" jsname="GeGHKb" aria-label="Back to site" aria-disabled="false" tabindex="0" data-tooltip="Back to site" data-tooltip-vertical-offset="-12" data-tooltip-horizontal-offset="0"><div class="VTBa7b MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="xjKiLb"><span class="Ce1Y1c" style="top: -12px"><svg class="V4YR2c" viewBox="0 0 24 24" focusable="false"><path d="M0 0h24v24H0z" fill="none"></path><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg></span></span></div><div class="E2UJ5" jsname="M6JdT" style="margin-left: 504px; width: 720px;"><div class="rFrNMe b7AJhc zKHdkd" jscontroller="pxq3x" jsaction="clickonly:KjsqPd; focus:Jt1EX; blur:fpfTEe; input:Lg5SV" jsshadow="" jsname="OH0EC" aria-expanded="true"><div class="aCsJod oJeWuf"><div class="aXBtI I0VJ4d Wic03c"><span jsslot="" class="A37UZe qgcB3c iHd5yb"><div role="button" class="U26fgb mUbCce fKz7Od i3PoXe M9Bg4d" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;" jsshadow="" jsname="lfEfFf" aria-label="Search" aria-disabled="false" tabindex="0" data-tooltip="Search" data-tooltip-vertical-offset="-12" data-tooltip-horizontal-offset="0"><div class="VTBa7b MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="xjKiLb"><span class="Ce1Y1c" style="top: -12px"><svg class="vu8Pwe" viewBox="0 0 24 24" focusable="false"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></span></div><div class="EmVfjc SKShhf" data-loadingmessage="Loadingâ€¦" jscontroller="qAKInc" jsaction="animationend:kWijWc;dyRcpb:dyRcpb" jsname="aZ2wEe"><div class="Cg7hO" aria-live="assertive" jsname="vyyg5"></div><div jsname="Hxlbvc" class="xu46lf"><div class="ir3uv uWlRce co39ub"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv GFoASc Cn087"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv WpeOqd hfsr6b"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv rHV3jf EjXFBf"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div></div></div><div role="button" class="U26fgb mUbCce fKz7Od JyJRXe M9Bg4d" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;" jsshadow="" jsname="m1xNUe" aria-label="Back to site" aria-disabled="false" tabindex="0" data-tooltip="Back to site" data-tooltip-vertical-offset="-12" data-tooltip-horizontal-offset="0"><div class="VTBa7b MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="xjKiLb"><span class="Ce1Y1c" style="top: -12px"><svg class="V4YR2c" viewBox="0 0 24 24" focusable="false"><path d="M0 0h24v24H0z" fill="none"></path><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg></span></span></div></span><div class="Xb9hP"><input type="search" class="whsOnd zHQkBf" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Search this site" aria-disabled="false" autofocus="" role="combobox" data-initial-value=""><div jsname="LwH6nd" class="ndJi5d snByac" aria-hidden="true">Search this site</div></div><span jsslot="" class="A37UZe sxyYjd MQL3Ob"><div role="button" class="U26fgb mUbCce fKz7Od Kk06A M9Bg4d" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;" jsshadow="" jsname="pZn8Oc" aria-label="Clear search" aria-disabled="false" tabindex="0" data-tooltip="Clear search" data-tooltip-vertical-offset="-12" data-tooltip-horizontal-offset="0" style="display: none;"><div class="VTBa7b MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="xjKiLb"><span class="Ce1Y1c" style="top: -12px"><svg class="fAUEUd" viewBox="0 0 24 24" focusable="false"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></span></div></span><div class="i9lrp mIZh1c"></div><div jsname="XmnwAc" class="OabDMe cXrdqd"></div></div></div><div class="LXRPh"><div jsname="ty6ygf" class="ovnfwe Is7Fhb"></div></div></div><div class="InHK7" jsname="aN0umc"><div class="GG9xTc" jsaction="click:wTqBkf;" jsname="e7EaC" tabindex="0" aria-label="Embedded Files"><svg class="vu8Pwe KYLCw" viewBox="0 0 24 24" focusable="false"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg><span class="HCIIgf">Embedded Files</span></div></div></div></div></div></div><div jsname="tiN4bf"><style nonce="">.rrJNTc{opacity: 0;}.bKy5e{pointer-events: none; position: absolute; top: 0;}</style><div class="bKy5e"><div class="rrJNTc" tabindex="-1"><div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb" data-is-touch-wrapper="true"><button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-dgl2Hf LjDxcd XhPA0b LQeN7 WsSUlf jz7fPb" jscontroller="soHxf" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;" data-idom-class="LjDxcd XhPA0b LQeN7 WsSUlf jz7fPb" jsname="z2EeY" tabindex="0"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d">Skip to main content</span></button></div><div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb" data-is-touch-wrapper="true"><button class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-dgl2Hf LjDxcd XhPA0b LQeN7 WsSUlf br90J" jscontroller="soHxf" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;" data-idom-class="LjDxcd XhPA0b LQeN7 WsSUlf br90J" jsname="ilzYPe" tabindex="0"><div class="VfPpkd-Jh9lGc"></div><div class="VfPpkd-J1Ukfc-LhBDec"></div><div class="VfPpkd-RLmnJb"></div><span jsname="V67aGc" class="VfPpkd-vQzf8d">Skip to navigation</span></button></div></div></div><div class="M63kCb N63NQ"></div><div class="QZ3zWd"><div class="fktJzd AKpWA yMcSQd Ly6Unf G9Qloe XeSM4 XxIgdb fOU46b" jsname="UzWXSb" data-uses-custom-theme="false" data-legacy-theme-name="QualityBasics" data-legacy-theme-font-kit="Light" data-legacy-theme-color-kit="Dark" jscontroller="Md9ENb" jsaction="gsiSmd:Ffcznf;yj5fUd:cpPetb;HNXL3:q0Vyke;e2SXKd:IPDu5e;BdXpgd:nhk7K;rcuQ6b:WYd;"><header id="atIdViewHeader"><div style="position:fixed; width: 100%; z-index: 100;"><div id="docs-banner-container"><div id="docs-banners"><div id="HB1eCd-mzNpsf-r8s4j-ORHb"></div><div id="HB1eCd-TZk80d-r8s4j-ORHb" aria-live="assertive" aria-atomic="true"></div><div id="HB1eCd-Vkfede-rJCtOc-b3rLgd-ORHb" aria-live="assertive" aria-atomic="true"></div></div><div class="HB1eCd-Vkfede-NBtyUd-PvRhvb-LwH6nd"></div></div></div><div class="BbxBP HP6J1d K5Zlne" jsname="WA9qLc" jscontroller="RQOkef" jsaction="rcuQ6b:ywL4Jf;VbOlFf:ywL4Jf;FaOgy:ywL4Jf; keydown:Hq2uPe; wheel:Ut4Ahc;" data-top-navigation="true" data-is-preview="false"><div class="VLoccc K5Zlne ELAV1d U8eYrb" jsname="rtFGi"><div class="Pvc6xe"><div jsname="I8J07e" class="TlfmSc YSH9J"><a class="GAuSPc" jsname="jIujaf" href="https://sites.google.com/view/gavinnes-forging-calculator/home?authuser=0"><img src="Gavinnes%20Smithing%20Calculator_files/unnamed_wJtN.png" class="lzy1Td" role="img" aria-label="Site home" jsname="SwcDWb"><span class="QTKDff p46B7e">Gavinnes Smithing Calculator</span></a></div></div><div jsname="mADGA" class="zDUgLc"></div></div></div></header><div jsname="ZBtY8b" tabindex="-1" class="UtePc RCETm" dir="ltr"><section id="h.INITIAL_GRID.16fllza6spj5" class="yaqOZd LB7kq cJgDec nyKByd O13XJf" style=""><div class="Nu95r"><div class="IFuOkc" style="background-position: center center; background-image: url(&quot;https://sites.google.com/u/0/sitesv-images-rt/AMxu72sC53rd4QXD5v0w_y7DLR9hrP2JNQEIi-LHtEHW6qf1wvkmBAfJVtwBvUtuTCII0vfQ9zBQ1dNAGUcLymJcrks8-h8lGRodLbgNsU-1x4SnVPKm-8DEawAq4UNgOwD5RGYDk1tRCpQTytldSR5n3oUjHtfxPywO2hFh5QpXMT5vu2NAUBIPwq9waXemCMM=w16383&quot;); background-size: cover; transform: translate3d(0px, 0px, 0px);" jsname="LQX2Vd"></div></div><div class="mYVXT"><div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1"><div class="hJDwNd-AhqUyc-ibL1re Ft7HRd-AhqUyc-ibL1re JNdkSc SQVYQc L6cTce-purZT L6cTce-pSzOP"><div class="JNdkSc-SmKAyb LkDMRd"><div class="" jscontroller="sGwD4d" jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId"></div></div></div><div class="hJDwNd-AhqUyc-OiUrBf Ft7HRd-AhqUyc-OiUrBf purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc"><div class="JNdkSc-SmKAyb LkDMRd"><div class="" jscontroller="sGwD4d" jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId"><div class="oKdM2c ZZyype Kzv0Me"><div id="h.INITIAL_GRID.yla566ro7fbx" class="hJDwNd-AhqUyc-OiUrBf Ft7HRd-AhqUyc-OiUrBf jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"><div class="jXK9ad-SmKAyb"><div class="tyJCtd mGzaTb Depvyb baZpAe lkHyyc" role="main" tabindex="0"><h1 id="h.vo02qyo32z67" dir="ltr" class="zfr3Q duRjpb CDt4Ke " style="text-align: center;"><span class="C9DxTc " style="font-family: Lato, Arial; font-weight: 700;">Smithing Calculator</span></h1></div></div></div></div></div></div></div><div class="hJDwNd-AhqUyc-ibL1re Ft7HRd-AhqUyc-ibL1re JNdkSc SQVYQc L6cTce-purZT L6cTce-pSzOP"><div class="JNdkSc-SmKAyb LkDMRd"><div class="" jscontroller="sGwD4d" jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId"></div></div></div></div></div></section><section id="h.7b59dfc15031e0bd_11" class="yaqOZd"><div class="IFuOkc"></div><div class="mYVXT"><div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1"><div class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc"><div class="JNdkSc-SmKAyb LkDMRd"><div class="" jscontroller="sGwD4d" jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId"><div class="oKdM2c ZZyype Kzv0Me"><div id="h.7b59dfc15031e0bd_8" class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"><div class="jXK9ad-SmKAyb"><div class="tyJCtd mGzaTb Depvyb baZpAe"><p dir="ltr" class="zfr3Q CDt4Ke " style="text-align: center;"><span class="C9DxTc " style="font-family: Lato, Arial; font-size: 13.999999999999998pt; font-weight: 700; vertical-align: baseline;">You can download a similar spreadsheet so that you can use this tool locally </span><a class="XqQF9c" href="https://drive.google.com/uc?export=download&amp;id=1LB2y6Jqp9U51IM5WvN_xwx5ZWHl8rxEo" target="_blank" style="color: inherit; text-decoration: none;"><span class="C9DxTc aw5Odc " style="font-family: Lato, Arial; font-size: 13.999999999999998pt; font-weight: 700; text-decoration: underline; vertical-align: baseline;">here</span></a><span class="C9DxTc " style="font-family: Lato, Arial; font-size: 13.999999999999998pt; font-weight: 700; vertical-align: baseline;">.</span></p></div></div></div></div></div></div></div></div></div></section><section id="h.ef0f41ac4636783_3" class="yaqOZd"><div class="IFuOkc"></div><div class="mYVXT"><div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1"><div class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc"><div class="JNdkSc-SmKAyb LkDMRd"><div class="" jscontroller="sGwD4d" jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId"><div class="oKdM2c ZZyype Kzv0Me"><div id="h.ef0f41ac4636783_0" class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"><div class="jXK9ad-SmKAyb"><div class="tyJCtd OWlOyc baZpAe"><div jscontroller="VYKRW" jsaction="rcuQ6b:rcuQ6b;"><div class="WIdY2d M1aSXe"><div jsname="WXxXjd" style="padding-top: 117.8509532062%"></div><div class="YMEQtf"><div jsname="jkaScf" jscontroller="szRU7e" class="w536ob" data-enable-interaction="true" data-url="https://57392249-atari-embeds.googleusercontent.com/embeds/7b1fab8145be131e22969eee9027b9ad/inner-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.etOqPKhAhvg.O%2Fd%3D1%2Frs%3DAHpOoo-l5JrVgGKVELwC844E6riBHX86-w%2Fm%3D__features__" data-code="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Gavinne's Smithing Calculator&lt;/title&gt;
+    &lt;style&gt;
         :root {
             --bg-dark: #0f172a;
             --panel-bg: #1e293b;
@@ -18,7 +121,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
             margin: 0;
@@ -213,645 +316,645 @@
         grid-template-columns: 1fr;
     }
 }
-    </style>
-</head>
-<body>
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-<div class="container">
-    <h1>Gavinne's Smithing Calculator</h1>
-    <div class="subtitle">Set up to 5 metals to calculate.</div>
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;Gavinne's Smithing Calculator&lt;/h1&gt;
+    &lt;div class=&quot;subtitle&quot;&gt;Set up to 5 metals to calculate.&lt;/div&gt;
 
-<div class="target-volume-control" style="margin-bottom: 1.5rem;">
-    <label for="target-volume"
-           style="display: block; margin-bottom: 0.5rem; color: var(--text-muted);">
+&lt;div class=&quot;target-volume-control&quot; style=&quot;margin-bottom: 1.5rem;&quot;&gt;
+    &lt;label for=&quot;target-volume&quot;
+           style=&quot;display: block; margin-bottom: 0.5rem; color: var(--text-muted);&quot;&gt;
         Target Item Volume
-    </label>
+    &lt;/label&gt;
 
-    <select id="target-volume" style="width: 100%;">
-        <option value="0" selected>Select Volume</option>
-        <option value="1">1 volume ingot</option>
-        <option value="5">5 volume ingot</option>
-        <option value="10">10 volume ingot</option>
-        <option value="20">20 volume ingot</option>
-        <option value="50">50 volume ingot</option>
-        <option value="100">100 volume ingot</option>
-        <option value="200">200 volume ingot</option>
-        <option value="custom">Custom volume...</option>
-        <option value="0">   </option>
-        <option value="0">--- SMALL EDGE ---</option>
-        <option value="2">briquet</option>
-        <option value="2">carving knife</option>
-        <option value="2">dagger</option>
-        <option value="3">katar</option>
-        <option value="2">misericorde</option>
-        <option value="2">poignard</option>
-        <option value="2">pugio</option>
-        <option value="3">short sword</option>
-        <option value="2">stiletto</option>
-        <option value="1">dart</option>
-        <option value="5">falcata</option>
-        <option value="4">jambiya</option>
-        <option value="4">kris</option>
-        <option value="4">leaf blade sword</option>
-        <option value="4">nehlata</option>
-        <option value="3">takouba</option>
-        <option value="2">telek</option>
-        <option value="2">throwing dagger</option>
-        <option value="5">dao</option>
-        <option value="5">foil</option>
-        <option value="3">kasai</option>
-        <option value="5">koummya</option>
-        <option value="5">kythe</option>
-        <option value="5">oben</option>
-        <option value="5">pasabas</option>
-        <option value="5">rapier</option>
-        <option value="3">sunblade</option>
-        <option value="5">thrusting blade</option>
-        <option value="6">adze</option>
-        <option value="6">baselard</option>
-        <option value="6">curlade</option>
-        <option value="6">gladius</option>
-        <option value="6">hanger</option>
-        <option value="6">mambeli</option>
-        <option value="6">parang</option>
-        <option value="6">sabre</option>
-        <option value="6">sashqa</option>
-        <option value="6">scimitar</option>
-        <option value="7">cutlass</option>
-        <option value="7">hand axe</option>
-        <option value="7">hatchet</option>
-        <option value="6">light throwing axe</option>
-        <option value="7">shotel</option>
-        <option value="7">iltesh</option>
-        <option value="0">   </option>
-        <option value="0">--- LARGE EDGE ---</option>
-    <option value="7">arzfilt</option>
-    <option value="7">broadsword</option>
-    <option value="7">condottiere</option>
-    <option value="7">kudalata</option>
-    <option value="7">longsword</option>
-    <option value="7">nehdalata</option>
-    <option value="7">round axe</option>
-    <option value="7">spatha</option>
-    <option value="8">abassi</option>
-    <option value="8">back-sword</option>
-    <option value="9">battle axe</option>
-    <option value="8">cinqueda</option>
-    <option value="8">dagasse</option>
-    <option value="9">falchion</option>
-    <option value="8">hunting sword</option>
-    <option value="8">namkomba</option>
-    <option value="8">nimsha</option>
-    <option value="8">recade</option>
-    <option value="9">robe sword</option>
-    <option value="9">schiavona</option>
-    <option value="8">hurling axe</option>
-    <option value="0">   </option>
-    <option value="0">-- TWO HANDED EDGE ---</option>
-    <option value="14">claymore</option>
-    <option value="12">greataxe</option>
-    <option value="14">karambit</option>
-    <option value="12">marauder blade</option>
-    <option value="14">twin-point axe</option>
-    <option value="12">two-handed sword</option>
-    <option value="12">warring axe</option>
-    <option value="18">double axe</option>
-    <option value="18">flamberge</option>
-    <option value="18">greatsword</option>
-    <option value="15">igorat axe</option>
-    <option value="15">kaskara</option>
-    <option value="18">periperiu sword</option>
-    <option value="15">shh'oi'ata</option>
-    <option value="0">   </option>
-    <option value="0">--- SMALL BLUNT ---</option>
-    <option value="4">cosh</option>
-    <option value="4">cudgel</option>
-    <option value="4">gavel</option>
-    <option value="4">prod</option>
-    <option value="5">bludgeon</option>
-    <option value="5">hand mallet</option>
-    <option value="4">horseshoe</option>
-    <option value="5">scepter</option>
-    <option value="5">zubke</option>
-    <option value="6">club</option>
-    <option value="6">garz</option>
-    <option value="6">hand mace</option>
-    <option value="12">large horseshoe</option>
-    <option value="6">ridged gauntlet</option>
-    <option value="5">short hammer</option>
-    <option value="5">spiked gauntlet</option>
-    <option value="5">bola</option>
-    <option value="5">bulhawf</option>
-    <option value="5">cuska</option>
-    <option value="7">mallet</option>
-    <option value="5">throwing club</option>
-    <option value="7">war club</option>
-    <option value="8">belaying pin</option>
-    <option value="3">boko</option>
-    <option value="3">boomerang</option>
-    <option value="7">hhr'tami</option>
-    <option value="7">komno</option>
-    <option value="8">mace</option>
-    <option value="8">marlingspike</option>
-    <option value="8">spiked club</option>
-    <option value="8">spiked hammer</option>
-    <option value="8">spiked mace</option>
-    <option value="8">war hammer</option>
-    <option value="9">flanged mace</option>
-    <option value="9">k'trinni sha-tai</option>
-    <option value="9">ball and chain</option>
-    <option value="9">heavy chain</option>
-    <option value="10">greathammer</option>
-    <option value="10">heavy mace</option>
-    <option value="0">   </option>
-    <option value="0">--- LARGE BLUNT ---</option>
-    <option value="9">horseman's flail</option>
-    <option value="10">Imperial war hammer</option>
-    <option value="11">spiked ball and chain</option>
-    <option value="10">double-headed hammer</option>
-    <option value="10">hara</option>
-    <option value="10">heavy mallet</option>
-    <option value="11">morning star</option>
-    <option value="10">sledgehammer</option>
-    <option value="11">spiked hara</option>
-    <option value="11">ukabi</option>
-    <option value="10">hhr'ata</option>
-    <option value="10">hurlable war hammer</option>
-    <option value="10">throwing mallet</option>
-    <option value="10">throwing hammer</option>
-    <option value="0">   </option>
-    <option value="0">--- TWO HANDED BLUNT ---</option>
-    <option value="13">akabo</option>
-    <option value="13">double-sided ball and chain</option>
-    <option value="13">footman's flail</option>
-    <option value="14">war mattock</option>
-    <option value="14">vilks kodur</option>
-    <option value="16">dire mace</option>
-    <option value="15">giant mallet</option>
-    <option value="16">heavy sledgehammer</option>
-    <option value="16">maul</option>
-    <option value="15">two-headed hammer</option>
-    <option value="0">   </option>
-    <option value="0">--- POLEARM ---</option>
-    <option value="7">javelin</option>
-    <option value="7">light spear</option>
-    <option value="7">allarh</option>
-    <option value="12">awgravet ava</option>
-    <option value="10">bardiche</option>
-    <option value="12">coresca</option>
-    <option value="10">guisarme</option>
-    <option value="12">halberd</option>
-    <option value="7">hunthsleg</option>
-    <option value="10">lochaber axe</option>
-    <option value="10">scythe</option>
-    <option value="10">spear</option>
-    <option value="12">tzece</option>
-    <option value="10">duraka skefne</option>
-    <option value="13">glaive</option>
-    <option value="13">khuj</option>
-    <option value="10">military fork</option>
-    <option value="13">partisan</option>
-    <option value="13">two-pronged halberd</option>
-    <option value="13">fauchard</option>
-    <option value="13">ngalio</option>
-    <option value="13">pole axe</option>
-    <option value="15">ilglaiks skefne</option>
-    <option value="15">lance</option>
-    <option value="15">pike</option>
-    <option value="15">ranseur</option>
-    <option value="15">spetum</option>
-    <option value="13">voulge</option>
-    <option value="15">awl pike</option>
-    <option value="9">short-hafted halberd</option>
-    <option value="0">   </option>
-    <option value="0">--- MARTIAL WEAPONS ---</option>
-    <option value="8">cane</option>
-    <option value="7">nightstick</option>
-    <option value="10">quarterstaff</option>
-    <option value="4">knuckles</option>
-    <option value="7">simple parry stick</option>
-    <option value="11">pike staff</option>
-    <option value="4">elbow spikes</option>
-    <option value="4">knee spikes</option>
-    <option value="4">weighted footwraps</option>
-    <option value="4">spiked footwraps</option>
-    <option value="4">spiked knuckles</option>
-    <option value="4">hand claws</option>
-    <option value="10">weightd staff</option>
-    <option value="0">   </option>
-    <option value="0">--- SWAPPABLE WEAPONS ---</option>
-    <option value="4">throwing spike</option>
-    <option value="9">bastard sword</option>
-    <option value="9">broadaxe</option>
-    <option value="9">war sword</option>
-    <option value="12">bar mace</option>
-    <option value="10">boarding axe</option>
-    <option value="15">splitting maul</option>
-    <option value="4">thin-bladed fan</option>
-    <option value="7">half-handled riste</option>
-    <option value="6">thick-bladed fan</option>
-    <option value="9">riste</option>
-    <option value="0">   </option>
-    <option value="0">--- SPECIAL WEAPON INSTRUCTIONS ---</option>
-    <option value="1">hawkbill</option>
-    <option value="2">pinwheel</option>
-    <option value="7">serrated kudalata</option>
-    <option value="14">serrated naginata</option>
-    <option value="5">serrated parazonium</option>
-    <option value="7">serrated iltesh</option>
-    <option value="8">serrated recade</option>
-    <option value="9">sterak axe</option>
-    <option value="12">svidaw sis</option>
-    <option value="7">serrated khopesh</option>
-    <option value="8">short-hafted glaive</option>
-    <option value="9">phalanx sword</option>
-    <option value="9">light pernach</option>
-    <option value="12">kanabo</option>
-    <option value="13">Imperial spear</option>
-    <option value="15">long-handled naginata</option>
-    <option value="9">hunga-munga</option>
-    <option value="12">folded katana</option>
-    <option value="14">pattern welded tekkan</option>
-    <option value="0">   </option>
-    <option value="0">--- CHAIN ARMOR ---</option>
-    <option value="5">ring aventail</option>
-    <option value="3">ring mask</option>
-    <option value="6">chain aventail</option>
-    <option value="8">ring cap</option>
-    <option value="4">chain mask</option>
-    <option value="6">ring gloves</option>
-    <option value="12">ring greaves</option>
-    <option value="12">ring helm</option>
-    <option value="7">mail aventail</option>
-    <option value="10">chain cap</option>
-    <option value="5">mail mask</option>
-    <option value="8">chain gloves</option>
-    <option value="8">ring tasset</option>
-    <option value="17">ring vambraces</option>
-    <option value="15">chain greaves</option>
-    <option value="16">ring balaclava</option>
-    <option value="14">chain helm</option>
-    <option value="12">mail cap</option>
-    <option value="10">mail gloves</option>
-    <option value="16">mail helm</option>
-    <option value="20">chain balaclava</option>
-    <option value="18">mail greaves</option>
-    <option value="20">chain vambraces</option>
-    <option value="21">ring sleeves</option>
-    <option value="10">chain tasset</option>
-    <option value="18">ring vest</option>
-    <option value="21">ring mantle</option>
-    <option value="26">ring lorica</option>
-    <option value="24">mail balaclava</option>
-    <option value="23">mail vambraces</option>
-    <option value="26">chain sleeves</option>
-    <option value="12">mail tasset</option>
-    <option value="20">chain vest</option>
-    <option value="24">chain mantle</option>
-    <option value="30">chain lorica</option>
-    <option value="38">ring robe</option>
-    <option value="43">ring shirt</option>
-    <option value="31">mail sleeves</option>
-    <option value="22">mail vest</option>
-    <option value="27">mail mantle</option>
-    <option value="34">mail lorica</option>
-    <option value="45">chain robe</option>
-    <option value="50">chain shirt</option>
-    <option value="70">ring hauberk</option>
-    <option value="52">mail robe</option>
-    <option value="57">mail shirt</option>
-    <option value="80">chain hauberk</option>
-    <option value="90">mail hauberk</option>
-    <option value="90">bar-mail hauberk</option>
-    <option value="0">   </option>
-    <option value="0">--- BRIGANDINE ---</option>    
-    <option value="5">scale mask</option>
-    <option value="9">scale aventail</option>
-    <option value="8">scale gloves</option>
-    <option value="6">brigandine mask</option>
-    <option value="10">brigandine aventail</option>
-    <option value="12">scale cap</option>
-    <option value="10">brigandine gloves</option>
-    <option value="15">scale greaves</option>
-    <option value="7">lamellar mask</option>
-    <option value="11">lamellar aventail</option>
-    <option value="14">brigandine cap</option>
-    <option value="21">scale helm</option>
-    <option value="12">lamellar gloves</option>
-    <option value="18">brigandine greaves</option>
-    <option value="16">lamellar cap</option>
-    <option value="24">brigandine helm</option>
-    <option value="26">scale balaclava</option>
-    <option value="22">scale vambraces</option>
-    <option value="10">scale tasset</option>
-    <option value="30">scale sleeves</option>
-    <option value="18">lamellar greaves</option>
-    <option value="27">lamellar helm</option>
-    <option value="30">brigandine balaclava</option>
-    <option value="25">brigandine vambraces</option>
-    <option value="12">brigandine tasset</option>
-    <option value="35">brigandine sleeves</option>
-    <option value="34">lamellar balaclava</option>
-    <option value="28">lamellar vambraces</option>
-    <option value="14">lamellar tasset</option>
-    <option value="24">scale vest</option>
-    <option value="33">scale mantle</option>
-    <option value="34">scale lorica</option>
-    <option value="63">brigandine shirt</option>
-    <option value="56">brigandine robe</option>
-    <option value="40">lamellar sleeves</option>
-    <option value="26">brigandine vest</option>
-    <option value="36">brigandine mantle</option>
-    <option value="38">brigandine lorica</option>
-    <option value="49">scale robe</option>
-    <option value="56">scale shirt</option>
-    <option value="70">lamellar shirt</option>
-    <option value="90">brigandine hauberk</option>
-    <option value="63">lamellar robe</option>
-    <option value="28">lamellar vest</option>
-    <option value="39">lamellar mantle</option>
-    <option value="42">lamellar lorica</option>
-    <option value="80">scale hauberk</option>
-    <option value="100">lamellar hauberk</option>
-    <option value="100">laminar hauberk</option>
-    <option value="0">   </option>
-    <option value="0">--- PLATE ARMOR ---</option>
-    <option value="7">light plate mask</option>
-    <option value="12">light plate aventail</option>
-    <option value="8">plate mask</option>
-    <option value="16">dome helm</option>
-    <option value="14">plate aventail</option>
-    <option value="13">light plate gauntlets</option>
-    <option value="9">heavy plate mask</option>
-    <option value="18">morion</option>
-    <option value="16">heavy plate aventail</option>
-    <option value="15">plate gauntlets</option>
-    <option value="23">bascinet</option>
-    <option value="20">barbute</option>
-    <option value="17">heavy plate gauntlets</option>
-    <option value="26">visored helm</option>
-    <option value="26">light plate vambraces</option>
-    <option value="10">light backplate</option>
-    <option value="13">light plate fauld</option>
-    <option value="29">closed helm</option>
-    <option value="40">armet</option>
-    <option value="22">plate greaves</option>
-    <option value="30">plate vambraces</option>
-    <option value="39">light plate sleeves</option>
-    <option value="12">backplate</option>
-    <option value="15">plate fauld</option>
-    <option value="16">light breastplate</option>
-    <option value="35">sallet</option>
-    <option value="19">light plate greaves</option>
-    <option value="45">great helm</option>
-    <option value="25">heavy plate greaves</option>
-    <option value="34">heavy plate vambraces</option>
-    <option value="45">plate sleeves</option>
-    <option value="14">heavy backplate</option>
-    <option value="17">heavy plate fauld</option>
-    <option value="18">breastplate</option>
-    <option value="39">light plate cuirass</option>
-    <option value="51">heavy plate sleeves</option>
-    <option value="20">heavy breastplate</option>
-    <option value="45">plate cuirass</option>
-    <option value="58">light field plate</option>
-    <option value="65">light half plate</option>
-    <option value="51">heavy plate cuirass</option>
-    <option value="67">field plate</option>
-    <option value="75">half plate</option>
-    <option value="100">light full plate</option>
-    <option value="76">heavy field plate</option>
-    <option value="110">full plate</option>
-    <option value="85">heavy half plate</option>
-    <option value="120">heavy full plate</option>
-    <option value="120">heavy fluted plate</option>
-    <option value="0">   </option>
-    <option value="0">--- METAL SHIELDS ---</option>
-    <option value="2">shield handle</option>
-    <option value="3">shield boss</option>
-    <option value="14">target shield</option>
-    <option value="16">ordinary shield</option>
-    <option value="14">round sipar</option>
-    <option value="20">medium shield</option>
-    <option value="14">triangular sipar</option>
-    <option value="16">targe</option>
-    <option value="25">oval shield</option>
-    <option value="20">medium buckler</option>
-    <option value="20">circular buckler</option>
-    <option value="20">curved shield</option>
-    <option value="16">ceremonial shield</option>
-    <option value="30">kite shield</option>
-    <option value="25">skirmisher's shield</option>
-    <option value="25">jousting shield</option>
-    <option value="7">simple parry stick</option>
-    <option value="30">valnik shield</option>
-    <option value="40">tower shield</option>
-    <option value="30">warrior's shield</option>
-    <option value="30">aegis</option>
-    <option value="40">heater shield</option>
-    <option value="40">battle shield</option>
-    <option value="40">war shield</option>
-    <option value="25">deflector</option>
-    <option value="50">bulwark</option>
-    <option value="0">   </option>
-    <option value="0">--- SPECIAL ARMOR INSTRUCTIONS ---</option>
-    <option value="120">augmented gladiatorial armor</option>
-    <option value="17">augmented gladiatorial gauntlets</option>
-    <option value="31">Imbricated manica</option>
-    <option value="100">Imperial banded-mail hauberk</option>
-    <option value="180">Imperial plate</option>
-    <option value="80">Imperial ringmail hauberk</option>
-    <option value="180">massive full plate</option>
-    <option value="45">ornate full-visored galea</option>
-    <option value="0">   </option>
-    <option value="0">--- MINING TOOLS ---</option>
-    <option value="8">curved shovel</option>
-    <option value="10">stout pickaxe</option>
-    <option value="8">square shovel</option>
-    <option value="10">narrow pickaxe</option>
-    <option value="8">tapered shovel</option>
-    <option value="10">slender pickaxe</option>
-    <option value="8">sturdy shovel</option>
-    <option value="10">flat-headed pickaxe</option>
-    <option value="8">wide shovel</option>
-    <option value="10">weighted pickaxe</option>
-    <option value="0">   </option>
-    <option value="0">--- SMITHING TOOLS ---</option>
-    <option value="12">diagonal-peen mallet</option>
-    <option value="12">diagonal-peen hammer</option>
-    <option value="10">straight tongs</option>
-    <option value="12">cross-peen hammer</option>
-    <option value="10">curved tongs</option>
-    <option value="10">flat-bladed tongs</option>
-    <option value="10">angular tongs</option>
-    <option value="12">straight-peen hammer</option>
-    <option value="12">straight-peen mallet</option>
-    <option value="10">bolt tongs</option>
-    <option value="12">ball-peen hammer</option>
-    <option value="10">segmented tongs</option>
-    <option value="10">box-jaw tongs</option>
-    <option value="10">articulated tongs</option>
-    <option value="12">ball-peen mallet</option>
-    <option value="0">   </option>
-    <option value="0">--- ENGINEERING TOOLS ---</option>
-    <option value="5">short drawknife</option>
-    <option value="8">short chisels</option>
-    <option value="5">long drawknife</option>
-    <option value="8">straight wood saw</option>
-    <option value="8">straight bone saw</option>
-    <option value="8">thin rasp</option>
-    <option value="8">square rifflers</option>
-    <option value="8">long chisels</option>
-    <option value="4">flat shaper</option>
-    <option value="5">plain pliers</option>
-    <option value="8">squat rifflers</option>
-    <option value="4">thin tinker's tools</option>
-    <option value="4">rough wood shaper</option>
-    <option value="5">sturdy drawknife</option>
-    <option value="8">curved wood saw</option>
-    <option value="8">curved bone saw</option>
-    <option value="5">curved pliers</option>
-    <option value="8">coarse rasp</option>
-    <option value="8">sturdy chisels</option>
-    <option value="4">curved tinker's tools</option>
-    <option value="8">curved rifflers</option>
-    <option value="8">reinforced chisels</option>
-    <option value="5">sharpened drawknife</option>
-    <option value="8">slender wood saw</option>
-    <option value="8">slender bone saw</option>
-    <option value="5">rough pliers</option>
-    <option value="8">textured rasp</option>
-    <option value="4">beveled wood shaper</option>
-    <option value="5">thick pliers</option>
-    <option value="8">flat rasp</option>
-    <option value="8">elongated rifflers</option>
-    <option value="8">sharpened chisels</option>
-    <option value="4">thick tinker's tools</option>
-    <option value="8">tapered wood saw</option>
-    <option value="8">tapered bone saw</option>
-    <option value="5">hooked pliers</option>
-    <option value="8">tapered rasp</option>
-    <option value="4">jagged wood shaper</option>
-    <option value="8">serrated wood saw</option>
-    <option value="8">serrated bone saw</option>
-    <option value="4">precise tinker's tools</option>
-    <option value="0">   </option>
-    <option value="0">--- OUTFITTING TOOLS ---</option>
-    <option value="3">hide scraper</option>
-    <option value="6">stout yardstick</option>
-    <option value="4">smooth knitting needles</option>
-    <option value="3">plain sewing needles</option>
-    <option value="4">straight scissors</option>
-    <option value="3">curved hide scraper</option>
-    <option value="4">pointed awl</option>
-    <option value="6">flat yardstick</option>
-    <option value="4">tapered knitting needles</option>
-    <option value="4">curved scissors</option>
-    <option value="3">ribbed sewing needles</option>
-    <option value="4">narrow awl</option>
-    <option value="4">squat knitting needles</option>
-    <option value="3">knobby sewing needles</option>
-    <option value="6">rectangular yardstick</option>
-    <option value="4">bent scissors</option>
-    <option value="3">serrated hide scraper</option>
-    <option value="4">compact awl</option>
-    <option value="4">polished knitting needles</option>
-    <option value="4">slender awl</option>
-    <option value="6">detailed yardstick</option>
-    <option value="4">serrated scissors</option>
-    <option value="3">thin sewing needles</option>
-    <option value="0">   </option>
-    <option value="0">--- ALCHEMY AND ENCHANTING TOOLS ---</option>
-    <option value="10">small brazier</option>
-    <option value="1">tapered pestle</option>
-    <option value="6">flat mixing stick</option>
-    <option value="3">square wire sieve</option>
-    <option value="6">tapered mixing stick</option>
-    <option value="1">flat pestle</option>
-    <option value="10">brazier</option>
-    <option value="3">triangular wire sieve</option>
-    <option value="6">round mixing stick</option>
-    <option value="8">thick mixing bowl</option>
-    <option value="1">round pestle</option>
-    <option value="1">grooved pestle</option>
-    <option value="3">oblong wire sieve</option>
-    <option value="6">grooved mixing stick</option>
-    <option value="6">sleek mixing bowl</option>
-    <option value="3">trapezoidal wire sieve</option>
-    <option value="0">   </option>
-    <option value="0">--- BLACKSMITHING ITEMS ---</option>
-    <option value="1">shallow cup</option>
-    <option value="1">slender rod</option>
-    <option value="1">tall mug</option>
-    <option value="1">short mug</option>
-    <option value="2">soft keyblank</option>
-    <option value="4">horseshoe</option>
-    <option value="3">scratcher</option>
-    <option value="80">barbells</option>
-    <option value="12">large horseshoe</option>
-    <option value="5">small flask</option>
-    <option value="4">ankle band</option>
-    <option value="12">lockpick case</option>
-    <option value="12">origami case</option>
-    <option value="10">bolt box</option>
-    <option value="5">talisman case</option>
-    <option value="5">flask</option>
-    <option value="6">oil lantern</option>
-    <option value="2">lockpick ring</option>
-    <option value="8">herbal case</option>
-    <option value="4">jewelry box</option>
-    <option value="10">flights box</option>
-    <option value="2">razor</option>
-    <option value="7">large flask</option>
-    <option value="4">armband</option>
-    <option value="8">instrument case</option>
-    <option value="12">chest</option>
-    <option value="10">backtube</option>
-    <option value="8">starchart tube</option>
-    <option value="2">clippers</option>
-    <option value="10">crown</option>
-    <option value="5">mask</option>
-    <option value="5">torque</option>
-    <option value="10">headdress</option>
-    <option value="0">   </option>
-    <option value="0">--- BLACKSMITHING SPECIAL INSTRUCTIONS ---</option>
-    <option value="5">basic stamp</option>
-    <option value="5">complex stamp</option>
-    <option value="6">triple-fluted shovel</option>
-    <option value="10">blunt forging hammer</option>
-    <option value="8">wedge tong</option>
-    <option value="4">pointed metal pliers</option>
-    <option value="5">forked mixing stick</option>
-    <option value="2">diagonal-wire sieve</option>
-    </select>
+    &lt;select id=&quot;target-volume&quot; style=&quot;width: 100%;&quot;&gt;
+        &lt;option value=&quot;0&quot; selected&gt;Select Volume&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;1 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;5 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;10&quot;&gt;10 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;20&quot;&gt;20 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;50&quot;&gt;50 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;100&quot;&gt;100 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;200&quot;&gt;200 volume ingot&lt;/option&gt;
+        &lt;option value=&quot;custom&quot;&gt;Custom volume...&lt;/option&gt;
+        &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+        &lt;option value=&quot;0&quot;&gt;--- SMALL EDGE ---&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;briquet&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;carving knife&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;dagger&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;katar&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;misericorde&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;poignard&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;pugio&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;short sword&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;stiletto&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;dart&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;falcata&lt;/option&gt;
+        &lt;option value=&quot;4&quot;&gt;jambiya&lt;/option&gt;
+        &lt;option value=&quot;4&quot;&gt;kris&lt;/option&gt;
+        &lt;option value=&quot;4&quot;&gt;leaf blade sword&lt;/option&gt;
+        &lt;option value=&quot;4&quot;&gt;nehlata&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;takouba&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;telek&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;throwing dagger&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;dao&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;foil&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;kasai&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;koummya&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;kythe&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;oben&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;pasabas&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;rapier&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;sunblade&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;thrusting blade&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;adze&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;baselard&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;curlade&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;gladius&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;hanger&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;mambeli&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;parang&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;sabre&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;sashqa&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;scimitar&lt;/option&gt;
+        &lt;option value=&quot;7&quot;&gt;cutlass&lt;/option&gt;
+        &lt;option value=&quot;7&quot;&gt;hand axe&lt;/option&gt;
+        &lt;option value=&quot;7&quot;&gt;hatchet&lt;/option&gt;
+        &lt;option value=&quot;6&quot;&gt;light throwing axe&lt;/option&gt;
+        &lt;option value=&quot;7&quot;&gt;shotel&lt;/option&gt;
+        &lt;option value=&quot;7&quot;&gt;iltesh&lt;/option&gt;
+        &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+        &lt;option value=&quot;0&quot;&gt;--- LARGE EDGE ---&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;arzfilt&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;broadsword&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;condottiere&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;kudalata&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;longsword&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;nehdalata&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;round axe&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;spatha&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;abassi&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;back-sword&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;battle axe&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;cinqueda&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;dagasse&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;falchion&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;hunting sword&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;namkomba&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;nimsha&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;recade&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;robe sword&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;schiavona&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;hurling axe&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;-- TWO HANDED EDGE ---&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;claymore&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;greataxe&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;karambit&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;marauder blade&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;twin-point axe&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;two-handed sword&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;warring axe&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;double axe&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;flamberge&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;greatsword&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;igorat axe&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;kaskara&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;periperiu sword&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;shh'oi'ata&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- SMALL BLUNT ---&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;cosh&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;cudgel&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;gavel&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;prod&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;bludgeon&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;hand mallet&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;horseshoe&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;scepter&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;zubke&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;club&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;garz&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;hand mace&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;large horseshoe&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;ridged gauntlet&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;short hammer&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;spiked gauntlet&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;bola&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;bulhawf&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;cuska&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;mallet&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;throwing club&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;war club&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;belaying pin&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;boko&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;boomerang&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;hhr'tami&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;komno&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;mace&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;marlingspike&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;spiked club&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;spiked hammer&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;spiked mace&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;war hammer&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;flanged mace&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;k'trinni sha-tai&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;ball and chain&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;heavy chain&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;greathammer&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;heavy mace&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- LARGE BLUNT ---&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;horseman's flail&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;Imperial war hammer&lt;/option&gt;
+    &lt;option value=&quot;11&quot;&gt;spiked ball and chain&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;double-headed hammer&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;hara&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;heavy mallet&lt;/option&gt;
+    &lt;option value=&quot;11&quot;&gt;morning star&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;sledgehammer&lt;/option&gt;
+    &lt;option value=&quot;11&quot;&gt;spiked hara&lt;/option&gt;
+    &lt;option value=&quot;11&quot;&gt;ukabi&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;hhr'ata&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;hurlable war hammer&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;throwing mallet&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;throwing hammer&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- TWO HANDED BLUNT ---&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;akabo&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;double-sided ball and chain&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;footman's flail&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;war mattock&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;vilks kodur&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;dire mace&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;giant mallet&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;heavy sledgehammer&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;maul&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;two-headed hammer&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- POLEARM ---&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;javelin&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;light spear&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;allarh&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;awgravet ava&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;bardiche&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;coresca&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;guisarme&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;halberd&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;hunthsleg&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;lochaber axe&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;scythe&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;spear&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;tzece&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;duraka skefne&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;glaive&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;khuj&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;military fork&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;partisan&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;two-pronged halberd&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;fauchard&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;ngalio&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;pole axe&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;ilglaiks skefne&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;lance&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;pike&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;ranseur&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;spetum&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;voulge&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;awl pike&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;short-hafted halberd&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- MARTIAL WEAPONS ---&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;cane&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;nightstick&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;quarterstaff&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;knuckles&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;simple parry stick&lt;/option&gt;
+    &lt;option value=&quot;11&quot;&gt;pike staff&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;elbow spikes&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;knee spikes&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;weighted footwraps&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;spiked footwraps&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;spiked knuckles&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;hand claws&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;weightd staff&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- SWAPPABLE WEAPONS ---&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;throwing spike&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;bastard sword&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;broadaxe&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;war sword&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;bar mace&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;boarding axe&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;splitting maul&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;thin-bladed fan&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;half-handled riste&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;thick-bladed fan&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;riste&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- SPECIAL WEAPON INSTRUCTIONS ---&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;hawkbill&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;pinwheel&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;serrated kudalata&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;serrated naginata&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;serrated parazonium&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;serrated iltesh&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;serrated recade&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;sterak axe&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;svidaw sis&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;serrated khopesh&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;short-hafted glaive&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;phalanx sword&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;light pernach&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;kanabo&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;Imperial spear&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;long-handled naginata&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;hunga-munga&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;folded katana&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;pattern welded tekkan&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- CHAIN ARMOR ---&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;ring aventail&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;ring mask&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;chain aventail&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;ring cap&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;chain mask&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;ring gloves&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;ring greaves&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;ring helm&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;mail aventail&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;chain cap&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;mail mask&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;chain gloves&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;ring tasset&lt;/option&gt;
+    &lt;option value=&quot;17&quot;&gt;ring vambraces&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;chain greaves&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;ring balaclava&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;chain helm&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;mail cap&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;mail gloves&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;mail helm&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;chain balaclava&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;mail greaves&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;chain vambraces&lt;/option&gt;
+    &lt;option value=&quot;21&quot;&gt;ring sleeves&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;chain tasset&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;ring vest&lt;/option&gt;
+    &lt;option value=&quot;21&quot;&gt;ring mantle&lt;/option&gt;
+    &lt;option value=&quot;26&quot;&gt;ring lorica&lt;/option&gt;
+    &lt;option value=&quot;24&quot;&gt;mail balaclava&lt;/option&gt;
+    &lt;option value=&quot;23&quot;&gt;mail vambraces&lt;/option&gt;
+    &lt;option value=&quot;26&quot;&gt;chain sleeves&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;mail tasset&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;chain vest&lt;/option&gt;
+    &lt;option value=&quot;24&quot;&gt;chain mantle&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;chain lorica&lt;/option&gt;
+    &lt;option value=&quot;38&quot;&gt;ring robe&lt;/option&gt;
+    &lt;option value=&quot;43&quot;&gt;ring shirt&lt;/option&gt;
+    &lt;option value=&quot;31&quot;&gt;mail sleeves&lt;/option&gt;
+    &lt;option value=&quot;22&quot;&gt;mail vest&lt;/option&gt;
+    &lt;option value=&quot;27&quot;&gt;mail mantle&lt;/option&gt;
+    &lt;option value=&quot;34&quot;&gt;mail lorica&lt;/option&gt;
+    &lt;option value=&quot;45&quot;&gt;chain robe&lt;/option&gt;
+    &lt;option value=&quot;50&quot;&gt;chain shirt&lt;/option&gt;
+    &lt;option value=&quot;70&quot;&gt;ring hauberk&lt;/option&gt;
+    &lt;option value=&quot;52&quot;&gt;mail robe&lt;/option&gt;
+    &lt;option value=&quot;57&quot;&gt;mail shirt&lt;/option&gt;
+    &lt;option value=&quot;80&quot;&gt;chain hauberk&lt;/option&gt;
+    &lt;option value=&quot;90&quot;&gt;mail hauberk&lt;/option&gt;
+    &lt;option value=&quot;90&quot;&gt;bar-mail hauberk&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- BRIGANDINE ---&lt;/option&gt;    
+    &lt;option value=&quot;5&quot;&gt;scale mask&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;scale aventail&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;scale gloves&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;brigandine mask&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;brigandine aventail&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;scale cap&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;brigandine gloves&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;scale greaves&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;lamellar mask&lt;/option&gt;
+    &lt;option value=&quot;11&quot;&gt;lamellar aventail&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;brigandine cap&lt;/option&gt;
+    &lt;option value=&quot;21&quot;&gt;scale helm&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;lamellar gloves&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;brigandine greaves&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;lamellar cap&lt;/option&gt;
+    &lt;option value=&quot;24&quot;&gt;brigandine helm&lt;/option&gt;
+    &lt;option value=&quot;26&quot;&gt;scale balaclava&lt;/option&gt;
+    &lt;option value=&quot;22&quot;&gt;scale vambraces&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;scale tasset&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;scale sleeves&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;lamellar greaves&lt;/option&gt;
+    &lt;option value=&quot;27&quot;&gt;lamellar helm&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;brigandine balaclava&lt;/option&gt;
+    &lt;option value=&quot;25&quot;&gt;brigandine vambraces&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;brigandine tasset&lt;/option&gt;
+    &lt;option value=&quot;35&quot;&gt;brigandine sleeves&lt;/option&gt;
+    &lt;option value=&quot;34&quot;&gt;lamellar balaclava&lt;/option&gt;
+    &lt;option value=&quot;28&quot;&gt;lamellar vambraces&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;lamellar tasset&lt;/option&gt;
+    &lt;option value=&quot;24&quot;&gt;scale vest&lt;/option&gt;
+    &lt;option value=&quot;33&quot;&gt;scale mantle&lt;/option&gt;
+    &lt;option value=&quot;34&quot;&gt;scale lorica&lt;/option&gt;
+    &lt;option value=&quot;63&quot;&gt;brigandine shirt&lt;/option&gt;
+    &lt;option value=&quot;56&quot;&gt;brigandine robe&lt;/option&gt;
+    &lt;option value=&quot;40&quot;&gt;lamellar sleeves&lt;/option&gt;
+    &lt;option value=&quot;26&quot;&gt;brigandine vest&lt;/option&gt;
+    &lt;option value=&quot;36&quot;&gt;brigandine mantle&lt;/option&gt;
+    &lt;option value=&quot;38&quot;&gt;brigandine lorica&lt;/option&gt;
+    &lt;option value=&quot;49&quot;&gt;scale robe&lt;/option&gt;
+    &lt;option value=&quot;56&quot;&gt;scale shirt&lt;/option&gt;
+    &lt;option value=&quot;70&quot;&gt;lamellar shirt&lt;/option&gt;
+    &lt;option value=&quot;90&quot;&gt;brigandine hauberk&lt;/option&gt;
+    &lt;option value=&quot;63&quot;&gt;lamellar robe&lt;/option&gt;
+    &lt;option value=&quot;28&quot;&gt;lamellar vest&lt;/option&gt;
+    &lt;option value=&quot;39&quot;&gt;lamellar mantle&lt;/option&gt;
+    &lt;option value=&quot;42&quot;&gt;lamellar lorica&lt;/option&gt;
+    &lt;option value=&quot;80&quot;&gt;scale hauberk&lt;/option&gt;
+    &lt;option value=&quot;100&quot;&gt;lamellar hauberk&lt;/option&gt;
+    &lt;option value=&quot;100&quot;&gt;laminar hauberk&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- PLATE ARMOR ---&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;light plate mask&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;light plate aventail&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;plate mask&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;dome helm&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;plate aventail&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;light plate gauntlets&lt;/option&gt;
+    &lt;option value=&quot;9&quot;&gt;heavy plate mask&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;morion&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;heavy plate aventail&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;plate gauntlets&lt;/option&gt;
+    &lt;option value=&quot;23&quot;&gt;bascinet&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;barbute&lt;/option&gt;
+    &lt;option value=&quot;17&quot;&gt;heavy plate gauntlets&lt;/option&gt;
+    &lt;option value=&quot;26&quot;&gt;visored helm&lt;/option&gt;
+    &lt;option value=&quot;26&quot;&gt;light plate vambraces&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;light backplate&lt;/option&gt;
+    &lt;option value=&quot;13&quot;&gt;light plate fauld&lt;/option&gt;
+    &lt;option value=&quot;29&quot;&gt;closed helm&lt;/option&gt;
+    &lt;option value=&quot;40&quot;&gt;armet&lt;/option&gt;
+    &lt;option value=&quot;22&quot;&gt;plate greaves&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;plate vambraces&lt;/option&gt;
+    &lt;option value=&quot;39&quot;&gt;light plate sleeves&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;backplate&lt;/option&gt;
+    &lt;option value=&quot;15&quot;&gt;plate fauld&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;light breastplate&lt;/option&gt;
+    &lt;option value=&quot;35&quot;&gt;sallet&lt;/option&gt;
+    &lt;option value=&quot;19&quot;&gt;light plate greaves&lt;/option&gt;
+    &lt;option value=&quot;45&quot;&gt;great helm&lt;/option&gt;
+    &lt;option value=&quot;25&quot;&gt;heavy plate greaves&lt;/option&gt;
+    &lt;option value=&quot;34&quot;&gt;heavy plate vambraces&lt;/option&gt;
+    &lt;option value=&quot;45&quot;&gt;plate sleeves&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;heavy backplate&lt;/option&gt;
+    &lt;option value=&quot;17&quot;&gt;heavy plate fauld&lt;/option&gt;
+    &lt;option value=&quot;18&quot;&gt;breastplate&lt;/option&gt;
+    &lt;option value=&quot;39&quot;&gt;light plate cuirass&lt;/option&gt;
+    &lt;option value=&quot;51&quot;&gt;heavy plate sleeves&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;heavy breastplate&lt;/option&gt;
+    &lt;option value=&quot;45&quot;&gt;plate cuirass&lt;/option&gt;
+    &lt;option value=&quot;58&quot;&gt;light field plate&lt;/option&gt;
+    &lt;option value=&quot;65&quot;&gt;light half plate&lt;/option&gt;
+    &lt;option value=&quot;51&quot;&gt;heavy plate cuirass&lt;/option&gt;
+    &lt;option value=&quot;67&quot;&gt;field plate&lt;/option&gt;
+    &lt;option value=&quot;75&quot;&gt;half plate&lt;/option&gt;
+    &lt;option value=&quot;100&quot;&gt;light full plate&lt;/option&gt;
+    &lt;option value=&quot;76&quot;&gt;heavy field plate&lt;/option&gt;
+    &lt;option value=&quot;110&quot;&gt;full plate&lt;/option&gt;
+    &lt;option value=&quot;85&quot;&gt;heavy half plate&lt;/option&gt;
+    &lt;option value=&quot;120&quot;&gt;heavy full plate&lt;/option&gt;
+    &lt;option value=&quot;120&quot;&gt;heavy fluted plate&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- METAL SHIELDS ---&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;shield handle&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;shield boss&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;target shield&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;ordinary shield&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;round sipar&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;medium shield&lt;/option&gt;
+    &lt;option value=&quot;14&quot;&gt;triangular sipar&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;targe&lt;/option&gt;
+    &lt;option value=&quot;25&quot;&gt;oval shield&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;medium buckler&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;circular buckler&lt;/option&gt;
+    &lt;option value=&quot;20&quot;&gt;curved shield&lt;/option&gt;
+    &lt;option value=&quot;16&quot;&gt;ceremonial shield&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;kite shield&lt;/option&gt;
+    &lt;option value=&quot;25&quot;&gt;skirmisher's shield&lt;/option&gt;
+    &lt;option value=&quot;25&quot;&gt;jousting shield&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;simple parry stick&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;valnik shield&lt;/option&gt;
+    &lt;option value=&quot;40&quot;&gt;tower shield&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;warrior's shield&lt;/option&gt;
+    &lt;option value=&quot;30&quot;&gt;aegis&lt;/option&gt;
+    &lt;option value=&quot;40&quot;&gt;heater shield&lt;/option&gt;
+    &lt;option value=&quot;40&quot;&gt;battle shield&lt;/option&gt;
+    &lt;option value=&quot;40&quot;&gt;war shield&lt;/option&gt;
+    &lt;option value=&quot;25&quot;&gt;deflector&lt;/option&gt;
+    &lt;option value=&quot;50&quot;&gt;bulwark&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- SPECIAL ARMOR INSTRUCTIONS ---&lt;/option&gt;
+    &lt;option value=&quot;120&quot;&gt;augmented gladiatorial armor&lt;/option&gt;
+    &lt;option value=&quot;17&quot;&gt;augmented gladiatorial gauntlets&lt;/option&gt;
+    &lt;option value=&quot;31&quot;&gt;Imbricated manica&lt;/option&gt;
+    &lt;option value=&quot;100&quot;&gt;Imperial banded-mail hauberk&lt;/option&gt;
+    &lt;option value=&quot;180&quot;&gt;Imperial plate&lt;/option&gt;
+    &lt;option value=&quot;80&quot;&gt;Imperial ringmail hauberk&lt;/option&gt;
+    &lt;option value=&quot;180&quot;&gt;massive full plate&lt;/option&gt;
+    &lt;option value=&quot;45&quot;&gt;ornate full-visored galea&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- MINING TOOLS ---&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;curved shovel&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;stout pickaxe&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;square shovel&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;narrow pickaxe&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;tapered shovel&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;slender pickaxe&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;sturdy shovel&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;flat-headed pickaxe&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;wide shovel&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;weighted pickaxe&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- SMITHING TOOLS ---&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;diagonal-peen mallet&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;diagonal-peen hammer&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;straight tongs&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;cross-peen hammer&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;curved tongs&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;flat-bladed tongs&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;angular tongs&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;straight-peen hammer&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;straight-peen mallet&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;bolt tongs&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;ball-peen hammer&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;segmented tongs&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;box-jaw tongs&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;articulated tongs&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;ball-peen mallet&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- ENGINEERING TOOLS ---&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;short drawknife&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;short chisels&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;long drawknife&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;straight wood saw&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;straight bone saw&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;thin rasp&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;square rifflers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;long chisels&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;flat shaper&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;plain pliers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;squat rifflers&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;thin tinker's tools&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;rough wood shaper&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;sturdy drawknife&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;curved wood saw&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;curved bone saw&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;curved pliers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;coarse rasp&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;sturdy chisels&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;curved tinker's tools&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;curved rifflers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;reinforced chisels&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;sharpened drawknife&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;slender wood saw&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;slender bone saw&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;rough pliers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;textured rasp&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;beveled wood shaper&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;thick pliers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;flat rasp&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;elongated rifflers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;sharpened chisels&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;thick tinker's tools&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;tapered wood saw&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;tapered bone saw&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;hooked pliers&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;tapered rasp&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;jagged wood shaper&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;serrated wood saw&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;serrated bone saw&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;precise tinker's tools&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- OUTFITTING TOOLS ---&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;hide scraper&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;stout yardstick&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;smooth knitting needles&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;plain sewing needles&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;straight scissors&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;curved hide scraper&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;pointed awl&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;flat yardstick&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;tapered knitting needles&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;curved scissors&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;ribbed sewing needles&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;narrow awl&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;squat knitting needles&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;knobby sewing needles&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;rectangular yardstick&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;bent scissors&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;serrated hide scraper&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;compact awl&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;polished knitting needles&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;slender awl&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;detailed yardstick&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;serrated scissors&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;thin sewing needles&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- ALCHEMY AND ENCHANTING TOOLS ---&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;small brazier&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;tapered pestle&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;flat mixing stick&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;square wire sieve&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;tapered mixing stick&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;flat pestle&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;brazier&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;triangular wire sieve&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;round mixing stick&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;thick mixing bowl&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;round pestle&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;grooved pestle&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;oblong wire sieve&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;grooved mixing stick&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;sleek mixing bowl&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;trapezoidal wire sieve&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- BLACKSMITHING ITEMS ---&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;shallow cup&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;slender rod&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;tall mug&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;short mug&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;soft keyblank&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;horseshoe&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;scratcher&lt;/option&gt;
+    &lt;option value=&quot;80&quot;&gt;barbells&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;large horseshoe&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;small flask&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;ankle band&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;lockpick case&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;origami case&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;bolt box&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;talisman case&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;flask&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;oil lantern&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;lockpick ring&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;herbal case&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;jewelry box&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;flights box&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;razor&lt;/option&gt;
+    &lt;option value=&quot;7&quot;&gt;large flask&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;armband&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;instrument case&lt;/option&gt;
+    &lt;option value=&quot;12&quot;&gt;chest&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;backtube&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;starchart tube&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;clippers&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;crown&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;mask&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;torque&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;headdress&lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;   &lt;/option&gt;
+    &lt;option value=&quot;0&quot;&gt;--- BLACKSMITHING SPECIAL INSTRUCTIONS ---&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;basic stamp&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;complex stamp&lt;/option&gt;
+    &lt;option value=&quot;6&quot;&gt;triple-fluted shovel&lt;/option&gt;
+    &lt;option value=&quot;10&quot;&gt;blunt forging hammer&lt;/option&gt;
+    &lt;option value=&quot;8&quot;&gt;wedge tong&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;pointed metal pliers&lt;/option&gt;
+    &lt;option value=&quot;5&quot;&gt;forked mixing stick&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;diagonal-wire sieve&lt;/option&gt;
+    &lt;/select&gt;
 
-    <input
-        id="custom-volume"
-        type="number"
-        min="0.01"
-        step="any"
-        placeholder="Enter custom volume"
-        style="display: none; width: 100%; box-sizing: border-box; margin-top: 0.5rem;"
-    />
-</div>
+    &lt;input
+        id=&quot;custom-volume&quot;
+        type=&quot;number&quot;
+        min=&quot;0.01&quot;
+        step=&quot;any&quot;
+        placeholder=&quot;Enter custom volume&quot;
+        style=&quot;display: none; width: 100%; box-sizing: border-box; margin-top: 0.5rem;&quot;
+    /&gt;
+&lt;/div&gt;
 
 
-    <div class="queue-header">
-        <span>Metals</span>
-        <span>Quantity</span>
-    </div>
+    &lt;div class=&quot;queue-header&quot;&gt;
+        &lt;span&gt;Metals&lt;/span&gt;
+        &lt;span&gt;Quantity&lt;/span&gt;
+    &lt;/div&gt;
 
-    <!-- 5 Configurable Inputs Box -->
-    <div class="crafting-queue" id="queue-container">
-        <!-- Rows 1 to 5 will be injected dynamically here -->
-    </div>
+    &lt;!-- 5 Configurable Inputs Box --&gt;
+    &lt;div class=&quot;crafting-queue&quot; id=&quot;queue-container&quot;&gt;
+        &lt;!-- Rows 1 to 5 will be injected dynamically here --&gt;
+    &lt;/div&gt;
 
-    <!-- Actions Control Panel -->
-    <div class="actions-row">
-        <button class="btn-clear" onclick="clearAllQueue()">Clear All Items</button>
-    </div>
+    &lt;!-- Actions Control Panel --&gt;
+    &lt;div class=&quot;actions-row&quot;&gt;
+        &lt;button class=&quot;btn-clear&quot; onclick=&quot;clearAllQueue()&quot;&gt;Clear All Items&lt;/button&gt;
+    &lt;/div&gt;
 
-<div id="material-warning" style="
+&lt;div id=&quot;material-warning&quot; style=&quot;
     display: none;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -861,12 +964,12 @@
     color: #fca5a5;
     font-weight: bold;
     text-align: center;
-">
+&quot;&gt;
     Not enough material
-</div>
+&lt;/div&gt;
 
 
-<div id="alloy-warning" style="
+&lt;div id=&quot;alloy-warning&quot; style=&quot;
     display: none;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -876,12 +979,12 @@
     color: #fcd34d;
     font-weight: bold;
     text-align: center;
-">
+&quot;&gt;
     Ingot Will Alloy
-</div>
+&lt;/div&gt;
 
 
-<div id="minority-metal-warning" style="
+&lt;div id=&quot;minority-metal-warning&quot; style=&quot;
     display: none;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -891,104 +994,104 @@
     color: #fcd34d;
     font-weight: bold;
     text-align: center;
-">
+&quot;&gt;
     Ingot Will Alloy: No metal reaches 67% of the total quantity.
-</div>
+&lt;/div&gt;
 
 
 
-<div class="results-card">
-    <h3>Ingot Stats</h3>
+&lt;div class=&quot;results-card&quot;&gt;
+    &lt;h3&gt;Ingot Stats&lt;/h3&gt;
 
-    <div class="stats-grid">
-        <div class="stat-box">
-            <span>Total Weight</span>
-            <strong id="total-weight">0.00</strong>
-        </div>
+    &lt;div class=&quot;stats-grid&quot;&gt;
+        &lt;div class=&quot;stat-box&quot;&gt;
+            &lt;span&gt;Total Weight&lt;/span&gt;
+            &lt;strong id=&quot;total-weight&quot;&gt;0.00&lt;/strong&gt;
+        &lt;/div&gt;
 
-        <div class="stat-box">
-            <span>Total Volume</span>
-            <strong id="total-volume">0.00</strong>
-        </div>
+        &lt;div class=&quot;stat-box&quot;&gt;
+            &lt;span&gt;Total Volume&lt;/span&gt;
+            &lt;strong id=&quot;total-volume&quot;&gt;0.00&lt;/strong&gt;
+        &lt;/div&gt;
 
-        <div class="stat-box">
-            <span>Density</span>
-            <strong id="average-density">0.00</strong>
-        </div>
-<div class="stat-box">
-    <span>Target Volume</span>
-    <strong id="display-target-volume">10.00</strong>
-</div>
-<div class="stat-box">
-    <span>Item Weight</span>
-    <strong id="target-weight">0.00</strong>
-</div>
-
-
-<div class="stat-box">
-    <span>Item Kronar Value</span>
-    <strong id="item-value">0.00</strong>
-</div>
+        &lt;div class=&quot;stat-box&quot;&gt;
+            &lt;span&gt;Density&lt;/span&gt;
+            &lt;strong id=&quot;average-density&quot;&gt;0.00&lt;/strong&gt;
+        &lt;/div&gt;
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Target Volume&lt;/span&gt;
+    &lt;strong id=&quot;display-target-volume&quot;&gt;10.00&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Item Weight&lt;/span&gt;
+    &lt;strong id=&quot;target-weight&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
 
 
-<div class="stat-box">
-    <span>Avg Kronar Value per volume</span>
-    <strong id="average-value">0.00</strong>
-</div>
-<div class="stat-box">
-    <span>Ingot Kronar Value</span>
-    <strong id="total-value-money">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Hardness</span>
-    <strong id="property-hardness">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Durability</span>
-    <strong id="property-durability">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Workability</span>
-    <strong id="property-workability">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Electrical</span>
-    <strong id="property-electrical">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Thermal</span>
-    <strong id="property-thermal">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Physical</span>
-    <strong id="property-physical">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Ductility</span>
-    <strong id="property-ductility">0.00</strong>
-</div>
-
-<div class="stat-box">
-    <span>Capacity</span>
-    <strong id="property-capacity">0.00</strong>
-</div>
-
-    </div>
-
-    <ul id="raw-materials-list" class="material-list">
-        <!-- Consolidated material results appear here -->
-    </ul>
-</div>
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Item Kronar Value&lt;/span&gt;
+    &lt;strong id=&quot;item-value&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
 
 
-<script>
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Avg Kronar Value per volume&lt;/span&gt;
+    &lt;strong id=&quot;average-value&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Ingot Kronar Value&lt;/span&gt;
+    &lt;strong id=&quot;total-value-money&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Hardness&lt;/span&gt;
+    &lt;strong id=&quot;property-hardness&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Durability&lt;/span&gt;
+    &lt;strong id=&quot;property-durability&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Workability&lt;/span&gt;
+    &lt;strong id=&quot;property-workability&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Electrical&lt;/span&gt;
+    &lt;strong id=&quot;property-electrical&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Thermal&lt;/span&gt;
+    &lt;strong id=&quot;property-thermal&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Physical&lt;/span&gt;
+    &lt;strong id=&quot;property-physical&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Ductility&lt;/span&gt;
+    &lt;strong id=&quot;property-ductility&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;stat-box&quot;&gt;
+    &lt;span&gt;Capacity&lt;/span&gt;
+    &lt;strong id=&quot;property-capacity&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;ul id=&quot;raw-materials-list&quot; class=&quot;material-list&quot;&gt;
+        &lt;!-- Consolidated material results appear here --&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;script&gt;
     // Game Crafting Matrix Database
     const recipes = {
         'None': {}, 
@@ -1047,7 +1150,7 @@
     function buildQueueUI() {
         const container = document.getElementById('queue-container');
 
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i &lt;= 5; i++) {
             const row = document.createElement('div');
             row.className = 'queue-row';
             
@@ -1058,7 +1161,7 @@
             
             // Populate select item options
             for (const item in recipes) {
-                if (Object.keys(recipes[item]).length > 0 || item === 'None') {
+                if (Object.keys(recipes[item]).length &gt; 0 || item === 'None') {
                     const opt = document.createElement('option');
                     opt.value = item;
                     opt.textContent = item;
@@ -1082,7 +1185,7 @@
 
     // Reset function triggered by the Clear All button
     function clearAllQueue() {
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i &lt;= 5; i++) {
             document.getElementById(`item-select-${i}`).value = 'None';
             document.getElementById(`item-qty-${i}`).value = '0';
         }
@@ -1106,11 +1209,11 @@
 ];
 
 const propertyTotals = Object.fromEntries(
-    propertyNames.map(name => [name, 0])
+    propertyNames.map(name =&gt; [name, 0])
 );
     const selectedMaterials = {};
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i &lt;= 5; i++) {
         const metalName = document.getElementById(
             `item-select-${i}`
         ).value;
@@ -1157,7 +1260,7 @@ for (const property of propertyNames) {
         selectedMaterials[metalName].weight += weight;
     }
 
-    const averageDensity = totalVolume > 0
+    const averageDensity = totalVolume &gt; 0
         ? totalWeight / totalVolume
         : 0;
 const targetVolume = getTargetVolume();
@@ -1173,9 +1276,9 @@ const minorityMetalWarning = document.getElementById(
 );
 
 
-const allMetalsBelow67Percent = totalVolume > 0 &&
+const allMetalsBelow67Percent = totalVolume &gt; 0 &amp;&amp;
     Object.values(selectedMaterials).every(
-        material => material.volume / totalVolume < 0.67
+        material =&gt; material.volume / totalVolume &lt; 0.67
     );
 
 minorityMetalWarning.style.display =
@@ -1185,20 +1288,20 @@ minorityMetalWarning.style.display =
 
 const alloyWarning = document.getElementById('alloy-warning');
 
-const metalsOver33Percent = totalVolume > 0
+const metalsOver33Percent = totalVolume &gt; 0
     ? Object.values(selectedMaterials).filter(
-        material => material.volume / totalVolume > 0.33
+        material =&gt; material.volume / totalVolume &gt; 0.33
       ).length
     : 0;
 
 alloyWarning.style.display =
-    metalsOver33Percent > 1 ? 'block' : 'none';
+    metalsOver33Percent &gt; 1 ? 'block' : 'none';
 
 
 const materialWarning = document.getElementById('material-warning');
 
 materialWarning.style.display =
-    totalVolume < targetVolume ? 'block' : 'none';
+    totalVolume &lt; targetVolume ? 'block' : 'none';
 
 const targetWeight = targetVolume * averageDensity;
 
@@ -1215,7 +1318,7 @@ document.getElementById('target-weight').textContent =
     document.getElementById('average-density').textContent =
         averageDensity.toFixed(2);
         
-const averageValue = totalVolume > 0
+const averageValue = totalVolume &gt; 0
     ? totalValue / totalVolume
     : 0;
     
@@ -1233,28 +1336,28 @@ document.getElementById('total-value-money').textContent =
 // Display the weighted average of each property.
 
 const totalQuantity = Object.values(selectedMaterials)
-    .reduce((sum, material) => sum + material.volume, 0);
+    .reduce((sum, material) =&gt; sum + material.volume, 0);
 
 const dominantMetalEntry = Object.entries(selectedMaterials)
-    .sort((a, b) => b[1].volume - a[1].volume)[0];
+    .sort((a, b) =&gt; b[1].volume - a[1].volume)[0];
 
 const dominantMetal = dominantMetalEntry
     ? dominantMetalEntry[0]
     : null;
 
-const dominantShare = dominantMetal && totalQuantity > 0
+const dominantShare = dominantMetal &amp;&amp; totalQuantity &gt; 0
     ? selectedMaterials[dominantMetal].volume / totalQuantity
     : 0;
 
 for (const property of propertyNames) {
     let result;
 
-    if (dominantShare >= 0.67) {
+    if (dominantShare &gt;= 0.67) {
         // One metal makes up at least 67% of the ingot.
         result = recipes[dominantMetal][property];
     } else {
         // Otherwise, use the quantity-weighted average.
-        result = totalVolume > 0
+        result = totalVolume &gt; 0
             ? propertyTotals[property] / totalVolume
             : 0;
     }
@@ -1302,7 +1405,7 @@ function getTargetVolume() {
         ? parseFloat(customVolumeInput.value)
         : parseFloat(targetVolumeSelect.value);
 
-    return Number.isFinite(value) && value > 0 ? value : 0;
+    return Number.isFinite(value) &amp;&amp; value &gt; 0 ? value : 0;
 }
 
 
@@ -1310,21 +1413,18 @@ function getTargetVolume() {
     buildQueueUI();
     calculateTotalQueue();
 
-</script>
+&lt;/script&gt;
 
 
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gavinne's Reverse Ingot Calculator</title>
-<style>
+&lt;/body&gt;
+&lt;/html&gt;
+" data-tile-id="ef0f41ac4636783_0" data-enable-html-sites-gen-ai="false" data-is-liquid-artifact="false" data-enable-liquid-apps-vertical-scrolling="false" data-in-editor="false" jsaction="rcuQ6b:WYd;" style="background-color: rgb(15, 23, 42);"><div class="EmVfjc qs41qe UzswCe" data-loadingmessage=" " jscontroller="qAKInc" jsaction="animationend:kWijWc;dyRcpb:dyRcpb" data-active="true" jsname="Hy6Uif" style="display: none;"><div class="Cg7hO" aria-live="assertive" jsname="vyyg5"> </div><div jsname="Hxlbvc" class="xu46lf"><div class="ir3uv uWlRce co39ub"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv GFoASc Cn087"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv WpeOqd hfsr6b"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv rHV3jf EjXFBf"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div></div></div><iframe jsname="WMhH6e" class=" YMEQtf" frameborder="0" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" id="ef0f41ac4636783_0" name="ef0f41ac4636783_0" scrolling="no" title="Custom embed" aria-label="Custom embed" src="Gavinnes%20Smithing%20Calculator_files/intermediate-frame-minified_wJtN.htm" style="background-color: rgb(15, 23, 42);"></iframe></div></div></div></div></div></div></div></div></div></div></div></div></div></section><section id="h.ef0f41ac4636783_7" class="yaqOZd"><div class="IFuOkc"></div><div class="mYVXT"><div class="LS81yb VICjCf j5pSsc db35Fc" tabindex="-1"><div class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd purZT-AhqUyc-II5mzb ZcASvf-AhqUyc-II5mzb pSzOP-AhqUyc-qWD73c Ktthjf-AhqUyc-qWD73c JNdkSc SQVYQc"><div class="JNdkSc-SmKAyb LkDMRd"><div class="" jscontroller="sGwD4d" jsaction="zXBUYb:zTPCnb;zQF9Uc:Qxe3nd;" jsname="F57UId"><div class="oKdM2c ZZyype Kzv0Me"><div id="h.ef0f41ac4636783_4" class="hJDwNd-AhqUyc-uQSCkd Ft7HRd-AhqUyc-uQSCkd jXK9ad D2fZ2 zu5uec OjCsFc dmUFtb wHaque g5GTcb"><div class="jXK9ad-SmKAyb"><div class="tyJCtd OWlOyc baZpAe"><div jscontroller="VYKRW" jsaction="rcuQ6b:rcuQ6b;"><div class="WIdY2d M1aSXe"><div jsname="WXxXjd" style="padding-top: 104.3327556326%"></div><div class="YMEQtf"><div jsname="jkaScf" jscontroller="szRU7e" class="w536ob" data-enable-interaction="true" data-url="https://57392249-atari-embeds.googleusercontent.com/embeds/7b1fab8145be131e22969eee9027b9ad/inner-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.etOqPKhAhvg.O%2Fd%3D1%2Frs%3DAHpOoo-l5JrVgGKVELwC844E6riBHX86-w%2Fm%3D__features__" data-code="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Gavinne's Reverse Ingot Calculator&lt;/title&gt;
+&lt;style&gt;
 :root {
     --bg-dark: #0f172a;
     --panel-bg: #1e293b;
@@ -1337,7 +1437,7 @@ function getTargetVolume() {
 }
 * { box-sizing: border-box; }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
     background: var(--bg-dark);
     color: var(--text);
     margin: 0;
@@ -1455,67 +1555,67 @@ button {
     body { padding: 1rem .5rem; }
     .metal-row { gap: .5rem; padding: .5rem; }
 }
-</style>
-</head>
-<body>
-<div class="container">
-    <h1>Gavinne's Reverse Ingot Calculator</h1>
-    <div class="subtitle">
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;Gavinne's Reverse Ingot Calculator&lt;/h1&gt;
+    &lt;div class=&quot;subtitle&quot;&gt;
         Enter an ingot volume and the percentage of each metal.
-    </div>
+    &lt;/div&gt;
 
-    <div class="target">
-        <label for="target-volume">Total Ingot Volume</label>
-        <input id="target-volume" type="number" min="0" step="any" value="0">
-    </div>
+    &lt;div class=&quot;target&quot;&gt;
+        &lt;label for=&quot;target-volume&quot;&gt;Total Ingot Volume&lt;/label&gt;
+        &lt;input id=&quot;target-volume&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;any&quot; value=&quot;0&quot;&gt;
+    &lt;/div&gt;
 
-    <div class="queue-heading">
-        <span>Metal</span>
-        <span>Percentage</span>
-    </div>
-    <div id="metal-rows"></div>
+    &lt;div class=&quot;queue-heading&quot;&gt;
+        &lt;span&gt;Metal&lt;/span&gt;
+        &lt;span&gt;Percentage&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;metal-rows&quot;&gt;&lt;/div&gt;
 
-    <div class="actions">
-        <button class="clear-button" id="clear-button" type="button">
+    &lt;div class=&quot;actions&quot;&gt;
+        &lt;button class=&quot;clear-button&quot; id=&quot;clear-button&quot; type=&quot;button&quot;&gt;
             Clear All
-        </button>
-    </div>
+        &lt;/button&gt;
+    &lt;/div&gt;
 
-    <section class="results">
-        <h2>Ingot Composition Breakdown</h2>
-        <div class="summary-grid">
-            <div class="stat">
-                <span>Total Ingot Volume</span>
-                <strong id="display-volume">100.00</strong>
-            </div>
-            <div class="stat">
-                <span>Total Percentage</span>
-                <strong id="display-percentage">0.00%</strong>
-            </div>
-            <div class="stat">
-                <span>Unallocated Volume</span>
-                <strong id="remaining-volume">100.00</strong>
-            </div>
+    &lt;section class=&quot;results&quot;&gt;
+        &lt;h2&gt;Ingot Composition Breakdown&lt;/h2&gt;
+        &lt;div class=&quot;summary-grid&quot;&gt;
+            &lt;div class=&quot;stat&quot;&gt;
+                &lt;span&gt;Total Ingot Volume&lt;/span&gt;
+                &lt;strong id=&quot;display-volume&quot;&gt;100.00&lt;/strong&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;stat&quot;&gt;
+                &lt;span&gt;Total Percentage&lt;/span&gt;
+                &lt;strong id=&quot;display-percentage&quot;&gt;0.00%&lt;/strong&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;stat&quot;&gt;
+                &lt;span&gt;Unallocated Volume&lt;/span&gt;
+                &lt;strong id=&quot;remaining-volume&quot;&gt;100.00&lt;/strong&gt;
+            &lt;/div&gt;
 
-<div class="stat">
-    <span>Total Ingot Weight</span>
-    <strong id="display-weight">0.00</strong>
-</div>
+&lt;div class=&quot;stat&quot;&gt;
+    &lt;span&gt;Total Ingot Weight&lt;/span&gt;
+    &lt;strong id=&quot;display-weight&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
 
-<div class="stat">
-    <span>Overall Ingot Density</span>
-    <strong id="display-density">0.00</strong>
-</div>
+&lt;div class=&quot;stat&quot;&gt;
+    &lt;span&gt;Overall Ingot Density&lt;/span&gt;
+    &lt;strong id=&quot;display-density&quot;&gt;0.00&lt;/strong&gt;
+&lt;/div&gt;
             
-        </div>
-        <p id="percentage-status" class="warning" role="status">
+        &lt;/div&gt;
+        &lt;p id=&quot;percentage-status&quot; class=&quot;warning&quot; role=&quot;status&quot;&gt;
             Enter metal percentages.
-        </p>
-        <ul id="breakdown"></ul>
-    </section>
-</div>
+        &lt;/p&gt;
+        &lt;ul id=&quot;breakdown&quot;&gt;&lt;/ul&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
 
-<script>
+&lt;script&gt;
 const metalNames = [
     'None',
     'Acenite', 'Brass', 'Bronze', 'Copper', 'Covellite',
@@ -1588,7 +1688,7 @@ const rowContainer = document.getElementById('metal-rows');
 const volumeInput = document.getElementById('target-volume');
 
 function buildRows() {
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i &lt;= 5; i++) {
         const row = document.createElement('div');
         row.className = 'metal-row';
 
@@ -1596,7 +1696,7 @@ function buildRows() {
         select.id = `metal-${i}`;
         select.setAttribute('aria-label', `Metal ${i}`);
 
-        metalNames.forEach(name => {
+        metalNames.forEach(name =&gt; {
             const option = document.createElement('option');
             option.value = name;
             option.textContent = name;
@@ -1635,16 +1735,16 @@ function calculate() {
     
 let totalWeight = 0;    
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i &lt;= 5; i++) {
         const metal = document.getElementById(`metal-${i}`).value;
         const input = document.getElementById(`percentage-${i}`);
         const percentage = Math.max(0, Number(input.value) || 0);
 
-        if (percentage > 100) {
+        if (percentage &gt; 100) {
             // Keep the entered value visible, but flag it as invalid below.
         }
 
-        if (metal !== 'None' && percentage > 0) {
+        if (metal !== 'None' &amp;&amp; percentage &gt; 0) {
             totalPercentage += percentage;
 const metalVolume = totalVolume * percentage / 100;
 const metalWeight = metalVolume * metalDensities[metal];
@@ -1668,7 +1768,7 @@ entries.push({
         (totalVolume * (1 - totalPercentage / 100)).toFixed(2);
         
 // NEW CODE: Display total weight and overall density
-const overallDensity = totalVolume > 0
+const overallDensity = totalVolume &gt; 0
     ? totalWeight / totalVolume
     : 0;
 
@@ -1681,19 +1781,19 @@ document.getElementById('display-density').textContent =
 // Existing code continues below        
     const status = document.getElementById('percentage-status');
     const anyInvalid = Array.from(
-        document.querySelectorAll('[id^="percentage-"]')
-    ).some(input => {
+        document.querySelectorAll('[id^=&quot;percentage-&quot;]')
+    ).some(input =&gt; {
         const p = Number(input.value);
-        return p < 0 || p > 100;
+        return p &lt; 0 || p &gt; 100;
     });
 
-    if (anyInvalid || totalPercentage > 100) {
+    if (anyInvalid || totalPercentage &gt; 100) {
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
     } else if (totalPercentage === 100) {
-        status.textContent = 'Percentages total 100% — ready to craft.';
+        status.textContent = 'Percentages total 100% â€” ready to craft.';
         status.className = 'good';
-    } else if (totalPercentage > 0) {
+    } else if (totalPercentage &gt; 0) {
         status.textContent = 'Percentages must total 100%. Some volume is unallocated.';
         status.className = 'warning';
     } else {
@@ -1704,7 +1804,7 @@ document.getElementById('display-density').textContent =
     const breakdown = document.getElementById('breakdown');
     breakdown.replaceChildren();
 
-    entries.forEach(entry => {
+    entries.forEach(entry =&gt; {
         const li = document.createElement('li');
         const name = document.createElement('span');
         const amount = document.createElement('strong');
@@ -1724,10 +1824,10 @@ document.getElementById('display-density').textContent =
 
 volumeInput.addEventListener('input', calculate);
 
-document.getElementById('clear-button').addEventListener('click', () => {
+document.getElementById('clear-button').addEventListener('click', () =&gt; {
     volumeInput.value = '100';
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i &lt;= 5; i++) {
         document.getElementById(`metal-${i}`).value = 'None';
         document.getElementById(`percentage-${i}`).value = '0';
     }
@@ -1737,6 +1837,7 @@ document.getElementById('clear-button').addEventListener('click', () => {
 
 buildRows();
 calculate();
-</script>
-</body>
-</html>
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" data-tile-id="ef0f41ac4636783_4" data-enable-html-sites-gen-ai="false" data-is-liquid-artifact="false" data-enable-liquid-apps-vertical-scrolling="false" data-in-editor="false" jsaction="rcuQ6b:WYd;" style="background-color: rgb(15, 23, 42);"><div class="EmVfjc qs41qe UzswCe" data-loadingmessage=" " jscontroller="qAKInc" jsaction="animationend:kWijWc;dyRcpb:dyRcpb" data-active="true" jsname="Hy6Uif" style="display: none;"><div class="Cg7hO" aria-live="assertive" jsname="vyyg5"> </div><div jsname="Hxlbvc" class="xu46lf"><div class="ir3uv uWlRce co39ub"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv GFoASc Cn087"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv WpeOqd hfsr6b"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div><div class="ir3uv rHV3jf EjXFBf"><div class="xq3j6 ERcjC"><div class="X6jHbb GOJTSe"></div></div><div class="HBnAAc"><div class="X6jHbb GOJTSe"></div></div><div class="xq3j6 dj3yTd"><div class="X6jHbb GOJTSe"></div></div></div></div></div><iframe jsname="WMhH6e" class=" YMEQtf" frameborder="0" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" id="ef0f41ac4636783_4" name="ef0f41ac4636783_4" scrolling="no" title="Custom embed" aria-label="Custom embed" src="Gavinnes%20Smithing%20Calculator_files/intermediate-frame-minified_002_wJtN.htm" style="background-color: rgb(15, 23, 42);"></iframe></div></div></div></div></div></div></div></div></div></div></div></div></div></section></div><div class="Xpil1b xgQ6eb"></div><div jscontroller="j1RDQb" jsaction="rcuQ6b:rcuQ6b;MxH79b:JdcaS;FaOgy:XuHpsb;" class="dZA9kd ynRLnc" data-last-updated-at-time="1792781922295" data-is-preview="false"><div role="button" class="U26fgb JRtysb WzwrXb I12f0b K2mXPb zXBiaf ynRLnc" jscontroller="iSvg6e" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;;keydown:I481le;" jsshadow="" jsname="Bg3gkf" aria-label="Site actions" aria-disabled="false" tabindex="0" aria-haspopup="true" aria-expanded="false" data-menu-corner="bottom-start" data-anchor-corner="top-start" id="ow11" __is_owner="true"><div class="NWlf3e MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="MhXXcc oJeWuf"><span class="Lw7GHd snByac"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"></path></svg></span></span></div></div><div jscontroller="j1RDQb" jsaction="focusin:gBxDVb(srlkmf); focusout:zvXhGb(srlkmf); click:ro2KTd(psdQ5e);JIbuQc:DSypkd(Bg3gkf);MxH79b:JdcaS;rcuQ6b:rcuQ6b;" class="LqzjUe" data-last-updated-at-time="1792781922295" data-is-preview="false"><div jsname="psdQ5e" class="Q0cSn"></div><div jsname="bN97Pc" class="hBW7Hb"><div role="button" class="U26fgb mUbCce fKz7Od kpPxtd QMuaBc M9Bg4d" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;" jsshadow="" jsname="Bg3gkf" aria-label="Site actions" aria-disabled="false" tabindex="-1" aria-hidden="true"><div class="VTBa7b MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="xjKiLb"><span class="Ce1Y1c" style="top: -12px"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"></path></svg></span></span></div><div jsname="srlkmf" class="hUphyc"><div class="YkaBSd"><div class="iBkmkf"><span>Page updated</span> <span jsname="CFIm1b" class="dji00c" jsaction="AHmuwe:eGiyHb; mouseover:eGiyHb;" tabindex="0" role="contentinfo"></span></div></div><div class="YkaBSd" jsaction="click:Toy3n;"><div role="button" class="U26fgb kpPxtd J7BuEb" jsshadow="" jsname="V2zOu" aria-disabled="false" tabindex="0">Google Sites</div></div><div class="YkaBSd" jscontroller="HYv29e" jsaction="click:dQ6O0c;" data-abuse-reporting-widget-proto="%.@.null,&quot;https://sites.google.com/view/gavinnes-forging-calculator/home&quot;]"><div role="button" class="U26fgb kpPxtd J7BuEb" jsshadow="" aria-label="Report abuse" aria-disabled="false" tabindex="0">Report abuse</div></div></div></div></div><div jsname="kdb7zb"><div jscontroller="kklOXe" jsmodel="nbZU0e" jsaction="rcuQ6b:rcuQ6b;FaOgy:nkegzf;BU3dg:U3QbAf;HRy4zb:Z8zbSc;" class="Pt0Du TSZdd"><div class="mF4yBc auswjd LItWS-bMElCd" jsname="LgbsSe"><div jscontroller="TW9Rvc" jsaction="rcuQ6b:WYd;"><div role="presentation" class="U26fgb XHsn7e MAXCNe M9Bg4d" jscontroller="VXdfxd" jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;" jsshadow="" jsname="LgbsSe" aria-label="Edit this page" aria-disabled="false" data-tooltip="Edit this page" data-tooltip-vertical-offset="-12" data-tooltip-horizontal-offset="0"><a class="FKF6mc TpQm9d" href="https://sites.google.com/u/0/d/1ltQ7G_0lP4kDQ9Fd7LWnEGotZFGVzkWm/p/1R_LqsU-auxOEDPLIv1oFdPuM8ijivv8Q/edit?authuser=0&amp;usp=edit_published_site" aria-label="Edit this page"><div class="HaXdpb wb61gb"></div><div class="HRp7vf MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="Ip8zfc"><svg class="EI709d" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></a></div></div></div></div></div></div></div></div><script nonce="">DOCS_timing['cov']=new Date().getTime();</script><script src="Gavinnes%20Smithing%20Calculator_files/m=view_wJtN" id="base-js" nonce=""></script></div></div><div jscontroller="YV8yqd" jsaction="rcuQ6b:npT2md"></div><div id="docs-aria-speakable" style="position: absolute; left: 0px; top: -1px; z-index: -2; opacity: 0; height: 1px; width: 1px; overflow: hidden;" role="region" aria-live="assertive" aria-atomic="true" aria-hidden="false"></div></body></html>
