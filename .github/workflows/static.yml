@@ -1,0 +1,1785 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavinne's Smithing Calculator</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --panel-bg: #1e293b;
+            --accent-blue: #3b82f6;
+            --accent-blue-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --danger-red: #ef4444;
+            --danger-red-hover: #dc2626;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .queue-header {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .queue-header span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .crafting-queue {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .queue-row {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 1rem;
+            background-color: rgba(15, 23, 42, 0.4);
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+        select, input {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        select:focus, input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .actions-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-clear {
+            background-color: transparent;
+            border: 1px solid var(--danger-red);
+            color: var(--danger-red);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-clear:hover {
+            background-color: var(--danger-red);
+            color: var(--text-main);
+        }
+
+        .results-card {
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .results-card h3 {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .material-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .material-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-dark);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .material-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .material-qty {
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #10b981;
+            font-weight: bold;
+        }
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-box {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-box span {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.stat-box strong {
+    color: #10b981;
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 560px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .queue-row,
+    .queue-header {
+        grid-template-columns: minmax(0, 2fr) minmax(70px, 1fr);
+        gap: 0.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Gavinne's Smithing Calculator</h1>
+    <div class="subtitle">Set up to 5 metals to calculate.</div>
+
+<div class="target-volume-control" style="margin-bottom: 1.5rem;">
+    <label for="target-volume"
+           style="display: block; margin-bottom: 0.5rem; color: var(--text-muted);">
+        Target Item Volume
+    </label>
+
+    <select id="target-volume" style="width: 100%;">
+        <option value="0" selected>Select Volume</option>
+        <option value="1">1 volume ingot</option>
+        <option value="5">5 volume ingot</option>
+        <option value="10">10 volume ingot</option>
+        <option value="20">20 volume ingot</option>
+        <option value="50">50 volume ingot</option>
+        <option value="100">100 volume ingot</option>
+        <option value="200">200 volume ingot</option>
+        <option value="custom">Custom volume...</option>
+        <option value="0">   </option>
+        <option value="0">--- SMALL EDGE ---</option>
+        <option value="2">briquet</option>
+        <option value="2">carving knife</option>
+        <option value="2">dagger</option>
+        <option value="3">katar</option>
+        <option value="2">misericorde</option>
+        <option value="2">poignard</option>
+        <option value="2">pugio</option>
+        <option value="3">short sword</option>
+        <option value="2">stiletto</option>
+        <option value="1">dart</option>
+        <option value="5">falcata</option>
+        <option value="4">jambiya</option>
+        <option value="4">kris</option>
+        <option value="4">leaf blade sword</option>
+        <option value="4">nehlata</option>
+        <option value="3">takouba</option>
+        <option value="2">telek</option>
+        <option value="2">throwing dagger</option>
+        <option value="5">dao</option>
+        <option value="5">foil</option>
+        <option value="3">kasai</option>
+        <option value="5">koummya</option>
+        <option value="5">kythe</option>
+        <option value="5">oben</option>
+        <option value="5">pasabas</option>
+        <option value="5">rapier</option>
+        <option value="3">sunblade</option>
+        <option value="5">thrusting blade</option>
+        <option value="6">adze</option>
+        <option value="6">baselard</option>
+        <option value="6">curlade</option>
+        <option value="6">gladius</option>
+        <option value="6">hanger</option>
+        <option value="6">mambeli</option>
+        <option value="6">parang</option>
+        <option value="6">sabre</option>
+        <option value="6">sashqa</option>
+        <option value="6">scimitar</option>
+        <option value="7">cutlass</option>
+        <option value="7">hand axe</option>
+        <option value="7">hatchet</option>
+        <option value="6">light throwing axe</option>
+        <option value="7">shotel</option>
+        <option value="7">iltesh</option>
+        <option value="0">   </option>
+        <option value="0">--- LARGE EDGE ---</option>
+    <option value="7">arzfilt</option>
+    <option value="7">broadsword</option>
+    <option value="7">condottiere</option>
+    <option value="7">kudalata</option>
+    <option value="7">longsword</option>
+    <option value="7">nehdalata</option>
+    <option value="7">round axe</option>
+    <option value="7">spatha</option>
+    <option value="8">abassi</option>
+    <option value="8">back-sword</option>
+    <option value="9">battle axe</option>
+    <option value="8">cinqueda</option>
+    <option value="8">dagasse</option>
+    <option value="9">falchion</option>
+    <option value="8">hunting sword</option>
+    <option value="8">namkomba</option>
+    <option value="8">nimsha</option>
+    <option value="8">recade</option>
+    <option value="9">robe sword</option>
+    <option value="9">schiavona</option>
+    <option value="8">hurling axe</option>
+    <option value="0">   </option>
+    <option value="0">-- TWO HANDED EDGE ---</option>
+    <option value="14">claymore</option>
+    <option value="12">greataxe</option>
+    <option value="14">karambit</option>
+    <option value="12">marauder blade</option>
+    <option value="14">twin-point axe</option>
+    <option value="12">two-handed sword</option>
+    <option value="12">warring axe</option>
+    <option value="18">double axe</option>
+    <option value="18">flamberge</option>
+    <option value="18">greatsword</option>
+    <option value="15">igorat axe</option>
+    <option value="15">kaskara</option>
+    <option value="18">periperiu sword</option>
+    <option value="15">shh'oi'ata</option>
+    <option value="0">   </option>
+    <option value="0">--- SMALL BLUNT ---</option>
+    <option value="4">cosh</option>
+    <option value="4">cudgel</option>
+    <option value="4">gavel</option>
+    <option value="4">prod</option>
+    <option value="5">bludgeon</option>
+    <option value="5">hand mallet</option>
+    <option value="4">horseshoe</option>
+    <option value="5">scepter</option>
+    <option value="5">zubke</option>
+    <option value="6">club</option>
+    <option value="6">garz</option>
+    <option value="6">hand mace</option>
+    <option value="12">large horseshoe</option>
+    <option value="6">ridged gauntlet</option>
+    <option value="5">short hammer</option>
+    <option value="5">spiked gauntlet</option>
+    <option value="5">bola</option>
+    <option value="5">bulhawf</option>
+    <option value="5">cuska</option>
+    <option value="7">mallet</option>
+    <option value="5">throwing club</option>
+    <option value="7">war club</option>
+    <option value="8">belaying pin</option>
+    <option value="3">boko</option>
+    <option value="3">boomerang</option>
+    <option value="7">hhr'tami</option>
+    <option value="7">komno</option>
+    <option value="8">mace</option>
+    <option value="8">marlingspike</option>
+    <option value="8">spiked club</option>
+    <option value="8">spiked hammer</option>
+    <option value="8">spiked mace</option>
+    <option value="8">war hammer</option>
+    <option value="9">flanged mace</option>
+    <option value="9">k'trinni sha-tai</option>
+    <option value="9">ball and chain</option>
+    <option value="9">heavy chain</option>
+    <option value="10">greathammer</option>
+    <option value="10">heavy mace</option>
+    <option value="0">   </option>
+    <option value="0">--- LARGE BLUNT ---</option>
+    <option value="9">horseman's flail</option>
+    <option value="10">Imperial war hammer</option>
+    <option value="11">spiked ball and chain</option>
+    <option value="10">double-headed hammer</option>
+    <option value="10">hara</option>
+    <option value="10">heavy mallet</option>
+    <option value="11">morning star</option>
+    <option value="10">sledgehammer</option>
+    <option value="11">spiked hara</option>
+    <option value="11">ukabi</option>
+    <option value="10">hhr'ata</option>
+    <option value="10">hurlable war hammer</option>
+    <option value="10">throwing mallet</option>
+    <option value="10">throwing hammer</option>
+    <option value="0">   </option>
+    <option value="0">--- TWO HANDED BLUNT ---</option>
+    <option value="13">akabo</option>
+    <option value="13">double-sided ball and chain</option>
+    <option value="13">footman's flail</option>
+    <option value="14">war mattock</option>
+    <option value="14">vilks kodur</option>
+    <option value="16">dire mace</option>
+    <option value="15">giant mallet</option>
+    <option value="16">heavy sledgehammer</option>
+    <option value="16">maul</option>
+    <option value="15">two-headed hammer</option>
+    <option value="0">   </option>
+    <option value="0">--- POLEARM ---</option>
+    <option value="7">javelin</option>
+    <option value="7">light spear</option>
+    <option value="7">allarh</option>
+    <option value="12">awgravet ava</option>
+    <option value="10">bardiche</option>
+    <option value="12">coresca</option>
+    <option value="10">guisarme</option>
+    <option value="12">halberd</option>
+    <option value="7">hunthsleg</option>
+    <option value="10">lochaber axe</option>
+    <option value="10">scythe</option>
+    <option value="10">spear</option>
+    <option value="12">tzece</option>
+    <option value="10">duraka skefne</option>
+    <option value="13">glaive</option>
+    <option value="13">khuj</option>
+    <option value="10">military fork</option>
+    <option value="13">partisan</option>
+    <option value="13">two-pronged halberd</option>
+    <option value="13">fauchard</option>
+    <option value="13">ngalio</option>
+    <option value="13">pole axe</option>
+    <option value="15">ilglaiks skefne</option>
+    <option value="15">lance</option>
+    <option value="15">pike</option>
+    <option value="15">ranseur</option>
+    <option value="15">spetum</option>
+    <option value="13">voulge</option>
+    <option value="15">awl pike</option>
+    <option value="9">short-hafted halberd</option>
+    <option value="0">   </option>
+    <option value="0">--- MARTIAL WEAPONS ---</option>
+    <option value="8">cane</option>
+    <option value="7">nightstick</option>
+    <option value="10">quarterstaff</option>
+    <option value="4">knuckles</option>
+    <option value="7">simple parry stick</option>
+    <option value="11">pike staff</option>
+    <option value="4">elbow spikes</option>
+    <option value="4">knee spikes</option>
+    <option value="4">weighted footwraps</option>
+    <option value="4">spiked footwraps</option>
+    <option value="4">spiked knuckles</option>
+    <option value="4">hand claws</option>
+    <option value="10">weightd staff</option>
+    <option value="0">   </option>
+    <option value="0">--- SWAPPABLE WEAPONS ---</option>
+    <option value="4">throwing spike</option>
+    <option value="9">bastard sword</option>
+    <option value="9">broadaxe</option>
+    <option value="9">war sword</option>
+    <option value="12">bar mace</option>
+    <option value="10">boarding axe</option>
+    <option value="15">splitting maul</option>
+    <option value="4">thin-bladed fan</option>
+    <option value="7">half-handled riste</option>
+    <option value="6">thick-bladed fan</option>
+    <option value="9">riste</option>
+    <option value="0">   </option>
+    <option value="0">--- SPECIAL WEAPON INSTRUCTIONS ---</option>
+    <option value="1">hawkbill</option>
+    <option value="2">pinwheel</option>
+    <option value="7">serrated kudalata</option>
+    <option value="14">serrated naginata</option>
+    <option value="5">serrated parazonium</option>
+    <option value="7">serrated iltesh</option>
+    <option value="8">serrated recade</option>
+    <option value="9">sterak axe</option>
+    <option value="12">svidaw sis</option>
+    <option value="7">serrated khopesh</option>
+    <option value="8">short-hafted glaive</option>
+    <option value="9">phalanx sword</option>
+    <option value="9">light pernach</option>
+    <option value="12">kanabo</option>
+    <option value="13">Imperial spear</option>
+    <option value="15">long-handled naginata</option>
+    <option value="9">hunga-munga</option>
+    <option value="12">folded katana</option>
+    <option value="14">pattern welded tekkan</option>
+    <option value="0">   </option>
+    <option value="0">--- CHAIN ARMOR ---</option>
+    <option value="5">ring aventail</option>
+    <option value="3">ring mask</option>
+    <option value="6">chain aventail</option>
+    <option value="8">ring cap</option>
+    <option value="4">chain mask</option>
+    <option value="6">ring gloves</option>
+    <option value="12">ring greaves</option>
+    <option value="12">ring helm</option>
+    <option value="7">mail aventail</option>
+    <option value="10">chain cap</option>
+    <option value="5">mail mask</option>
+    <option value="8">chain gloves</option>
+    <option value="8">ring tasset</option>
+    <option value="17">ring vambraces</option>
+    <option value="15">chain greaves</option>
+    <option value="16">ring balaclava</option>
+    <option value="14">chain helm</option>
+    <option value="12">mail cap</option>
+    <option value="10">mail gloves</option>
+    <option value="16">mail helm</option>
+    <option value="20">chain balaclava</option>
+    <option value="18">mail greaves</option>
+    <option value="20">chain vambraces</option>
+    <option value="21">ring sleeves</option>
+    <option value="10">chain tasset</option>
+    <option value="18">ring vest</option>
+    <option value="21">ring mantle</option>
+    <option value="26">ring lorica</option>
+    <option value="24">mail balaclava</option>
+    <option value="23">mail vambraces</option>
+    <option value="26">chain sleeves</option>
+    <option value="12">mail tasset</option>
+    <option value="20">chain vest</option>
+    <option value="24">chain mantle</option>
+    <option value="30">chain lorica</option>
+    <option value="38">ring robe</option>
+    <option value="43">ring shirt</option>
+    <option value="31">mail sleeves</option>
+    <option value="22">mail vest</option>
+    <option value="27">mail mantle</option>
+    <option value="34">mail lorica</option>
+    <option value="45">chain robe</option>
+    <option value="50">chain shirt</option>
+    <option value="70">ring hauberk</option>
+    <option value="52">mail robe</option>
+    <option value="57">mail shirt</option>
+    <option value="80">chain hauberk</option>
+    <option value="90">mail hauberk</option>
+    <option value="90">bar-mail hauberk</option>
+    <option value="0">   </option>
+    <option value="0">--- BRIGANDINE ---</option>    
+    <option value="5">scale mask</option>
+    <option value="9">scale aventail</option>
+    <option value="8">scale gloves</option>
+    <option value="6">brigandine mask</option>
+    <option value="10">brigandine aventail</option>
+    <option value="12">scale cap</option>
+    <option value="10">brigandine gloves</option>
+    <option value="15">scale greaves</option>
+    <option value="7">lamellar mask</option>
+    <option value="11">lamellar aventail</option>
+    <option value="14">brigandine cap</option>
+    <option value="21">scale helm</option>
+    <option value="12">lamellar gloves</option>
+    <option value="18">brigandine greaves</option>
+    <option value="16">lamellar cap</option>
+    <option value="24">brigandine helm</option>
+    <option value="26">scale balaclava</option>
+    <option value="22">scale vambraces</option>
+    <option value="10">scale tasset</option>
+    <option value="30">scale sleeves</option>
+    <option value="18">lamellar greaves</option>
+    <option value="27">lamellar helm</option>
+    <option value="30">brigandine balaclava</option>
+    <option value="25">brigandine vambraces</option>
+    <option value="12">brigandine tasset</option>
+    <option value="35">brigandine sleeves</option>
+    <option value="34">lamellar balaclava</option>
+    <option value="28">lamellar vambraces</option>
+    <option value="14">lamellar tasset</option>
+    <option value="24">scale vest</option>
+    <option value="33">scale mantle</option>
+    <option value="34">scale lorica</option>
+    <option value="63">brigandine shirt</option>
+    <option value="56">brigandine robe</option>
+    <option value="40">lamellar sleeves</option>
+    <option value="26">brigandine vest</option>
+    <option value="36">brigandine mantle</option>
+    <option value="38">brigandine lorica</option>
+    <option value="49">scale robe</option>
+    <option value="56">scale shirt</option>
+    <option value="70">lamellar shirt</option>
+    <option value="90">brigandine hauberk</option>
+    <option value="63">lamellar robe</option>
+    <option value="28">lamellar vest</option>
+    <option value="39">lamellar mantle</option>
+    <option value="42">lamellar lorica</option>
+    <option value="80">scale hauberk</option>
+    <option value="100">lamellar hauberk</option>
+    <option value="100">laminar hauberk</option>
+    <option value="0">   </option>
+    <option value="0">--- PLATE ARMOR ---</option>
+    <option value="7">light plate mask</option>
+    <option value="12">light plate aventail</option>
+    <option value="8">plate mask</option>
+    <option value="16">dome helm</option>
+    <option value="14">plate aventail</option>
+    <option value="13">light plate gauntlets</option>
+    <option value="9">heavy plate mask</option>
+    <option value="18">morion</option>
+    <option value="16">heavy plate aventail</option>
+    <option value="15">plate gauntlets</option>
+    <option value="23">bascinet</option>
+    <option value="20">barbute</option>
+    <option value="17">heavy plate gauntlets</option>
+    <option value="26">visored helm</option>
+    <option value="26">light plate vambraces</option>
+    <option value="10">light backplate</option>
+    <option value="13">light plate fauld</option>
+    <option value="29">closed helm</option>
+    <option value="40">armet</option>
+    <option value="22">plate greaves</option>
+    <option value="30">plate vambraces</option>
+    <option value="39">light plate sleeves</option>
+    <option value="12">backplate</option>
+    <option value="15">plate fauld</option>
+    <option value="16">light breastplate</option>
+    <option value="35">sallet</option>
+    <option value="19">light plate greaves</option>
+    <option value="45">great helm</option>
+    <option value="25">heavy plate greaves</option>
+    <option value="34">heavy plate vambraces</option>
+    <option value="45">plate sleeves</option>
+    <option value="14">heavy backplate</option>
+    <option value="17">heavy plate fauld</option>
+    <option value="18">breastplate</option>
+    <option value="39">light plate cuirass</option>
+    <option value="51">heavy plate sleeves</option>
+    <option value="20">heavy breastplate</option>
+    <option value="45">plate cuirass</option>
+    <option value="58">light field plate</option>
+    <option value="65">light half plate</option>
+    <option value="51">heavy plate cuirass</option>
+    <option value="67">field plate</option>
+    <option value="75">half plate</option>
+    <option value="100">light full plate</option>
+    <option value="76">heavy field plate</option>
+    <option value="110">full plate</option>
+    <option value="85">heavy half plate</option>
+    <option value="120">heavy full plate</option>
+    <option value="120">heavy fluted plate</option>
+    <option value="0">   </option>
+    <option value="0">--- METAL SHIELDS ---</option>
+    <option value="2">shield handle</option>
+    <option value="3">shield boss</option>
+    <option value="14">target shield</option>
+    <option value="16">ordinary shield</option>
+    <option value="14">round sipar</option>
+    <option value="20">medium shield</option>
+    <option value="14">triangular sipar</option>
+    <option value="16">targe</option>
+    <option value="25">oval shield</option>
+    <option value="20">medium buckler</option>
+    <option value="20">circular buckler</option>
+    <option value="20">curved shield</option>
+    <option value="16">ceremonial shield</option>
+    <option value="30">kite shield</option>
+    <option value="25">skirmisher's shield</option>
+    <option value="25">jousting shield</option>
+    <option value="7">simple parry stick</option>
+    <option value="30">valnik shield</option>
+    <option value="40">tower shield</option>
+    <option value="30">warrior's shield</option>
+    <option value="30">aegis</option>
+    <option value="40">heater shield</option>
+    <option value="40">battle shield</option>
+    <option value="40">war shield</option>
+    <option value="25">deflector</option>
+    <option value="50">bulwark</option>
+    <option value="0">   </option>
+    <option value="0">--- SPECIAL ARMOR INSTRUCTIONS ---</option>
+    <option value="120">augmented gladiatorial armor</option>
+    <option value="17">augmented gladiatorial gauntlets</option>
+    <option value="31">Imbricated manica</option>
+    <option value="100">Imperial banded-mail hauberk</option>
+    <option value="180">Imperial plate</option>
+    <option value="80">Imperial ringmail hauberk</option>
+    <option value="180">massive full plate</option>
+    <option value="45">ornate full-visored galea</option>
+    <option value="0">   </option>
+    <option value="0">--- MINING TOOLS ---</option>
+    <option value="8">curved shovel</option>
+    <option value="10">stout pickaxe</option>
+    <option value="8">square shovel</option>
+    <option value="10">narrow pickaxe</option>
+    <option value="8">tapered shovel</option>
+    <option value="10">slender pickaxe</option>
+    <option value="8">sturdy shovel</option>
+    <option value="10">flat-headed pickaxe</option>
+    <option value="8">wide shovel</option>
+    <option value="10">weighted pickaxe</option>
+    <option value="0">   </option>
+    <option value="0">--- SMITHING TOOLS ---</option>
+    <option value="12">diagonal-peen mallet</option>
+    <option value="12">diagonal-peen hammer</option>
+    <option value="10">straight tongs</option>
+    <option value="12">cross-peen hammer</option>
+    <option value="10">curved tongs</option>
+    <option value="10">flat-bladed tongs</option>
+    <option value="10">angular tongs</option>
+    <option value="12">straight-peen hammer</option>
+    <option value="12">straight-peen mallet</option>
+    <option value="10">bolt tongs</option>
+    <option value="12">ball-peen hammer</option>
+    <option value="10">segmented tongs</option>
+    <option value="10">box-jaw tongs</option>
+    <option value="10">articulated tongs</option>
+    <option value="12">ball-peen mallet</option>
+    <option value="0">   </option>
+    <option value="0">--- ENGINEERING TOOLS ---</option>
+    <option value="5">short drawknife</option>
+    <option value="8">short chisels</option>
+    <option value="5">long drawknife</option>
+    <option value="8">straight wood saw</option>
+    <option value="8">straight bone saw</option>
+    <option value="8">thin rasp</option>
+    <option value="8">square rifflers</option>
+    <option value="8">long chisels</option>
+    <option value="4">flat shaper</option>
+    <option value="5">plain pliers</option>
+    <option value="8">squat rifflers</option>
+    <option value="4">thin tinker's tools</option>
+    <option value="4">rough wood shaper</option>
+    <option value="5">sturdy drawknife</option>
+    <option value="8">curved wood saw</option>
+    <option value="8">curved bone saw</option>
+    <option value="5">curved pliers</option>
+    <option value="8">coarse rasp</option>
+    <option value="8">sturdy chisels</option>
+    <option value="4">curved tinker's tools</option>
+    <option value="8">curved rifflers</option>
+    <option value="8">reinforced chisels</option>
+    <option value="5">sharpened drawknife</option>
+    <option value="8">slender wood saw</option>
+    <option value="8">slender bone saw</option>
+    <option value="5">rough pliers</option>
+    <option value="8">textured rasp</option>
+    <option value="4">beveled wood shaper</option>
+    <option value="5">thick pliers</option>
+    <option value="8">flat rasp</option>
+    <option value="8">elongated rifflers</option>
+    <option value="8">sharpened chisels</option>
+    <option value="4">thick tinker's tools</option>
+    <option value="8">tapered wood saw</option>
+    <option value="8">tapered bone saw</option>
+    <option value="5">hooked pliers</option>
+    <option value="8">tapered rasp</option>
+    <option value="4">jagged wood shaper</option>
+    <option value="8">serrated wood saw</option>
+    <option value="8">serrated bone saw</option>
+    <option value="4">precise tinker's tools</option>
+    <option value="0">   </option>
+    <option value="0">--- OUTFITTING TOOLS ---</option>
+    <option value="3">hide scraper</option>
+    <option value="6">stout yardstick</option>
+    <option value="4">smooth knitting needles</option>
+    <option value="3">plain sewing needles</option>
+    <option value="4">straight scissors</option>
+    <option value="3">curved hide scraper</option>
+    <option value="4">pointed awl</option>
+    <option value="6">flat yardstick</option>
+    <option value="4">tapered knitting needles</option>
+    <option value="4">curved scissors</option>
+    <option value="3">ribbed sewing needles</option>
+    <option value="4">narrow awl</option>
+    <option value="4">squat knitting needles</option>
+    <option value="3">knobby sewing needles</option>
+    <option value="6">rectangular yardstick</option>
+    <option value="4">bent scissors</option>
+    <option value="3">serrated hide scraper</option>
+    <option value="4">compact awl</option>
+    <option value="4">polished knitting needles</option>
+    <option value="4">slender awl</option>
+    <option value="6">detailed yardstick</option>
+    <option value="4">serrated scissors</option>
+    <option value="3">thin sewing needles</option>
+    <option value="0">   </option>
+    <option value="0">--- ALCHEMY AND ENCHANTING TOOLS ---</option>
+    <option value="10">small brazier</option>
+    <option value="1">tapered pestle</option>
+    <option value="6">flat mixing stick</option>
+    <option value="3">square wire sieve</option>
+    <option value="6">tapered mixing stick</option>
+    <option value="1">flat pestle</option>
+    <option value="10">brazier</option>
+    <option value="3">triangular wire sieve</option>
+    <option value="6">round mixing stick</option>
+    <option value="8">thick mixing bowl</option>
+    <option value="1">round pestle</option>
+    <option value="1">grooved pestle</option>
+    <option value="3">oblong wire sieve</option>
+    <option value="6">grooved mixing stick</option>
+    <option value="6">sleek mixing bowl</option>
+    <option value="3">trapezoidal wire sieve</option>
+    <option value="0">   </option>
+    <option value="0">--- BLACKSMITHING ITEMS ---</option>
+    <option value="1">shallow cup</option>
+    <option value="1">slender rod</option>
+    <option value="1">tall mug</option>
+    <option value="1">short mug</option>
+    <option value="2">soft keyblank</option>
+    <option value="4">horseshoe</option>
+    <option value="3">scratcher</option>
+    <option value="80">barbells</option>
+    <option value="12">large horseshoe</option>
+    <option value="5">small flask</option>
+    <option value="4">ankle band</option>
+    <option value="12">lockpick case</option>
+    <option value="12">origami case</option>
+    <option value="10">bolt box</option>
+    <option value="5">talisman case</option>
+    <option value="5">flask</option>
+    <option value="6">oil lantern</option>
+    <option value="2">lockpick ring</option>
+    <option value="8">herbal case</option>
+    <option value="4">jewelry box</option>
+    <option value="10">flights box</option>
+    <option value="2">razor</option>
+    <option value="7">large flask</option>
+    <option value="4">armband</option>
+    <option value="8">instrument case</option>
+    <option value="12">chest</option>
+    <option value="10">backtube</option>
+    <option value="8">starchart tube</option>
+    <option value="2">clippers</option>
+    <option value="10">crown</option>
+    <option value="5">mask</option>
+    <option value="5">torque</option>
+    <option value="10">headdress</option>
+    <option value="0">   </option>
+    <option value="0">--- BLACKSMITHING SPECIAL INSTRUCTIONS ---</option>
+    <option value="5">basic stamp</option>
+    <option value="5">complex stamp</option>
+    <option value="6">triple-fluted shovel</option>
+    <option value="10">blunt forging hammer</option>
+    <option value="8">wedge tong</option>
+    <option value="4">pointed metal pliers</option>
+    <option value="5">forked mixing stick</option>
+    <option value="2">diagonal-wire sieve</option>
+    </select>
+
+    <input
+        id="custom-volume"
+        type="number"
+        min="0.01"
+        step="any"
+        placeholder="Enter custom volume"
+        style="display: none; width: 100%; box-sizing: border-box; margin-top: 0.5rem;"
+    />
+</div>
+
+
+    <div class="queue-header">
+        <span>Metals</span>
+        <span>Quantity</span>
+    </div>
+
+    <!-- 5 Configurable Inputs Box -->
+    <div class="crafting-queue" id="queue-container">
+        <!-- Rows 1 to 5 will be injected dynamically here -->
+    </div>
+
+    <!-- Actions Control Panel -->
+    <div class="actions-row">
+        <button class="btn-clear" onclick="clearAllQueue()">Clear All Items</button>
+    </div>
+
+<div id="material-warning" style="
+    display: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+    background-color: rgba(239, 68, 68, 0.12);
+    color: #fca5a5;
+    font-weight: bold;
+    text-align: center;
+">
+    Not enough material
+</div>
+
+
+<div id="alloy-warning" style="
+    display: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    background-color: rgba(245, 158, 11, 0.12);
+    color: #fcd34d;
+    font-weight: bold;
+    text-align: center;
+">
+    Ingot Will Alloy
+</div>
+
+
+<div id="minority-metal-warning" style="
+    display: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    background-color: rgba(245, 158, 11, 0.12);
+    color: #fcd34d;
+    font-weight: bold;
+    text-align: center;
+">
+    Ingot Will Alloy: No metal reaches 67% of the total quantity.
+</div>
+
+
+
+<div class="results-card">
+    <h3>Ingot Stats</h3>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span>Total Weight</span>
+            <strong id="total-weight">0.00</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Total Volume</span>
+            <strong id="total-volume">0.00</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Density</span>
+            <strong id="average-density">0.00</strong>
+        </div>
+<div class="stat-box">
+    <span>Target Volume</span>
+    <strong id="display-target-volume">10.00</strong>
+</div>
+<div class="stat-box">
+    <span>Item Weight</span>
+    <strong id="target-weight">0.00</strong>
+</div>
+
+
+<div class="stat-box">
+    <span>Item Kronar Value</span>
+    <strong id="item-value">0.00</strong>
+</div>
+
+
+<div class="stat-box">
+    <span>Avg Kronar Value per volume</span>
+    <strong id="average-value">0.00</strong>
+</div>
+<div class="stat-box">
+    <span>Ingot Kronar Value</span>
+    <strong id="total-value-money">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Hardness</span>
+    <strong id="property-hardness">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Durability</span>
+    <strong id="property-durability">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Workability</span>
+    <strong id="property-workability">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Electrical</span>
+    <strong id="property-electrical">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Thermal</span>
+    <strong id="property-thermal">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Physical</span>
+    <strong id="property-physical">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Ductility</span>
+    <strong id="property-ductility">0.00</strong>
+</div>
+
+<div class="stat-box">
+    <span>Capacity</span>
+    <strong id="property-capacity">0.00</strong>
+</div>
+
+    </div>
+
+    <ul id="raw-materials-list" class="material-list">
+        <!-- Consolidated material results appear here -->
+    </ul>
+</div>
+
+
+<script>
+    // Game Crafting Matrix Database
+    const recipes = {
+        'None': {}, 
+        'Acenite': { 'Hardness': 25, 'Durability': 15, 'Workability': 50, 'Electrical': 30, 'Thermal': 25, 'Physical': 25, 'Ductility': 90, 'Capacity': 50, 'Density': 6, 'Value': 3750},
+        'Brass': { 'Hardness': 40, 'Durability': 25, 'Workability': 60, 'Electrical': 30, 'Thermal': 40, 'Physical': 40, 'Ductility': 90, 'Capacity': 28, 'Density': 5.8, 'Value': 150},
+        'Bronze': { 'Hardness': 80, 'Durability': 65, 'Workability': 70, 'Electrical': 35, 'Thermal': 55, 'Physical': 80, 'Ductility': 85, 'Capacity': 40, 'Density': 6.2, 'Value': 125},
+        'Copper': { 'Hardness': 25, 'Durability': 40, 'Workability': 70, 'Electrical': 10, 'Thermal': 15, 'Physical': 25, 'Ductility': 80, 'Capacity': 30, 'Density': 7, 'Value': 125},
+        'Covellite': { 'Hardness': 35, 'Durability': 80, 'Workability': 65, 'Electrical': 25, 'Thermal': 85, 'Physical': 80, 'Ductility': 80, 'Capacity': 30, 'Density': 2, 'Value': 62.5},
+        'Iron': { 'Hardness': 70, 'Durability': 40, 'Workability': 50, 'Electrical': 30, 'Thermal': 50, 'Physical': 75, 'Ductility': 50, 'Capacity': 25, 'Density': 5, 'Value': 125},
+        'Lead': { 'Hardness': 20, 'Durability': 30, 'Workability': 80, 'Electrical': 40, 'Thermal': 70, 'Physical': 20, 'Ductility': 75, 'Capacity': 30, 'Density': 8, 'Value': 50},
+        'Nickel': { 'Hardness': 25, 'Durability': 15, 'Workability': 50, 'Electrical': 30, 'Thermal': 25, 'Physical': 25, 'Ductility': 90, 'Capacity': 30, 'Density': 6, 'Value': 100},
+        'Oravir': { 'Hardness': 40, 'Durability': 20, 'Workability': 70, 'Electrical': 95, 'Thermal': 15, 'Physical': 25, 'Ductility': 15, 'Capacity': 50, 'Density': 1, 'Value': 50},
+        'Pewter': { 'Hardness': 25, 'Durability': 45, 'Workability': 70, 'Electrical': 40, 'Thermal': 70, 'Physical': 25, 'Ductility': 30, 'Capacity': 50, 'Density': 5.0, 'Value': 275},
+        'Platinum': { 'Hardness': 20, 'Durability': 15, 'Workability': 20, 'Electrical': 30, 'Thermal': 10, 'Physical': 20, 'Ductility': 85, 'Capacity': 50, 'Density': 9, 'Value': 12500},
+        'Silver': { 'Hardness': 15, 'Durability': 25, 'Workability': 50, 'Electrical': 5, 'Thermal': 10, 'Physical': 15, 'Ductility': 75, 'Capacity': 50, 'Density': 8, 'Value': 2500},
+        'Steel (HCS)': { 'Hardness': 90, 'Durability': 25, 'Workability': 35, 'Electrical': 30, 'Thermal': 50, 'Physical': 90, 'Ductility': 20, 'Capacity': 5, 'Density': 5, 'Value': 250},
+        'Steel (LCS)': { 'Hardness': 80, 'Durability': 80, 'Workability': 40, 'Electrical': 30, 'Thermal': 50, 'Physical': 80, 'Ductility': 75, 'Capacity': 10, 'Density': 5, 'Value': 250},
+        'Steel (MCS)': { 'Hardness': 85, 'Durability': 60, 'Workability': 50, 'Electrical': 30, 'Thermal': 50, 'Physical': 85, 'Ductility': 70, 'Capacity': 20, 'Density': 5, 'Value': 187},
+        'Tin': { 'Hardness': 25, 'Durability': 75, 'Workability': 40, 'Electrical': 35, 'Thermal': 25, 'Physical': 25, 'Ductility': 80, 'Capacity': 50, 'Density': 3, 'Value': 37.5},
+        'Gold': { 'Hardness': 10, 'Durability': 20, 'Workability': 40, 'Electrical': 15, 'Thermal': 15, 'Physical': 10, 'Ductility': 80, 'Capacity': 50, 'Density': 9, 'Value': 6250},
+        'Zinc': { 'Hardness': 25, 'Durability': 20, 'Workability': 60, 'Electrical': 50, 'Thermal': 25, 'Physical': 25, 'Ductility': 75, 'Capacity': 45, 'Density': 4, 'Value': 87.5},
+        'Animite': { 'Hardness': 15, 'Durability': 10, 'Workability': 10, 'Electrical': 65, 'Thermal': 65, 'Physical': 15, 'Ductility': 90, 'Capacity': 50, 'Density': 4, 'Value': 43750},
+        'Audrualm': { 'Hardness': 92, 'Durability': 40, 'Workability': 5, 'Electrical': 55, 'Thermal': 90, 'Physical': 95, 'Ductility': 85, 'Capacity': 7, 'Density': 3, 'Value': 15000},
+        'Coralite': { 'Hardness': 99, 'Durability': 65, 'Workability': 40, 'Electrical': 40, 'Thermal': 99, 'Physical': 99, 'Ductility': 35, 'Capacity': 6, 'Density': 5.9, 'Value': 77500},
+        'Damite': { 'Hardness': 80, 'Durability': 70, 'Workability': 10, 'Electrical': 90, 'Thermal': 40, 'Physical': 95, 'Ductility': 25, 'Capacity': 4, 'Density': 6, 'Value': 13750},
+        'Darkstone': { 'Hardness': 85, 'Durability': 50, 'Workability': 75, 'Electrical': 70, 'Thermal': 35, 'Physical': 75, 'Ductility': 20, 'Capacity': 50, 'Density': 5.1, 'Value': 875},
+        'Electrum': { 'Hardness': 20, 'Durability': 20, 'Workability': 30, 'Electrical': 20, 'Thermal': 20, 'Physical': 20, 'Ductility': 80, 'Capacity': 55, 'Density': 8, 'Value': 5625},
+        'Glaes': { 'Hardness': 95, 'Durability': 50, 'Workability': 10, 'Electrical': 60, 'Thermal': 40, 'Physical': 75, 'Ductility': 95, 'Capacity': 10, 'Density': 4, 'Value': 16250},
+        'Haralun': { 'Hardness': 95, 'Durability': 60, 'Workability': 20, 'Electrical': 70, 'Thermal': 75, 'Physical': 80, 'Ductility': 90, 'Capacity': 5, 'Density': 8, 'Value': 13750},
+        'Icesteel': { 'Hardness': 90, 'Durability': 75, 'Workability': 20, 'Electrical': 80, 'Thermal': 95, 'Physical': 85, 'Ductility': 95, 'Capacity': 40, 'Density': 4.5, 'Value': 25000},
+        'Kelpzyte': { 'Hardness': 99, 'Durability': 75, 'Workability': 38, 'Electrical': 60, 'Thermal': 80, 'Physical': 99, 'Ductility': 35, 'Capacity': 5, 'Density': 3.6, 'Value': 63750},
+        'Kertig': { 'Hardness': 95, 'Durability': 70, 'Workability': 5, 'Electrical': 40, 'Thermal': 55, 'Physical': 90, 'Ductility': 90, 'Capacity': 6, 'Density': 7, 'Value': 18750},
+        'Krakenite': { 'Hardness': 99, 'Durability': 85, 'Workability': 30, 'Electrical': 65, 'Thermal': 75, 'Physical': 99, 'Ductility': 60, 'Capacity': 35, 'Density': 6.3, 'Value': 87500},
+        'Loimic': { 'Hardness': 99, 'Durability': 70, 'Workability': 35, 'Electrical': 99, 'Thermal': 40, 'Physical': 99, 'Ductility': 20, 'Capacity': 7, 'Density': 3.5, 'Value': 81250},
+        'Lumium': { 'Hardness': 75, 'Durability': 50, 'Workability': 15, 'Electrical': 60, 'Thermal': 75, 'Physical': 90, 'Ductility': 90, 'Capacity': 12, 'Density': 3, 'Value': 6500},
+        'Muracite': { 'Hardness': 70, 'Durability': 55, 'Workability': 70, 'Electrical': 55, 'Thermal': 55, 'Physical': 85, 'Ductility': 85, 'Capacity': 50, 'Density': 4.7, 'Value': 1125},
+        'Niello': { 'Hardness': 5, 'Durability': 5, 'Workability': 15, 'Electrical': 85, 'Thermal': 25, 'Physical': 25, 'Ductility': 40, 'Capacity': 60, 'Density': 8, 'Value': 22500},
+        'Niniam': { 'Hardness': 80, 'Durability': 70, 'Workability': 20, 'Electrical': 75, 'Thermal': 75, 'Physical': 70, 'Ductility': 90, 'Capacity': 60, 'Density': 5, 'Value': 6250},
+        'Orichalcum': { 'Hardness': 30, 'Durability': 50, 'Workability': 10, 'Electrical': 40, 'Thermal': 40, 'Physical': 30, 'Ductility': 35, 'Capacity': 80, 'Density': 6, 'Value': 17500},
+        'Silversteel': { 'Hardness': 95, 'Durability': 90, 'Workability': 2, 'Electrical': 20, 'Thermal': 80, 'Physical': 95, 'Ductility': 90, 'Capacity': 10, 'Density': 2.2, 'Value': 27500},
+        'Tomiek': { 'Hardness': 80, 'Durability': 45, 'Workability': 40, 'Electrical': 35, 'Thermal': 55, 'Physical': 70, 'Ductility': 80, 'Capacity': 75, 'Density': 5, 'Value': 25000},
+        'Tyrium': { 'Hardness': 99, 'Durability': 80, 'Workability': 40, 'Electrical': 70, 'Thermal': 70, 'Physical': 99, 'Ductility': 40, 'Capacity': 4, 'Density': 6, 'Value': 62500},
+        'Agonite': { 'Hardness': 95, 'Durability': 65, 'Workability': 75, 'Electrical': 20, 'Thermal': 99, 'Physical': 85, 'Ductility': 90, 'Capacity': 5, 'Density': 7.5, 'Value': 25000},
+        'Atheldalm': { 'Hardness': 90, 'Durability': 75, 'Workability': 20, 'Electrical': 80, 'Thermal': 95, 'Physical': 85, 'Ductility': 95, 'Capacity': 40, 'Density': 4.5, 'Value': 21875},
+        'Haledroth': { 'Hardness': 96, 'Durability': 75, 'Workability': 35, 'Electrical': 15, 'Thermal': 20, 'Physical': 97, 'Ductility': 95, 'Capacity': 6, 'Density': 6.2, 'Value': 35000},
+        'Indurium': { 'Hardness': 82, 'Durability': 64, 'Workability': 50, 'Electrical': 12, 'Thermal': 34, 'Physical': 22, 'Ductility': 20, 'Capacity': 70, 'Density': 3.9, 'Value': 47500},
+        'Kadepa': { 'Hardness': 85, 'Durability': 80, 'Workability': 95, 'Electrical': 40, 'Thermal': 80, 'Physical': 94, 'Ductility': 90, 'Capacity': 12, 'Density': 5.2, 'Value': 20625},
+        'Kiralan': { 'Hardness': 70, 'Durability': 80, 'Workability': 35, 'Electrical': 90, 'Thermal': 80, 'Physical': 99, 'Ductility': 12, 'Capacity': 4, 'Density': 7, 'Value': 93750},
+        'Quelium': { 'Hardness': 92, 'Durability': 20, 'Workability': 45, 'Electrical': 65, 'Thermal': 65, 'Physical': 92, 'Ductility': 90, 'Capacity': 20, 'Density': 7.2, 'Value': 18750},
+        'Selatila': { 'Hardness': 15, 'Durability': 10, 'Workability': 10, 'Electrical': 65, 'Thermal': 65, 'Physical': 15, 'Ductility': 90, 'Capacity': 60, 'Density': 4, 'Value': 25000},
+        'Telothian': { 'Hardness': 104, 'Durability': 80, 'Workability': 25, 'Electrical': 90, 'Thermal': 70, 'Physical': 45, 'Ductility': 90, 'Capacity': 5, 'Density': 6.4, 'Value': 87500},
+        'Vardite': { 'Hardness': 88, 'Durability': 75, 'Workability': 45, 'Electrical': 80, 'Thermal': 45, 'Physical': 99, 'Ductility': 30, 'Capacity': 4, 'Density': 6.1, 'Value': 27500}
+    };
+
+    // Generate the 5 distinct rows in the UI
+    function buildQueueUI() {
+        const container = document.getElementById('queue-container');
+
+        for (let i = 1; i <= 5; i++) {
+            const row = document.createElement('div');
+            row.className = 'queue-row';
+            
+            // Build the selector element
+            const select = document.createElement('select');
+            select.id = `item-select-${i}`;
+            select.addEventListener('change', calculateTotalQueue);
+            
+            // Populate select item options
+            for (const item in recipes) {
+                if (Object.keys(recipes[item]).length > 0 || item === 'None') {
+                    const opt = document.createElement('option');
+                    opt.value = item;
+                    opt.textContent = item;
+                    select.appendChild(opt);
+                }
+            }
+
+            // Build the input amount element
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.id = `item-qty-${i}`;
+            input.value = i === 1 ? '1' : '0'; // Default first item to 1, rest to 0
+            input.min = '0';
+            input.addEventListener('input', calculateTotalQueue);
+
+            row.appendChild(select);
+            row.appendChild(input);
+            container.appendChild(row);
+        }
+    }
+
+    // Reset function triggered by the Clear All button
+    function clearAllQueue() {
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(`item-select-${i}`).value = 'None';
+            document.getElementById(`item-qty-${i}`).value = '0';
+        }
+        calculateTotalQueue();
+    }
+
+    // Consolidated Flattening Logic Engine
+    function calculateTotalQueue() {
+    let totalWeight = 0;
+    let totalVolume = 0;
+    let totalValue = 0;
+    const propertyNames = [
+    'Hardness',
+    'Durability',
+    'Workability',
+    'Electrical',
+    'Thermal',
+    'Physical',
+    'Ductility',
+    'Capacity'
+];
+
+const propertyTotals = Object.fromEntries(
+    propertyNames.map(name => [name, 0])
+);
+    const selectedMaterials = {};
+
+    for (let i = 1; i <= 5; i++) {
+        const metalName = document.getElementById(
+            `item-select-${i}`
+        ).value;
+
+        const quantity = Math.max(
+            0,
+            parseFloat(
+                document.getElementById(`item-qty-${i}`).value
+            ) || 0
+        );
+
+        if (metalName === 'None' || quantity === 0) {
+            continue;
+        }
+
+        const metal = recipes[metalName];
+
+        if (!metal || typeof metal.Density !== 'number') {
+            continue;
+        }
+
+        // Assumption: quantity represents volume units.
+const volume = quantity;
+const weight = metal.Density * volume;
+const value = metal.Value * quantity;
+
+totalVolume += volume;
+totalWeight += weight;
+totalValue += value;
+// Add each material property weighted by quantity.
+for (const property of propertyNames) {
+    propertyTotals[property] +=
+        (metal[property] || 0) * quantity;
+}
+
+        if (!selectedMaterials[metalName]) {
+            selectedMaterials[metalName] = {
+                volume: 0,
+                weight: 0
+            };
+        }
+
+        selectedMaterials[metalName].volume += volume;
+        selectedMaterials[metalName].weight += weight;
+    }
+
+    const averageDensity = totalVolume > 0
+        ? totalWeight / totalVolume
+        : 0;
+const targetVolume = getTargetVolume();
+
+
+document.getElementById('display-target-volume').textContent =
+    targetVolume.toFixed(2);
+
+
+
+const minorityMetalWarning = document.getElementById(
+    'minority-metal-warning'
+);
+
+
+const allMetalsBelow67Percent = totalVolume > 0 &&
+    Object.values(selectedMaterials).every(
+        material => material.volume / totalVolume < 0.67
+    );
+
+minorityMetalWarning.style.display =
+    allMetalsBelow67Percent ? 'block' : 'none';
+
+
+
+const alloyWarning = document.getElementById('alloy-warning');
+
+const metalsOver33Percent = totalVolume > 0
+    ? Object.values(selectedMaterials).filter(
+        material => material.volume / totalVolume > 0.33
+      ).length
+    : 0;
+
+alloyWarning.style.display =
+    metalsOver33Percent > 1 ? 'block' : 'none';
+
+
+const materialWarning = document.getElementById('material-warning');
+
+materialWarning.style.display =
+    totalVolume < targetVolume ? 'block' : 'none';
+
+const targetWeight = targetVolume * averageDensity;
+
+document.getElementById('target-weight').textContent =
+    targetWeight.toFixed(2);
+
+
+    document.getElementById('total-weight').textContent =
+        totalWeight.toFixed(2);
+
+    document.getElementById('total-volume').textContent =
+        totalVolume.toFixed(2);
+
+    document.getElementById('average-density').textContent =
+        averageDensity.toFixed(2);
+        
+const averageValue = totalVolume > 0
+    ? totalValue / totalVolume
+    : 0;
+    
+const itemValue = targetVolume * averageValue;
+
+document.getElementById('item-value').textContent =
+    itemValue.toFixed(2);    
+
+document.getElementById('average-value').textContent =
+    averageValue.toFixed(2);
+    
+document.getElementById('total-value-money').textContent =
+    totalValue.toFixed(2);
+    
+// Display the weighted average of each property.
+
+const totalQuantity = Object.values(selectedMaterials)
+    .reduce((sum, material) => sum + material.volume, 0);
+
+const dominantMetalEntry = Object.entries(selectedMaterials)
+    .sort((a, b) => b[1].volume - a[1].volume)[0];
+
+const dominantMetal = dominantMetalEntry
+    ? dominantMetalEntry[0]
+    : null;
+
+const dominantShare = dominantMetal && totalQuantity > 0
+    ? selectedMaterials[dominantMetal].volume / totalQuantity
+    : 0;
+
+for (const property of propertyNames) {
+    let result;
+
+    if (dominantShare >= 0.67) {
+        // One metal makes up at least 67% of the ingot.
+        result = recipes[dominantMetal][property];
+    } else {
+        // Otherwise, use the quantity-weighted average.
+        result = totalVolume > 0
+            ? propertyTotals[property] / totalVolume
+            : 0;
+    }
+
+    document.getElementById(
+        'property-' + property.toLowerCase()
+    ).textContent = (result ?? 0).toFixed(2);
+}
+
+
+    const listContainer = document.getElementById(
+        'raw-materials-list'
+    );
+
+    listContainer.replaceChildren();
+
+    const materials = Object.entries(selectedMaterials);
+
+    if (materials.length === 0) {
+        const message = document.createElement('li');
+        message.style.color = 'var(--text-muted)';
+        message.textContent = 'No metals selected.';
+        listContainer.appendChild(message);
+        return;
+    }
+
+}
+
+
+const targetVolumeSelect = document.getElementById('target-volume');
+const customVolumeInput = document.getElementById('custom-volume');
+
+targetVolumeSelect.addEventListener('change', function () {
+    const isCustom = this.value === 'custom';
+
+    customVolumeInput.style.display = isCustom ? 'block' : 'none';
+
+    calculateTotalQueue();
+});
+
+customVolumeInput.addEventListener('input', calculateTotalQueue);
+
+function getTargetVolume() {
+    const value = targetVolumeSelect.value === 'custom'
+        ? parseFloat(customVolumeInput.value)
+        : parseFloat(targetVolumeSelect.value);
+
+    return Number.isFinite(value) && value > 0 ? value : 0;
+}
+
+
+    // Run layout build hooks on launch
+    buildQueueUI();
+    calculateTotalQueue();
+
+</script>
+
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gavinne's Reverse Ingot Calculator</title>
+<style>
+:root {
+    --bg-dark: #0f172a;
+    --panel-bg: #1e293b;
+    --accent: #3b82f6;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: #334155;
+    --green: #10b981;
+    --red: #ef4444;
+}
+* { box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    margin: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+}
+h1 { margin-top: 0; font-size: 1.7rem; }
+.subtitle { color: var(--muted); margin-bottom: 1.5rem; }
+label, .field-label {
+    display: block;
+    color: var(--muted);
+    font-size: .9rem;
+    margin-bottom: .45rem;
+}
+input, select {
+    width: 100%;
+    min-width: 0;
+    padding: .75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg-dark);
+    color: var(--text);
+    font-size: 1rem;
+}
+input:focus, select:focus { outline: 2px solid var(--accent); }
+.target { margin-bottom: 1.5rem; }
+.queue-heading, .metal-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(85px, 1fr);
+    gap: .75rem;
+}
+.queue-heading { margin: 0 .5rem .5rem; }
+.queue-heading span {
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#metal-rows { display: flex; flex-direction: column; gap: .75rem; }
+.metal-row {
+    padding: .75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, .4);
+}
+.percentage-field { position: relative; }
+.percentage-field input { padding-right: 2rem; }
+.percent-symbol {
+    position: absolute;
+    right: .75rem;
+    top: .8rem;
+    color: var(--muted);
+    pointer-events: none;
+}
+.results {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, .55);
+}
+.results h2 { margin-top: 0; font-size: 1.15rem; }
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: .75rem;
+}
+.stat {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+}
+.stat span { display: block; color: var(--muted); font-size: .8rem; }
+.stat strong { display: block; margin-top: .4rem; font-size: 1.35rem; }
+#percentage-status { margin: 1rem 0 0; font-weight: 600; }
+.good { color: var(--green); }
+.warning { color: #fbbf24; }
+.error { color: #f87171; }
+#breakdown { list-style: none; padding: 0; margin: 1rem 0 0; }
+#breakdown li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .75rem;
+    margin-top: .5rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+button {
+    padding: .7rem 1.1rem;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.clear-button {
+    color: var(--red);
+    background: transparent;
+    border: 1px solid var(--red);
+}
+.actions { display: flex; justify-content: flex-end; margin-top: 1rem; }
+@media (max-width: 480px) {
+    .container { padding: 1rem; }
+    body { padding: 1rem .5rem; }
+    .metal-row { gap: .5rem; padding: .5rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Gavinne's Reverse Ingot Calculator</h1>
+    <div class="subtitle">
+        Enter an ingot volume and the percentage of each metal.
+    </div>
+
+    <div class="target">
+        <label for="target-volume">Total Ingot Volume</label>
+        <input id="target-volume" type="number" min="0" step="any" value="0">
+    </div>
+
+    <div class="queue-heading">
+        <span>Metal</span>
+        <span>Percentage</span>
+    </div>
+    <div id="metal-rows"></div>
+
+    <div class="actions">
+        <button class="clear-button" id="clear-button" type="button">
+            Clear All
+        </button>
+    </div>
+
+    <section class="results">
+        <h2>Ingot Composition Breakdown</h2>
+        <div class="summary-grid">
+            <div class="stat">
+                <span>Total Ingot Volume</span>
+                <strong id="display-volume">100.00</strong>
+            </div>
+            <div class="stat">
+                <span>Total Percentage</span>
+                <strong id="display-percentage">0.00%</strong>
+            </div>
+            <div class="stat">
+                <span>Unallocated Volume</span>
+                <strong id="remaining-volume">100.00</strong>
+            </div>
+
+<div class="stat">
+    <span>Total Ingot Weight</span>
+    <strong id="display-weight">0.00</strong>
+</div>
+
+<div class="stat">
+    <span>Overall Ingot Density</span>
+    <strong id="display-density">0.00</strong>
+</div>
+            
+        </div>
+        <p id="percentage-status" class="warning" role="status">
+            Enter metal percentages.
+        </p>
+        <ul id="breakdown"></ul>
+    </section>
+</div>
+
+<script>
+const metalNames = [
+    'None',
+    'Acenite', 'Brass', 'Bronze', 'Copper', 'Covellite',
+    'Iron', 'Lead', 'Nickel', 'Oravir', 'Pewter', 'Platinum',
+    'Silver', 'Steel (HCS)', 'Steel (LCS)', 'Steel (MCS)',
+    'Tin', 'Gold', 'Zinc', 'Animite', 'Audrualm', 'Coralite',
+    'Damite', 'Darkstone', 'Electrum', 'Glaes', 'Haralun',
+    'Icesteel', 'Kelpzyte', 'Kertig', 'Krakenite', 'Loimic',
+    'Lumium', 'Muracite', 'Niello', 'Niniam', 'Orichalcum',
+    'Silversteel', 'Tomiek', 'Tyrium', 'Agonite', 'Atheldalm',
+    'Haledroth', 'Indurium', 'Kadepa', 'Kiralan', 'Quelium',
+    'Selatila', 'Telothian', 'Vardite'
+];
+
+
+const metalDensities = {
+    'Acenite': 6,
+    'Brass': 5.8,
+    'Bronze': 6.2,
+    'Copper': 7,
+    'Covellite': 2,
+    'Iron': 5,
+    'Lead': 8,
+    'Nickel': 6,
+    'Oravir': 1,
+    'Pewter': 5,
+    'Platinum': 9,
+    'Silver': 8,
+    'Steel (HCS)': 5,
+    'Steel (LCS)': 5,
+    'Steel (MCS)': 5,
+    'Tin': 3,
+    'Gold': 9,
+    'Zinc': 4,
+    'Animite': 4,
+    'Audrualm': 3,
+    'Coralite': 5.9,
+    'Damite': 6,
+    'Darkstone': 5.1,
+    'Electrum': 8,
+    'Glaes': 4,
+    'Haralun': 8,
+    'Icesteel': 4.5,
+    'Kelpzyte': 3.6,
+    'Kertig': 7,
+    'Krakenite': 6.3,
+    'Loimic': 3.5,
+    'Lumium': 3,
+    'Muracite': 4.7,
+    'Niello': 8,
+    'Niniam': 5,
+    'Orichalcum': 6,
+    'Silversteel': 2.2,
+    'Tomiek': 5,
+    'Tyrium': 6,
+    'Agonite': 7.5,
+    'Atheldalm': 4.5,
+    'Haledroth': 6.2,
+    'Indurium': 3.9,
+    'Kadepa': 5.2,
+    'Kiralan': 7,
+    'Quelium': 7.2,
+    'Selatila': 4,
+    'Telothian': 6.4,
+    'Vardite': 6.1
+};
+
+
+const rowContainer = document.getElementById('metal-rows');
+const volumeInput = document.getElementById('target-volume');
+
+function buildRows() {
+    for (let i = 1; i <= 5; i++) {
+        const row = document.createElement('div');
+        row.className = 'metal-row';
+
+        const select = document.createElement('select');
+        select.id = `metal-${i}`;
+        select.setAttribute('aria-label', `Metal ${i}`);
+
+        metalNames.forEach(name => {
+            const option = document.createElement('option');
+            option.value = name;
+            option.textContent = name;
+            select.appendChild(option);
+        });
+
+        const percentageField = document.createElement('div');
+        percentageField.className = 'percentage-field';
+
+        const percentage = document.createElement('input');
+        percentage.id = `percentage-${i}`;
+        percentage.type = 'number';
+        percentage.min = '0';
+        percentage.max = '100';
+        percentage.step = 'any';
+        percentage.value = '0';
+        percentage.setAttribute('aria-label', `Metal ${i} percentage`);
+
+        const symbol = document.createElement('span');
+        symbol.className = 'percent-symbol';
+        symbol.textContent = '%';
+
+        percentageField.append(percentage, symbol);
+        row.append(select, percentageField);
+        rowContainer.appendChild(row);
+
+        select.addEventListener('change', calculate);
+        percentage.addEventListener('input', calculate);
+    }
+}
+
+function calculate() {
+    const totalVolume = Math.max(0, Number(volumeInput.value) || 0);
+    let totalPercentage = 0;
+    const entries = [];
+    
+let totalWeight = 0;    
+
+    for (let i = 1; i <= 5; i++) {
+        const metal = document.getElementById(`metal-${i}`).value;
+        const input = document.getElementById(`percentage-${i}`);
+        const percentage = Math.max(0, Number(input.value) || 0);
+
+        if (percentage > 100) {
+            // Keep the entered value visible, but flag it as invalid below.
+        }
+
+        if (metal !== 'None' && percentage > 0) {
+            totalPercentage += percentage;
+const metalVolume = totalVolume * percentage / 100;
+const metalWeight = metalVolume * metalDensities[metal];
+
+totalWeight += metalWeight;
+
+entries.push({
+    metal,
+    percentage,
+    volume: metalVolume,
+    weight: metalWeight
+});
+        }
+    }
+
+    document.getElementById('display-volume').textContent =
+        totalVolume.toFixed(2);
+    document.getElementById('display-percentage').textContent =
+        totalPercentage.toFixed(2) + '%';
+    document.getElementById('remaining-volume').textContent =
+        (totalVolume * (1 - totalPercentage / 100)).toFixed(2);
+        
+// NEW CODE: Display total weight and overall density
+const overallDensity = totalVolume > 0
+    ? totalWeight / totalVolume
+    : 0;
+
+document.getElementById('display-weight').textContent =
+    totalWeight.toFixed(2);
+
+document.getElementById('display-density').textContent =
+    overallDensity.toFixed(2);
+
+// Existing code continues below        
+    const status = document.getElementById('percentage-status');
+    const anyInvalid = Array.from(
+        document.querySelectorAll('[id^="percentage-"]')
+    ).some(input => {
+        const p = Number(input.value);
+        return p < 0 || p > 100;
+    });
+
+    if (anyInvalid || totalPercentage > 100) {
+        status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
+        status.className = 'error';
+    } else if (totalPercentage === 100) {
+        status.textContent = 'Percentages total 100% — ready to craft.';
+        status.className = 'good';
+    } else if (totalPercentage > 0) {
+        status.textContent = 'Percentages must total 100%. Some volume is unallocated.';
+        status.className = 'warning';
+    } else {
+        status.textContent = 'Enter metal percentages.';
+        status.className = 'warning';
+    }
+
+    const breakdown = document.getElementById('breakdown');
+    breakdown.replaceChildren();
+
+    entries.forEach(entry => {
+        const li = document.createElement('li');
+        const name = document.createElement('span');
+        const amount = document.createElement('strong');
+
+        name.textContent = `${entry.metal} (${entry.percentage.toFixed(2)}%)`;
+        amount.textContent = `${entry.volume.toFixed(2)} volume`;
+        li.append(name, amount);
+        breakdown.appendChild(li);
+    });
+
+    if (entries.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = 'Select a metal and enter its percentage.';
+        breakdown.appendChild(li);
+    }
+}
+
+volumeInput.addEventListener('input', calculate);
+
+document.getElementById('clear-button').addEventListener('click', () => {
+    volumeInput.value = '100';
+
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById(`metal-${i}`).value = 'None';
+        document.getElementById(`percentage-${i}`).value = '0';
+    }
+
+    calculate();
+});
+
+buildRows();
+calculate();
+</script>
+</body>
+</html>
