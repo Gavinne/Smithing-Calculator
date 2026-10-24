@@ -338,13 +338,11 @@
     <option value="4">prod</option>
     <option value="5">bludgeon</option>
     <option value="5">hand mallet</option>
-    <option value="4">horseshoe</option>
     <option value="5">scepter</option>
     <option value="5">zubke</option>
     <option value="6">club</option>
     <option value="6">garz</option>
     <option value="6">hand mace</option>
-    <option value="12">large horseshoe</option>
     <option value="6">ridged gauntlet</option>
     <option value="5">short hammer</option>
     <option value="5">spiked gauntlet</option>
@@ -433,7 +431,6 @@
     <option value="7">nightstick</option>
     <option value="10">quarterstaff</option>
     <option value="4">knuckles</option>
-    <option value="7">simple parry stick</option>
     <option value="11">pike staff</option>
     <option value="4">elbow spikes</option>
     <option value="4">knee spikes</option>
@@ -1715,7 +1712,7 @@ document.getElementById('display-density').textContent =
 volumeInput.addEventListener('input', calculate);
 
 document.getElementById('clear-button').addEventListener('click', () => {
-    volumeInput.value = '100';
+    volumeInput.value = '0';
 
     for (let i = 1; i <= 5; i++) {
         document.getElementById(`metal-${i}`).value = 'None';
