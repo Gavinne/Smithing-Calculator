@@ -1199,7 +1199,7 @@ const alloyWarning = document.getElementById('alloy-warning');
 
 const metalsOver33Percent = totalVolume > 0
     ? Object.values(selectedMaterials).filter(
-        material => material.volume / totalVolume > 0.33
+        material => material.volume / totalVolume > 0.3300000001
       ).length
     : 0;
 
