@@ -1655,8 +1655,10 @@ entries.push({
         (totalVolume * (1 - totalPercentage / 100)).toFixed(2);
         
 // NEW CODE: Display total weight and overall density
-const overallDensity = totalVolume > 0
-    ? totalWeight / totalVolume
+// Density is the percentage-weighted average of the chosen metals.
+// It ignores unallocated volume and doesn't depend on the ingot volume.
+const overallDensity = totalPercentage > 0
+    ? entries.reduce((sum, entry) => sum + entry.percentage * metalDensities[entry.metal], 0) / totalPercentage
     : 0;
 
 document.getElementById('display-weight').textContent =
