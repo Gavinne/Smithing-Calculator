@@ -37,6 +37,9 @@
             padding: 2rem;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
         }
 
         .container {
@@ -972,6 +975,7 @@
     <ul id="raw-materials-list" class="material-list">
         <!-- Consolidated material results appear here -->
     </ul>
+</div>
 </div>
 
 
