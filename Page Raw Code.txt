@@ -30,14 +30,15 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 800px;
-            background-color: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-        }
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
 
         h1 {
             font-size: 1.75rem;
@@ -168,52 +169,85 @@
             color: #10b981;
             font-weight: bold;
         }
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
 
-.stat-box {
-    background: var(--bg-dark);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
+
+
+/* Give the stats area the full available page width */
+.stats-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
 }
 
-.stat-box span {
-    color: var(--text-muted);
-    font-size: 0.8rem;
+/* Each row gets its own separate box */
+.stats-row {
+    display: grid;
+    width: 100%;
+    gap: 0.75rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
 }
 
-.stat-box strong {
-    color: #10b981;
-    font-size: 1.5rem;
-    overflow-wrap: anywhere;
+/* Row 1: five stats */
+.stats-row-1 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-@media (max-width: 560px) {
-    body {
-        padding: 1rem;
+/* Row 2: three stats */
+.stats-row-2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* Row 3: four stats per line, two lines total */
+.stats-row-3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* Prevent individual stat boxes from overflowing */
+.stat-box {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Adjust the layout for smaller screens */
+
+@media (max-width: 700px) {
+    .stats-row-1 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .container {
-        padding: 1rem;
+    .stats-row-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .queue-row,
-    .queue-header {
-        grid-template-columns: minmax(0, 2fr) minmax(70px, 1fr);
+    .stats-row-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 400px) {
+    .stats-row {
+        padding: 0.5rem;
         gap: 0.5rem;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
+    .stats-row-1,
+    .stats-row-2,
+    .stats-row-3 {
+        grid-template-columns: minmax(0, 1fr);
     }
+}
+
+
 }
     </style>
 </head>
@@ -239,6 +273,7 @@
     <option value="100">100 volume ingot</option>
     <option value="200">200 volume ingot</option>
     <option value="custom">Custom volume...</option>
+    </optgroup>
     <optgroup label="SMALL EDGE">
     <option value="2">briquet</option>
     <option value="2">carving knife</option>
@@ -284,6 +319,7 @@
     <option value="6">light throwing axe</option>
     <option value="7">shotel</option>
     <option value="7">iltesh</option>
+    </optgroup>
     <optgroup label="LARGE EDGE">
     <option value="7">arzfilt</option>
     <option value="7">broadsword</option>
@@ -306,6 +342,7 @@
     <option value="9">robe sword</option>
     <option value="9">schiavona</option>
     <option value="8">hurling axe</option>
+    </optgroup>
     <optgroup label="TWO HANDED EDGE">
     <option value="14">claymore</option>
     <option value="12">greataxe</option>
@@ -321,6 +358,7 @@
     <option value="15">kaskara</option>
     <option value="18">periperiu sword</option>
     <option value="15">shh'oi'ata</option>
+    </optgroup>
     <optgroup label="SMALL BLUNT">
     <option value="4">cosh</option>
     <option value="4">cudgel</option>
@@ -359,6 +397,7 @@
     <option value="9">heavy chain</option>
     <option value="10">greathammer</option>
     <option value="10">heavy mace</option>
+    </optgroup>
     <optgroup label="LARGE BLUNT">
     <option value="9">horseman's flail</option>
     <option value="10">Imperial war hammer</option>
@@ -374,6 +413,7 @@
     <option value="10">hurlable war hammer</option>
     <option value="10">throwing mallet</option>
     <option value="10">throwing hammer</option>
+    </optgroup>
     <optgroup label="TWO HANDED BLUNT">
     <option value="13">akabo</option>
     <option value="13">double-sided ball and chain</option>
@@ -385,6 +425,7 @@
     <option value="16">heavy sledgehammer</option>
     <option value="16">maul</option>
     <option value="15">two-headed hammer</option>
+    </optgroup>
     <optgroup label="POLEARM">
     <option value="7">javelin</option>
     <option value="7">light spear</option>
@@ -416,6 +457,7 @@
     <option value="13">voulge</option>
     <option value="15">awl pike</option>
     <option value="9">short-hafted halberd</option>
+    </optgroup>
     <optgroup label="MARTIAL WEAPONS">
     <option value="8">cane</option>
     <option value="7">nightstick</option>
@@ -429,6 +471,7 @@
     <option value="4">spiked knuckles</option>
     <option value="4">hand claws</option>
     <option value="10">weighted staff</option>
+    </optgroup>
     <optgroup label="SWAPPABLE WEAPONS">
     <option value="4">throwing spike</option>
     <option value="9">bastard sword</option>
@@ -441,6 +484,7 @@
     <option value="7">half-handled riste</option>
     <option value="6">thick-bladed fan</option>
     <option value="9">riste</option>
+    </optgroup>
     <optgroup label="SPECIAL WEAPON INSTRUCTIONS">
     <option value="1">hawkbill</option>
     <option value="2">pinwheel</option>
@@ -461,6 +505,7 @@
     <option value="9">hunga-munga</option>
     <option value="12">folded katana</option>
     <option value="14">pattern welded tekkan</option>
+    </optgroup>
     <optgroup label="CHAIN ARMOR">
     <option value="5">ring aventail</option>
     <option value="3">ring mask</option>
@@ -511,6 +556,7 @@
     <option value="80">chain hauberk</option>
     <option value="90">mail hauberk</option>
     <option value="90">bar-mail hauberk</option>
+    </optgroup>
     <optgroup label="BRIGANDINE">
     <option value="5">scale mask</option>
     <option value="9">scale aventail</option>
@@ -561,6 +607,7 @@
     <option value="80">scale hauberk</option>
     <option value="100">lamellar hauberk</option>
     <option value="100">laminar hauberk</option>
+    </optgroup>
     <optgroup label="PLATE ARMOR">
     <option value="7">light plate mask</option>
     <option value="12">light plate aventail</option>
@@ -611,6 +658,7 @@
     <option value="85">heavy half plate</option>
     <option value="120">heavy full plate</option>
     <option value="120">heavy fluted plate</option>
+    </optgroup>
     <optgroup label="METAL SHIELDS">
     <option value="2">shield handle</option>
     <option value="3">shield boss</option>
@@ -638,6 +686,7 @@
     <option value="40">war shield</option>
     <option value="25">deflector</option>
     <option value="50">bulwark</option>
+    </optgroup>
     <optgroup label="SPECIAL ARMOR INSTRUCTIONS">
     <option value="120">augmented gladiatorial armor</option>
     <option value="17">augmented gladiatorial gauntlets</option>
@@ -647,6 +696,7 @@
     <option value="80">Imperial ringmail hauberk</option>
     <option value="180">massive full plate</option>
     <option value="45">ornate full-visored galea</option>
+    </optgroup>
     <optgroup label="MINING TOOLS">
     <option value="8">curved shovel</option>
     <option value="10">stout pickaxe</option>
@@ -658,6 +708,7 @@
     <option value="10">flat-headed pickaxe</option>
     <option value="8">wide shovel</option>
     <option value="10">weighted pickaxe</option>
+    </optgroup>
     <optgroup label="SMITHING TOOLS">
     <option value="12">diagonal-peen mallet</option>
     <option value="12">diagonal-peen hammer</option>
@@ -674,6 +725,7 @@
     <option value="10">box-jaw tongs</option>
     <option value="10">articulated tongs</option>
     <option value="12">ball-peen mallet</option>
+    </optgroup>
     <optgroup label="ENGINEERING TOOLS">
     <option value="5">short drawknife</option>
     <option value="8">short chisels</option>
@@ -716,6 +768,7 @@
     <option value="8">serrated wood saw</option>
     <option value="8">serrated bone saw</option>
     <option value="4">precise tinker's tools</option>
+    </optgroup>
     <optgroup label="OUTFITTING TOOLS">
     <option value="3">hide scraper</option>
     <option value="6">stout yardstick</option>
@@ -740,6 +793,7 @@
     <option value="6">detailed yardstick</option>
     <option value="4">serrated scissors</option>
     <option value="3">thin sewing needles</option>
+    </optgroup>
     <optgroup label="ALCHEMY AND ENCHANTING TOOLS">
     <option value="10">small brazier</option>
     <option value="1">tapered pestle</option>
@@ -757,6 +811,7 @@
     <option value="6">grooved mixing stick</option>
     <option value="6">sleek mixing bowl</option>
     <option value="3">trapezoidal wire sieve</option>
+    </optgroup>
     <optgroup label="BLACKSMITHING ITEMS">
     <option value="1">shallow cup</option>
     <option value="1">slender rod</option>
@@ -791,6 +846,7 @@
     <option value="5">mask</option>
     <option value="5">torque</option>
     <option value="10">headdress</option>
+    </optgroup>
     <optgroup label="BLACKSMITHING SPECIAL INSTRUCTIONS">
     <option value="5">basic stamp</option>
     <option value="5">complex stamp</option>
@@ -800,6 +856,7 @@
     <option value="4">pointed metal pliers</option>
     <option value="5">forked mixing stick</option>
     <option value="2">diagonal-wire sieve</option>
+    </optgroup>
     </select>
 
     <input
@@ -878,6 +935,7 @@
     <h3>Ingot Stats</h3>
 
     <div class="stats-grid">
+<div class="stats-row stats-row-1">
         <div class="stat-box">
             <span>Total Weight</span>
             <strong id="total-weight">0.00</strong>
@@ -900,23 +958,23 @@
     <span>Item Weight</span>
     <strong id="target-weight">0.00</strong>
 </div>
-
-
-<div class="stat-box">
-    <span>Item Kronar Value</span>
-    <strong id="item-value">0.00</strong>
 </div>
-
-
+<div class="stats-row stats-row-2">
+<div class="stat-box">
+    <span>Ingot Kronar Value</span>
+    <strong id="total-value-money">0.00</strong>
+</div>
 <div class="stat-box">
     <span>Avg Kronar Value per volume</span>
     <strong id="average-value">0.00</strong>
 </div>
 <div class="stat-box">
-    <span>Ingot Kronar Value</span>
-    <strong id="total-value-money">0.00</strong>
+    <span>Item Kronar Value</span>
+    <strong id="item-value">0.00</strong>
 </div>
 
+</div>
+<div class="stats-row stats-row-3">
 <div class="stat-box">
     <span>Hardness</span>
     <strong id="property-hardness">0.00</strong>
@@ -956,6 +1014,12 @@
     <span>Capacity</span>
     <strong id="property-capacity">0.00</strong>
 </div>
+</div>
+
+
+
+
+
 
     </div>
 
@@ -1195,7 +1259,7 @@ document.getElementById('target-weight').textContent =
 const averageValue = totalVolume > 0
     ? totalValue / totalVolume
     : 0;
-    
+
 const itemValue = targetVolume * averageValue;
 
 document.getElementById('item-value').textContent =
@@ -1348,7 +1412,7 @@ body {
 }
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     background: var(--panel-bg);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -1792,7 +1856,7 @@ th, td {
     border: 1px solid #555555;
     padding: 4px 2px;
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
     color: #ffffff;
     overflow-wrap: anywhere;
 }
