@@ -1699,10 +1699,10 @@ document.getElementById('display-density').textContent =
         return p < 0 || p > 100;
     });
 
-    if (anyInvalid || totalPercentage > 100) {
+    if (anyInvalid || totalPercentage - 100 >= 1e-9) {
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
-    } else if (totalPercentage === 100) {
+    } else if (Math.abs(totalPercentage - 100) < 1e-9) {
         status.textContent = 'Percentages total 100% — ready to craft.';
         status.className = 'good';
     } else if (totalPercentage > 0) {
