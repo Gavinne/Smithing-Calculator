@@ -1272,6 +1272,7 @@ if (Math.round(dominantShare * 1e9) >= 670000000) {
     for (const [metalName, material] of materials) {
         const item = document.createElement('li');
         item.className = 'material-item';
+        item.style.gap = '0.5rem';
 
         const name = document.createElement('span');
         name.className = 'material-name';
@@ -1281,8 +1282,12 @@ if (Math.round(dominantShare * 1e9) >= 670000000) {
         share.style.display = 'block';
         share.style.color = 'var(--text-muted)';
         share.style.fontSize = '0.8rem';
-        share.textContent =
-            (material.volume / totalVolume * 100).toFixed(2) + '% of total';
+        let percent = material.volume / totalVolume * 100;
+        // Never show 67.00% for a metal the 67% rule above counts as below 67%.
+        if (Math.round(material.volume / totalVolume * 1e9) < 670000000) {
+            percent = Math.min(percent, 66.99);
+        }
+        share.textContent = percent.toFixed(2) + '% of total';
         name.appendChild(share);
 
         const qty = document.createElement('span');
