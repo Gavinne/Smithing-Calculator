@@ -1199,7 +1199,7 @@ const alloyWarning = document.getElementById('alloy-warning');
 
 const metalsOver33Percent = totalVolume > 0
     ? Object.values(selectedMaterials).filter(
-        material => material.volume / totalVolume > 0.3300000001
+        material => material.volume / totalVolume > 0.33
       ).length
     : 0;
 
@@ -1261,7 +1261,7 @@ const dominantShare = dominantMetal && totalQuantity > 0
 for (const property of propertyNames) {
     let result;
 
-    if (dominantShare >= 0.67) {
+if (Math.round(dominantShare * 1e9) >= 670000000) {
         // One metal makes up at least 67% of the ingot.
         result = recipes[dominantMetal][property];
     } else {
