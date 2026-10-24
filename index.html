@@ -1638,12 +1638,21 @@ const metalWeight = metalVolume * metalDensities[metal];
 
 totalWeight += metalWeight;
 
-entries.push({
-    metal,
-    percentage,
-    volume: metalVolume,
-    weight: metalWeight
-});
+// Same metal in more than one row: add it to the existing entry
+const existing = entries.find(entry => entry.metal === metal);
+
+if (existing) {
+    existing.percentage += percentage;
+    existing.volume += metalVolume;
+    existing.weight += metalWeight;
+} else {
+    entries.push({
+        metal,
+        percentage,
+        volume: metalVolume,
+        weight: metalWeight
+    });
+}
         }
     }
 
