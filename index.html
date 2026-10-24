@@ -1268,6 +1268,46 @@ if (Math.round(dominantShare * 1e9) >= 670000000) {
         return;
     }
 
+    // One entry per metal: name and share on the left, volume and weight on the right.
+    for (const [metalName, material] of materials) {
+        const item = document.createElement('li');
+        item.className = 'material-item';
+        item.style.gap = '0.5rem';
+
+        const name = document.createElement('span');
+        name.className = 'material-name';
+        name.textContent = metalName;
+
+        const share = document.createElement('span');
+        share.style.display = 'block';
+        share.style.color = 'var(--text-muted)';
+        share.style.fontSize = '0.8rem';
+        let percent = material.volume / totalVolume * 100;
+        // Never show 67.00% for a metal the 67% rule above counts as below 67%.
+        if (Math.round(material.volume / totalVolume * 1e9) < 670000000) {
+            percent = Math.min(percent, 66.99);
+        }
+        share.textContent = percent.toFixed(2) + '% of total';
+        name.appendChild(share);
+
+        const qty = document.createElement('span');
+        qty.className = 'material-qty';
+        qty.style.textAlign = 'right';
+        qty.textContent = material.volume.toFixed(2) + ' vol';
+
+        const weight = document.createElement('span');
+        weight.style.display = 'block';
+        weight.style.color = 'var(--text-muted)';
+        weight.style.fontSize = '0.8rem';
+        weight.style.fontWeight = 'normal';
+        weight.textContent = material.weight.toFixed(2) + ' weight';
+        qty.appendChild(weight);
+
+        item.appendChild(name);
+        item.appendChild(qty);
+        listContainer.appendChild(item);
+    }
+
 }
 
 
