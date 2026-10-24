@@ -1678,7 +1678,7 @@ document.getElementById('display-density').textContent =
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
     } else if (Math.abs(totalPercentage - 100) < 1e-9) {
-        status.textContent = 'Percentages total 100% — ready to craft.';
+        status.textContent = 'Percentages total 100% â€” ready to craft.';
         status.className = 'good';
     } else if (totalPercentage > 0) {
         status.textContent = 'Percentages must total 100%. Some volume is unallocated.';
