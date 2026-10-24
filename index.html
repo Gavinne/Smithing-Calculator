@@ -1,10 +1,20 @@
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavinne's Smithing Calculator</title>
+    <!-- Link to a PNG favicon inside an images folder -->
     <link rel="icon" type="image/png" href="./favicon-16x16.png">
+</head>
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gavinne's Smithing Calculator</title>
     <style>
         :root {
@@ -1177,7 +1187,7 @@ const minorityMetalWarning = document.getElementById(
 
 const allMetalsBelow67Percent = totalVolume > 0 &&
     Object.values(selectedMaterials).every(
-        material => Math.round(material.volume / totalVolume * 1e9) < 670000000
+        material => material.volume / totalVolume < 0.67
     );
 
 minorityMetalWarning.style.display =
@@ -1220,7 +1230,7 @@ document.getElementById('target-weight').textContent =
 const averageValue = totalVolume > 0
     ? totalValue / totalVolume
     : 0;
-
+    
 const itemValue = targetVolume * averageValue;
 
 document.getElementById('item-value').textContent =
@@ -1250,8 +1260,6 @@ const dominantShare = dominantMetal && totalQuantity > 0
 
 for (const property of propertyNames) {
     let result;
-
-if (Math.round(dominantShare * 1e9) >= 670000000) {
 
     if (dominantShare >= 0.67) {
         // One metal makes up at least 67% of the ingot.
