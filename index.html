@@ -1652,7 +1652,7 @@ entries.push({
     document.getElementById('display-percentage').textContent =
         totalPercentage.toFixed(2) + '%';
     document.getElementById('remaining-volume').textContent =
-        (totalVolume * (1 - totalPercentage / 100)).toFixed(2);
+        Math.max(0, totalVolume * (1 - totalPercentage / 100)).toFixed(2);
         
 // NEW CODE: Display total weight and overall density
 const overallDensity = totalVolume > 0
