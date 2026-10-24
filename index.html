@@ -1668,7 +1668,7 @@ document.getElementById('display-density').textContent =
 // Existing code continues below        
     const status = document.getElementById('percentage-status');
     const anyInvalid = Array.from(
-        document.querySelectorAll('[id^="percentage-"]')
+        document.querySelectorAll('#metal-rows input[id^="percentage-"]')
     ).some(input => {
         const p = Number(input.value);
         return p < 0 || p > 100;
