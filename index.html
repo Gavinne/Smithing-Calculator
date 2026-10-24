@@ -1187,7 +1187,7 @@ const minorityMetalWarning = document.getElementById(
 
 const allMetalsBelow67Percent = totalVolume > 0 &&
     Object.values(selectedMaterials).every(
-        material => material.volume / totalVolume < 0.67
+        material => Math.round(material.volume / totalVolume * 1e9) < 670000000
     );
 
 minorityMetalWarning.style.display =
