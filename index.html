@@ -1335,6 +1335,15 @@ function getTargetVolume() {
     buildQueueUI();
     calculateTotalQueue();
 
+    // When you come back to this page with the Back button, the browser can
+    // refill the boxes after the calculation above has already run. Redo it
+    // whenever the page is shown so the results match what is in the boxes.
+    window.addEventListener('pageshow', function () {
+        const isCustom = targetVolumeSelect.value === 'custom';
+        customVolumeInput.style.display = isCustom ? 'block' : 'none';
+        calculateTotalQueue();
+    });
+
 </script>
 
 
@@ -1762,6 +1771,11 @@ document.getElementById('clear-button').addEventListener('click', () => {
 
 buildRows();
 calculate();
+
+// When you come back to this page with the Back button, the browser can
+// refill the boxes after the calculation above has already run. Redo it
+// whenever the page is shown so the results match what is in the boxes.
+window.addEventListener('pageshow', calculate);
 </script>
 </body>
 </html>
