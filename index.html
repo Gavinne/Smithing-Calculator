@@ -1057,7 +1057,7 @@
             const input = document.createElement('input');
             input.type = 'number';
             input.id = `item-qty-${i}`;
-            input.value = i === 1 ? '0' : '0'; // Default first item to 1, rest to 0
+            input.value = '0';
             input.min = '0';
             input.addEventListener('input', calculateTotalQueue);
 
