@@ -853,21 +853,6 @@
 </div>
 
 
-<div id="alloy-warning" style="
-    display: none;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 1px solid #f59e0b;
-    border-radius: 8px;
-    background-color: rgba(245, 158, 11, 0.12);
-    color: #fcd34d;
-    font-weight: bold;
-    text-align: center;
-">
-    Ingot Will Alloy
-</div>
-
-
 <div id="minority-metal-warning" style="
     display: none;
     margin-bottom: 1rem;
@@ -1168,18 +1153,6 @@ const allMetalsBelow67Percent = totalVolume > 0 &&
 minorityMetalWarning.style.display =
     allMetalsBelow67Percent ? 'block' : 'none';
 
-
-
-const alloyWarning = document.getElementById('alloy-warning');
-
-const metalsOver33Percent = totalVolume > 0
-    ? Object.values(selectedMaterials).filter(
-        material => material.volume / totalVolume > 0.33
-      ).length
-    : 0;
-
-alloyWarning.style.display =
-    metalsOver33Percent > 1 ? 'block' : 'none';
 
 
 const materialWarning = document.getElementById('material-warning');
