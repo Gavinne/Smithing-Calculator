@@ -2,20 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gavinne's Smithing Calculator</title>
-    <!-- Link to a PNG favicon inside an images folder -->
-    <link rel="icon" type="image/png" href="./favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-</head>
-<body>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gavinne's Smithing Calculator</title>
+    <link rel="icon" type="image/png" href="./favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <style>
         :root {
             --bg-dark: #0f172a;
@@ -1037,7 +1027,7 @@
         for (let i = 1; i <= 5; i++) {
             const row = document.createElement('div');
             row.className = 'queue-row';
-            
+
             // Build the selector element
             const select = document.createElement('select');
             select.id = `item-select-${i}`;
@@ -1258,15 +1248,39 @@ if (Math.round(dominantShare * 1e9) >= 670000000) {
 
     listContainer.replaceChildren();
 
-    const materials = Object.entries(selectedMaterials);
 
-    if (materials.length === 0) {
-        const message = document.createElement('li');
-        message.style.color = 'var(--text-muted)';
-        message.textContent = 'No metals selected.';
-        listContainer.appendChild(message);
-        return;
-    }
+const materials = Object.entries(selectedMaterials);
+
+if (materials.length === 0) {
+    const message = document.createElement('li');
+    message.style.color = 'var(--text-muted)';
+    message.textContent = 'No metals selected.';
+    listContainer.appendChild(message);
+    return;
+}
+
+for (const [metalName, material] of materials) {
+    const item = document.createElement('li');
+    item.className = 'material-item';
+
+    const name = document.createElement('span');
+    name.className = 'material-name';
+    name.textContent = metalName;
+
+    const quantity = document.createElement('span');
+    quantity.className = 'material-qty';
+
+    const percentage = totalVolume > 0
+        ? (material.volume / totalVolume) * 100
+        : 0;
+
+    quantity.textContent =
+        `${material.volume.toFixed(2)} vol (${percentage.toFixed(2)}%)`;
+
+    item.append(name, quantity);
+    listContainer.appendChild(item);
+}
+
 
 }
 
@@ -1680,7 +1694,7 @@ document.getElementById('display-density').textContent =
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
     } else if (Math.abs(totalPercentage - 100) < 1e-9) {
-        status.textContent = 'Percentages total 100% — ready to craft.';
+        status.textContent = 'Percentages total 100% â€” ready to craft.';
         status.className = 'good';
     } else if (totalPercentage > 0) {
         status.textContent = 'Percentages must total 100%. Some volume is unallocated.';
