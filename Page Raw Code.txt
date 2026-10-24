@@ -39,7 +39,6 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
         }
 
         .container {
@@ -50,6 +49,24 @@
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Space between the calculator panels */
+        .container ~ .container {
+            margin-top: 2rem;
+        }
+
+        /* Metal Properties table: same slate panel as the calculators */
+        #metals, .note {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        #metals {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0 1rem;
         }
 
         h1 {
