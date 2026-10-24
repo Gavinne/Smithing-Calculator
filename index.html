@@ -1477,8 +1477,8 @@ button {
     </div>
 
     <div class="target">
-        <label for="target-volume">Total Ingot Volume</label>
-        <input id="target-volume" type="number" min="0" step="any" value="0">
+        <label for="reverse-volume">Total Ingot Volume</label>
+        <input id="reverse-volume" type="number" min="0" step="any" value="0">
     </div>
 
     <div class="queue-heading">
@@ -1597,7 +1597,7 @@ const metalDensities = {
 
 
 const rowContainer = document.getElementById('metal-rows');
-const volumeInput = document.getElementById('target-volume');
+const volumeInput = document.getElementById('reverse-volume');
 
 function buildRows() {
     for (let i = 1; i <= 5; i++) {
