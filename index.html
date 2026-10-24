@@ -1675,7 +1675,11 @@ document.getElementById('display-density').textContent =
     });
 
     if (anyInvalid || totalPercentage - 100 >= 1e-9) {
-        status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
+        status.textContent = Array.from(document.querySelectorAll('#metal-rows input')).some(input => Number(input.value) < 0)
+            ? (totalPercentage - 100 >= 1e-9 || Array.from(document.querySelectorAll('#metal-rows input')).some(input => Number(input.value) > 100)
+                ? 'Percentages cannot be negative or exceed the allowed total. Please check your entries.'
+                : 'Percentages cannot be negative. Please check your entries.')
+            : 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
     } else if (Math.abs(totalPercentage - 100) < 1e-9) {
         status.textContent = 'Percentages total 100% — ready to craft.';
