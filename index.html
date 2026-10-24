@@ -32,7 +32,7 @@
         .container {
     box-sizing: border-box;
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     background-color: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -169,52 +169,85 @@
             color: #10b981;
             font-weight: bold;
         }
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
 
-.stat-box {
-    background: var(--bg-dark);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
+
+
+/* Give the stats area the full available page width */
+.stats-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
 }
 
-.stat-box span {
-    color: var(--text-muted);
-    font-size: 0.8rem;
+/* Each row gets its own separate box */
+.stats-row {
+    display: grid;
+    width: 100%;
+    gap: 0.75rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
 }
 
-.stat-box strong {
-    color: #10b981;
-    font-size: 1.5rem;
-    overflow-wrap: anywhere;
+/* Row 1: five stats */
+.stats-row-1 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-@media (max-width: 560px) {
-    body {
-        padding: 1rem;
+/* Row 2: three stats */
+.stats-row-2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* Row 3: four stats per line, two lines total */
+.stats-row-3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+/* Prevent individual stat boxes from overflowing */
+.stat-box {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Adjust the layout for smaller screens */
+
+@media (max-width: 700px) {
+    .stats-row-1 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .container {
-        padding: 1rem;
+    .stats-row-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .queue-row,
-    .queue-header {
-        grid-template-columns: minmax(0, 2fr) minmax(70px, 1fr);
+    .stats-row-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 400px) {
+    .stats-row {
+        padding: 0.5rem;
         gap: 0.5rem;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
+    .stats-row-1,
+    .stats-row-2,
+    .stats-row-3 {
+        grid-template-columns: minmax(0, 1fr);
     }
+}
+
+
 }
     </style>
 </head>
@@ -902,6 +935,7 @@
     <h3>Ingot Stats</h3>
 
     <div class="stats-grid">
+<div class="stats-row stats-row-1">
         <div class="stat-box">
             <span>Total Weight</span>
             <strong id="total-weight">0.00</strong>
@@ -924,23 +958,23 @@
     <span>Item Weight</span>
     <strong id="target-weight">0.00</strong>
 </div>
-
-
-<div class="stat-box">
-    <span>Item Kronar Value</span>
-    <strong id="item-value">0.00</strong>
 </div>
-
-
+<div class="stats-row stats-row-2">
+<div class="stat-box">
+    <span>Ingot Kronar Value</span>
+    <strong id="total-value-money">0.00</strong>
+</div>
 <div class="stat-box">
     <span>Avg Kronar Value per volume</span>
     <strong id="average-value">0.00</strong>
 </div>
 <div class="stat-box">
-    <span>Ingot Kronar Value</span>
-    <strong id="total-value-money">0.00</strong>
+    <span>Item Kronar Value</span>
+    <strong id="item-value">0.00</strong>
 </div>
 
+</div>
+<div class="stats-row stats-row-3">
 <div class="stat-box">
     <span>Hardness</span>
     <strong id="property-hardness">0.00</strong>
@@ -980,6 +1014,12 @@
     <span>Capacity</span>
     <strong id="property-capacity">0.00</strong>
 </div>
+</div>
+
+
+
+
+
 
     </div>
 
