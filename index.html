@@ -1073,6 +1073,9 @@
             document.getElementById(`item-select-${i}`).value = 'None';
             document.getElementById(`item-qty-${i}`).value = '0';
         }
+        targetVolumeSelect.selectedIndex = 0;
+        customVolumeInput.value = '';
+        customVolumeInput.style.display = 'none';
         calculateTotalQueue();
     }
 
