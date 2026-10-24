@@ -1029,6 +1029,9 @@
         'Telothian': { 'Hardness': 104, 'Durability': 80, 'Workability': 25, 'Electrical': 90, 'Thermal': 70, 'Physical': 45, 'Ductility': 90, 'Capacity': 5, 'Density': 6.4, 'Value': 87500},
         'Vardite': { 'Hardness': 88, 'Durability': 75, 'Workability': 45, 'Electrical': 80, 'Thermal': 45, 'Physical': 99, 'Ductility': 30, 'Capacity': 4, 'Density': 6.1, 'Value': 27500}
     };
+</script>
+<script>
+    // recipes has its own script block above, so a typo in the code below only breaks the Forging Calculator.
 
     // Generate the 5 distinct rows in the UI
     function buildQueueUI() {
@@ -1504,7 +1507,9 @@ button {
 
 <script>
 // Metal names and densities come from the recipes list in the Forging Calculator above.
-const metalNames = Object.keys(recipes);
+const metalNames = Object.keys(recipes).filter(
+    name => name === 'None' || Object.keys(recipes[name]).length > 0
+);
 
 const metalDensities = {};
 for (const name of metalNames) {
@@ -1857,6 +1862,14 @@ for (const [category, metals] of Object.entries(categories)) {
     metals.forEach(name => {
         const row = document.createElement("tr");
         const metal = recipes[name];
+        if (!metal) {
+            const td = document.createElement("td");
+            td.colSpan = columns.length;
+            td.textContent = name + ": not found in recipes";
+            row.appendChild(td);
+            tbody.appendChild(row);
+            return;
+        }
         const values = [
             name, metal.Hardness, metal.Durability, metal.Workability,
             metal.Electrical, metal.Thermal, metal.Physical, metal.Ductility,
