@@ -1671,8 +1671,11 @@ document.getElementById('display-density').textContent =
         document.querySelectorAll('[id^="percentage-"]')
     ).some(input => {
         const p = Number(input.value);
-        return p < 0 || p > 100;
+        return p < 0 || Number(p.toFixed(2)) > 100;
     });
+
+    // Judge the total as the page shows it (rounded to two decimals).
+    totalPercentage = Number(totalPercentage.toFixed(2));
 
     if (anyInvalid || totalPercentage - 100 >= 1e-9) {
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
