@@ -1736,20 +1736,18 @@ calculate();
 <title>Metal Properties</title>
 
 <style>
-body {
+#metal-reference {
     font-family: Arial, sans-serif;
     font-size: 12px;
-    margin: 0;
-    background: #000000;
     color: #ffffff;
 }
 
-h1 {
+#metal-reference h1 {
     text-align: center;
     margin-top: 30px;
 }
 
-h2 {
+#metal-reference h2 {
     margin-top: 30px;
     background: #000000;
     color: #ffffff;
@@ -1757,7 +1755,7 @@ h2 {
     border-radius: 5px;
 }
 
-.table-container {
+#metal-reference .table-container {
     width: 100%;
     overflow-x: hidden;
     margin-bottom: 25px;
@@ -1765,7 +1763,7 @@ h2 {
     border-radius: 5px;
 }
 
-table {
+#metal-reference table {
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
@@ -1774,7 +1772,7 @@ table {
 }
 
 /* Table cells */
-th, td {
+#metal-reference th, #metal-reference td {
     border: 1px solid #555555;
     padding: 4px 2px;
     text-align: center;
@@ -1784,27 +1782,27 @@ th, td {
 }
 
 /* Column headings */
-th {
+#metal-reference th {
     background: #000000;
     color: #ffffff;
 }
 
 /* Dark grey rows */
-tbody tr:nth-child(odd) td {
+#metal-reference tbody tr:nth-child(odd) td {
     background: #333333;
 }
 
 /* Lighter grey rows */
-tbody tr:nth-child(even) td {
+#metal-reference tbody tr:nth-child(even) td {
     background: #505050;
 }
 
 /* Highlight when hovering over a row */
-tbody tr:hover td {
+#metal-reference tbody tr:hover td {
     background: #777777;
 }
 
-    .note {
+    #metal-reference .note {
         font-size: 0.9em;
         font-style: italic;
         margin-top: 10px;
@@ -1814,11 +1812,13 @@ tbody tr:hover td {
 
 <body>
 
+<section id="metal-reference">
 <h1>Metal Properties Reference</h1>
 
 <div id="metals"></div>
 
 <p class="note">* Value is per volume, at 99 purity.</p>
+</section>
 
 <script>
 const columns = [
