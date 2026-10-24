@@ -1627,10 +1627,6 @@ let totalWeight = 0;
         const input = document.getElementById(`percentage-${i}`);
         const percentage = Math.max(0, Number(input.value) || 0);
 
-        if (percentage > 100) {
-            // Keep the entered value visible, but flag it as invalid below.
-        }
-
         if (metal !== 'None' && percentage > 0) {
             totalPercentage += percentage;
 const metalVolume = totalVolume * percentage / 100;
