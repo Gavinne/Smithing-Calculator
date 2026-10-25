@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gavinne's Smithing Calculator</title>
-    <link rel="icon" type="image/png" href="./favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gavinne's Smithing Calculator</title>
+<link rel="icon" type="image/png" href="./favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<style>
+
         :root {
             --bg-dark: #0f172a;
             --panel-bg: #1e293b;
@@ -24,15 +25,28 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             margin: 0;
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
+            padding: 1.25rem;
         }
+
+        #app-shell { width: 100%; max-width: 1100px; margin: 0 auto; }
+        .app-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 auto 1rem; }
+        .app-nav button { border: 1px solid var(--border-color); border-radius: 8px; padding: .75rem 1rem; background: var(--panel-bg); color: var(--text-main); cursor: pointer; font: inherit; }
+        .app-nav button[aria-selected="true"] { background: var(--accent-blue); border-color: var(--accent-blue); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        .tab-panel:focus { outline: none; }
+
+        /* Match the centered heading style used by Metal Properties Reference. */
+        #panel-smithing h1,
+        #panel-reverse h1 { text-align: center; }
+        @media (max-width: 600px) { body { padding: .5rem; } .app-nav button { flex: 1 1 auto; } }
 
         .container {
     box-sizing: border-box;
     width: 100%;
-    max-width: 1000px;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -77,14 +91,19 @@
 
         .queue-row {
             display: grid;
-            grid-template-columns: 3fr 1fr;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
             gap: 1rem;
             background-color: rgba(15, 23, 42, 0.4);
             padding: 0.5rem;
             border-radius: 8px;
             border: 1px solid rgba(51, 65, 85, 0.5);
         }
-
+.queue-row select,
+.queue-row input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
         select, input {
             background-color: var(--bg-dark);
             border: 1px solid var(--border-color);
@@ -172,7 +191,7 @@
 
 
 
-/* Give the stats area the full available page width */
+/* Stats layout */
 .stats-grid {
     display: flex;
     flex-direction: column;
@@ -182,7 +201,6 @@
     box-sizing: border-box;
 }
 
-/* Each row gets its own separate box */
 .stats-row {
     display: grid;
     width: 100%;
@@ -194,46 +212,33 @@
     border-radius: 10px;
 }
 
-/* Row 1: five stats */
 .stats-row-1 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-/* Row 2: three stats */
 .stats-row-2 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-
-/* Row 3: four stats per line, two lines total */
 .stats-row-3 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-
-/* Prevent individual stat boxes from overflowing */
 .stat-box {
     min-width: 0;
     box-sizing: border-box;
 }
 
-/* Adjust the layout for smaller screens */
-
+/* Tablets and smaller screens */
 @media (max-width: 700px) {
-    .stats-row-1 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .stats-row-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .stats-row-1,
+    .stats-row-2,
     .stats-row-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-
+/* Small mobile screens */
 @media (max-width: 400px) {
     .stats-row {
         padding: 0.5rem;
@@ -246,13 +251,229 @@
         grid-template-columns: minmax(0, 1fr);
     }
 }
+    
 
+.reverse-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--text); padding: 0; }
+.reverse-page { --bg-dark: #0f172a; --panel-bg: #1e293b; --accent: #3b82f6; --text: #f8fafc; --muted: #94a3b8; --border: #334155; --green: #10b981; --red: #ef4444; }
+@scope (.reverse-page) {
+
+* { box-sizing: border-box; }
+.container {
+    width: 100%;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+}
+h1 { margin-top: 0; font-size: 1.7rem; }
+.subtitle { color: var(--muted); margin-bottom: 1.5rem; }
+label, .field-label {
+    display: block;
+    color: var(--muted);
+    font-size: .9rem;
+    margin-bottom: .45rem;
+}
+input, select {
+    width: 100%;
+    min-width: 0;
+    padding: .75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg-dark);
+    color: var(--text);
+    font-size: 1rem;
+}
+input:focus, select:focus { outline: 2px solid var(--accent); }
+.target { margin-bottom: 1.5rem; }
+.queue-heading, .metal-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(85px, 1fr);
+    gap: .75rem;
+}
+.queue-heading { margin: 0 .5rem .5rem; }
+.queue-heading span {
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#metal-rows { display: flex; flex-direction: column; gap: .75rem; }
+.metal-row {
+    padding: .75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, .4);
+}
+.percentage-field { position: relative; }
+.percentage-field input { padding-right: 2rem; }
+.percent-symbol {
+    position: absolute;
+    right: .75rem;
+    top: .8rem;
+    color: var(--muted);
+    pointer-events: none;
+}
+.results {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, .55);
+}
+.results h2 { margin-top: 0; font-size: 1.15rem; }
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: .75rem;
+}
+.stat {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+}
+.stat span { display: block; color: var(--muted); font-size: .8rem; }
+.stat strong { display: block; margin-top: .4rem; font-size: 1.35rem; }
+#percentage-status { margin: 1rem 0 0; font-weight: 600; }
+.good { color: var(--green); }
+.warning { color: #fbbf24; }
+.error { color: #f87171; }
+#breakdown { list-style: none; padding: 0; margin: 1rem 0 0; }
+#breakdown li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .75rem;
+    margin-top: .5rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+button {
+    padding: .7rem 1.1rem;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.clear-button {
+    color: var(--red);
+    background: transparent;
+    border: 1px solid var(--red);
+}
+.actions { display: flex; justify-content: flex-end; margin-top: 1rem; }
+@media (max-width: 480px) {
+    .container { padding: 1rem; }
+    body { padding: 1rem .5rem; }
+    .metal-row { gap: .5rem; padding: .5rem; }
+}
 
 }
-    </style>
+
+
+.properties-page {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--panel-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+@scope (.properties-page) {
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--text-main);
+    font-size: 1.75rem;
+}
+
+h2 {
+    margin-top: 1.75rem;
+    background: rgba(15, 23, 42, 0.7);
+    color: var(--accent-blue);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    background: var(--bg-dark);
+    color: var(--text-main);
+}
+
+/* Table cells */
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-main);
+    overflow-wrap: anywhere;
+}
+
+/* Column headings */
+th {
+    background: var(--panel-bg);
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(odd) td {
+    background: rgba(30, 41, 59, 0.75);
+}
+
+tbody tr:nth-child(even) td {
+    background: rgba(15, 23, 42, 0.7);
+}
+
+tbody tr:hover td {
+    background: rgba(59, 130, 246, 0.18);
+}
+
+.note {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .properties-page { padding: 1rem; }
+    th, td { padding: 5px 3px; font-size: 11px; }
+}
+}
+
+</style>
 </head>
 <body>
-
+<div id="app-shell">
+  <nav class="app-nav" role="tablist" aria-label="Smithing tools">
+    <button type="button" role="tab" id="tab-smithing" aria-controls="panel-smithing" aria-selected="true" data-panel="panel-smithing">Smithing Calculator</button>
+    <button type="button" role="tab" id="tab-reverse" aria-controls="panel-reverse" aria-selected="false" data-panel="panel-reverse">Ingot Dissector</button>
+    <button type="button" role="tab" id="tab-properties" aria-controls="panel-properties" aria-selected="false" data-panel="panel-properties">Metal Properties</button>
+  </nav>
+  <main>
+    <section id="panel-smithing" class="tab-panel active" role="tabpanel" aria-labelledby="tab-smithing" tabindex="0">
 <div class="container">
     <h1>Gavinne's Smithing Calculator</h1>
     <div class="subtitle">Set up to 5 metals to calculate.</div>
@@ -882,7 +1103,7 @@
 
     <!-- Actions Control Panel -->
     <div class="actions-row">
-        <button class="btn-clear" onclick="clearAllQueue()">Clear All Items</button>
+        <button class="btn-clear" id="clear-all-queue" type="button">Clear All Items</button>
     </div>
 
 <div id="material-warning" style="
@@ -1027,64 +1248,167 @@
         <!-- Consolidated material results appear here -->
     </ul>
 </div>
+    </section>
+    <section id="panel-reverse" class="tab-panel reverse-page" role="tabpanel" aria-labelledby="tab-reverse" tabindex="0">
+<div class="container">
+    <h1>Gavinne's Ingot Dissector</h1>
+    <div class="subtitle">
+        Enter an ingot volume and the percentage of each metal.
+    </div>
 
+    <div class="target">
+        <label for="reverse-volume">Total Ingot Volume</label>
+        <input id="reverse-volume" type="number" min="0" step="any" value="0">
+    </div>
 
+    <div class="queue-heading">
+        <span>Metal</span>
+        <span>Percentage</span>
+    </div>
+    <div id="metal-rows"></div>
+
+    <div class="actions">
+        <button class="clear-button" id="clear-button" type="button">
+            Clear All
+        </button>
+    </div>
+
+    <section class="results">
+        <h2>Ingot Composition Breakdown</h2>
+        <div class="summary-grid">
+            <div class="stat">
+                <span>Total Ingot Volume</span>
+                <strong id="display-volume">100.00</strong>
+            </div>
+            <div class="stat">
+                <span>Total Percentage</span>
+                <strong id="display-percentage">0.00%</strong>
+            </div>
+            <div class="stat">
+                <span>Unallocated Volume</span>
+                <strong id="remaining-volume">100.00</strong>
+            </div>
+
+<div class="stat">
+    <span>Total Ingot Weight</span>
+    <strong id="display-weight">0.00</strong>
+</div>
+
+<div class="stat">
+    <span>Overall Ingot Density</span>
+    <strong id="display-density">0.00</strong>
+</div>
+            
+        </div>
+        <p id="percentage-status" class="warning" role="status">
+            Enter metal percentages.
+        </p>
+        <ul id="breakdown"></ul>
+    </section>
+</div>
+    </section>
+    <section id="panel-properties" class="tab-panel properties-page" role="tabpanel" aria-labelledby="tab-properties" tabindex="0">
+<h1>Metal Properties Reference</h1>
+
+<div id="metals">
+<h2>Common Metals</h2>
+<div class="table-container"><table class="metal-properties-table"><thead><tr><th>Metal</th><th>Hardness</th><th>Durability</th><th>Workability</th><th>Electrical</th><th>Thermal</th><th>Physical</th><th>Ductility</th><th>Capacity</th><th>Density</th><th>Kronar Value</th></tr></thead><tbody>
+<tr><td class="metal-name">Acenite</td><td>25</td><td>15</td><td>50</td><td>30</td><td>25</td><td>25</td><td>90</td><td>50</td><td>6</td><td>3,750</td></tr>
+<tr><td class="metal-name">Brass</td><td>40</td><td>25</td><td>60</td><td>30</td><td>40</td><td>40</td><td>90</td><td>28</td><td>5.8</td><td>150</td></tr>
+<tr><td class="metal-name">Bronze</td><td>80</td><td>65</td><td>70</td><td>35</td><td>55</td><td>80</td><td>85</td><td>40</td><td>6.2</td><td>125</td></tr>
+<tr><td class="metal-name">Copper</td><td>25</td><td>40</td><td>70</td><td>10</td><td>15</td><td>25</td><td>80</td><td>30</td><td>7</td><td>125</td></tr>
+<tr><td class="metal-name">Covellite</td><td>35</td><td>80</td><td>65</td><td>25</td><td>85</td><td>80</td><td>80</td><td>30</td><td>2</td><td>62.5</td></tr>
+<tr><td class="metal-name">Iron</td><td>70</td><td>40</td><td>50</td><td>30</td><td>50</td><td>75</td><td>50</td><td>25</td><td>5</td><td>125</td></tr>
+<tr><td class="metal-name">Lead</td><td>20</td><td>30</td><td>80</td><td>40</td><td>70</td><td>20</td><td>75</td><td>30</td><td>8</td><td>50</td></tr>
+<tr><td class="metal-name">Nickel</td><td>25</td><td>15</td><td>50</td><td>30</td><td>25</td><td>25</td><td>90</td><td>30</td><td>6</td><td>100</td></tr>
+<tr><td class="metal-name">Oravir</td><td>40</td><td>20</td><td>70</td><td>95</td><td>15</td><td>25</td><td>15</td><td>50</td><td>1</td><td>50</td></tr>
+<tr><td class="metal-name">Pewter</td><td>25</td><td>45</td><td>70</td><td>40</td><td>70</td><td>25</td><td>30</td><td>50</td><td>5.0</td><td>275</td></tr>
+<tr><td class="metal-name">Platinum</td><td>20</td><td>15</td><td>20</td><td>30</td><td>10</td><td>20</td><td>85</td><td>50</td><td>9</td><td>12,500</td></tr>
+<tr><td class="metal-name">Silver</td><td>15</td><td>25</td><td>50</td><td>5</td><td>10</td><td>15</td><td>75</td><td>50</td><td>8</td><td>2,500</td></tr>
+<tr><td class="metal-name">Steel (HCS)</td><td>90</td><td>25</td><td>35</td><td>30</td><td>50</td><td>90</td><td>20</td><td>5</td><td>5</td><td>250</td></tr>
+<tr><td class="metal-name">Steel (LCS)</td><td>80</td><td>80</td><td>40</td><td>30</td><td>50</td><td>80</td><td>75</td><td>10</td><td>5</td><td>250</td></tr>
+<tr><td class="metal-name">Steel (MCS)</td><td>85</td><td>60</td><td>50</td><td>30</td><td>50</td><td>85</td><td>70</td><td>20</td><td>5</td><td>187</td></tr>
+<tr><td class="metal-name">Tin</td><td>25</td><td>75</td><td>40</td><td>35</td><td>25</td><td>25</td><td>80</td><td>50</td><td>3</td><td>37.5</td></tr>
+<tr><td class="metal-name">Gold</td><td>10</td><td>20</td><td>40</td><td>15</td><td>15</td><td>10</td><td>80</td><td>50</td><td>9</td><td>6,250</td></tr>
+<tr><td class="metal-name">Zinc</td><td>25</td><td>20</td><td>60</td><td>50</td><td>25</td><td>25</td><td>75</td><td>45</td><td>4</td><td>87.5</td></tr>
+</tbody></table></div>
+<h2>Rare Metals</h2>
+<div class="table-container"><table class="metal-properties-table"><thead><tr><th>Metal</th><th>Hardness</th><th>Durability</th><th>Workability</th><th>Electrical</th><th>Thermal</th><th>Physical</th><th>Ductility</th><th>Capacity</th><th>Density</th><th>Kronar Value</th></tr></thead><tbody>
+<tr><td class="metal-name">Animite</td><td>15</td><td>10</td><td>10</td><td>65</td><td>65</td><td>15</td><td>90</td><td>50</td><td>4</td><td>43,750</td></tr>
+<tr><td class="metal-name">Audrualm</td><td>92</td><td>40</td><td>5</td><td>55</td><td>90</td><td>95</td><td>85</td><td>7</td><td>3</td><td>15,000</td></tr>
+<tr><td class="metal-name">Coralite</td><td>99</td><td>65</td><td>40</td><td>40</td><td>99</td><td>99</td><td>35</td><td>6</td><td>5.9</td><td>77,500</td></tr>
+<tr><td class="metal-name">Damite</td><td>80</td><td>70</td><td>10</td><td>90</td><td>40</td><td>95</td><td>25</td><td>4</td><td>6</td><td>13,750</td></tr>
+<tr><td class="metal-name">Darkstone</td><td>85</td><td>50</td><td>75</td><td>70</td><td>35</td><td>75</td><td>20</td><td>50</td><td>5.1</td><td>875</td></tr>
+<tr><td class="metal-name">Electrum</td><td>20</td><td>20</td><td>30</td><td>20</td><td>20</td><td>20</td><td>80</td><td>55</td><td>8</td><td>5,625</td></tr>
+<tr><td class="metal-name">Glaes</td><td>95</td><td>50</td><td>10</td><td>60</td><td>40</td><td>75</td><td>95</td><td>10</td><td>4</td><td>16,250</td></tr>
+<tr><td class="metal-name">Haralun</td><td>95</td><td>60</td><td>20</td><td>70</td><td>75</td><td>80</td><td>90</td><td>5</td><td>8</td><td>13,750</td></tr>
+<tr><td class="metal-name">Icesteel</td><td>90</td><td>75</td><td>20</td><td>80</td><td>95</td><td>85</td><td>95</td><td>40</td><td>4.5</td><td>25,000</td></tr>
+<tr><td class="metal-name">Kelpzyte</td><td>99</td><td>75</td><td>38</td><td>60</td><td>80</td><td>99</td><td>35</td><td>5</td><td>3.6</td><td>63,750</td></tr>
+<tr><td class="metal-name">Kertig</td><td>95</td><td>70</td><td>5</td><td>40</td><td>55</td><td>90</td><td>90</td><td>6</td><td>7</td><td>18,750</td></tr>
+<tr><td class="metal-name">Krakenite</td><td>99</td><td>85</td><td>30</td><td>65</td><td>75</td><td>99</td><td>60</td><td>35</td><td>6.3</td><td>87,500</td></tr>
+<tr><td class="metal-name">Loimic</td><td>99</td><td>70</td><td>35</td><td>99</td><td>40</td><td>99</td><td>20</td><td>7</td><td>3.5</td><td>81,250</td></tr>
+<tr><td class="metal-name">Lumium</td><td>75</td><td>50</td><td>15</td><td>60</td><td>75</td><td>90</td><td>90</td><td>12</td><td>3</td><td>6,500</td></tr>
+<tr><td class="metal-name">Muracite</td><td>70</td><td>55</td><td>70</td><td>55</td><td>55</td><td>85</td><td>85</td><td>50</td><td>4.7</td><td>1,125</td></tr>
+<tr><td class="metal-name">Niello</td><td>5</td><td>5</td><td>15</td><td>85</td><td>25</td><td>25</td><td>40</td><td>60</td><td>8</td><td>22,500</td></tr>
+<tr><td class="metal-name">Niniam</td><td>80</td><td>70</td><td>20</td><td>75</td><td>75</td><td>70</td><td>90</td><td>60</td><td>5</td><td>6,250</td></tr>
+<tr><td class="metal-name">Orichalcum</td><td>30</td><td>50</td><td>10</td><td>40</td><td>40</td><td>30</td><td>35</td><td>80</td><td>6</td><td>17,500</td></tr>
+<tr><td class="metal-name">Silversteel</td><td>95</td><td>90</td><td>2</td><td>20</td><td>80</td><td>95</td><td>90</td><td>10</td><td>2.2</td><td>27,500</td></tr>
+<tr><td class="metal-name">Tomiek</td><td>80</td><td>45</td><td>40</td><td>35</td><td>55</td><td>70</td><td>80</td><td>75</td><td>5</td><td>25,000</td></tr>
+<tr><td class="metal-name">Tyrium</td><td>99</td><td>80</td><td>40</td><td>70</td><td>70</td><td>99</td><td>40</td><td>4</td><td>6</td><td>62,500</td></tr>
+</tbody></table></div>
+<h2>Special Metals</h2>
+<div class="table-container"><table class="metal-properties-table"><thead><tr><th>Metal</th><th>Hardness</th><th>Durability</th><th>Workability</th><th>Electrical</th><th>Thermal</th><th>Physical</th><th>Ductility</th><th>Capacity</th><th>Density</th><th>Kronar Value</th></tr></thead><tbody>
+<tr><td class="metal-name">Agonite</td><td>95</td><td>65</td><td>75</td><td>20</td><td>99</td><td>85</td><td>90</td><td>5</td><td>7.5</td><td>25,000</td></tr>
+<tr><td class="metal-name">Atheldalm</td><td>90</td><td>75</td><td>20</td><td>80</td><td>95</td><td>85</td><td>95</td><td>40</td><td>4.5</td><td>21,875</td></tr>
+<tr><td class="metal-name">Haledroth</td><td>96</td><td>75</td><td>35</td><td>15</td><td>20</td><td>97</td><td>95</td><td>6</td><td>6.2</td><td>35,000</td></tr>
+<tr><td class="metal-name">Indurium</td><td>82</td><td>64</td><td>50</td><td>12</td><td>34</td><td>22</td><td>20</td><td>70</td><td>3.9</td><td>47,500</td></tr>
+<tr><td class="metal-name">Kadepa</td><td>85</td><td>80</td><td>95</td><td>40</td><td>80</td><td>94</td><td>90</td><td>12</td><td>5.2</td><td>20,625</td></tr>
+<tr><td class="metal-name">Kiralan</td><td>70</td><td>80</td><td>35</td><td>90</td><td>80</td><td>99</td><td>12</td><td>4</td><td>7</td><td>93,750</td></tr>
+<tr><td class="metal-name">Quelium</td><td>92</td><td>20</td><td>45</td><td>65</td><td>65</td><td>92</td><td>90</td><td>20</td><td>7.2</td><td>18,750</td></tr>
+<tr><td class="metal-name">Selatila</td><td>15</td><td>10</td><td>10</td><td>65</td><td>65</td><td>15</td><td>90</td><td>60</td><td>4</td><td>25,000</td></tr>
+<tr><td class="metal-name">Telothian</td><td>104</td><td>80</td><td>25</td><td>90</td><td>70</td><td>45</td><td>90</td><td>5</td><td>6.4</td><td>87,500</td></tr>
+<tr><td class="metal-name">Vardite</td><td>88</td><td>75</td><td>45</td><td>80</td><td>45</td><td>99</td><td>30</td><td>4</td><td>6.1</td><td>27,500</td></tr>
+</tbody></table></div>
+</div>
+
+<p class="note">* Value is per volume, at 99 purity.</p>
+    </section>
+  </main>
+</div>
 <script>
-    // Game Crafting Matrix Database
-    const recipes = {
-        'None': {}, 
-        'Acenite': { 'Hardness': 25, 'Durability': 15, 'Workability': 50, 'Electrical': 30, 'Thermal': 25, 'Physical': 25, 'Ductility': 90, 'Capacity': 50, 'Density': 6, 'Value': 3750},
-        'Brass': { 'Hardness': 40, 'Durability': 25, 'Workability': 60, 'Electrical': 30, 'Thermal': 40, 'Physical': 40, 'Ductility': 90, 'Capacity': 28, 'Density': 5.8, 'Value': 150},
-        'Bronze': { 'Hardness': 80, 'Durability': 65, 'Workability': 70, 'Electrical': 35, 'Thermal': 55, 'Physical': 80, 'Ductility': 85, 'Capacity': 40, 'Density': 6.2, 'Value': 125},
-        'Copper': { 'Hardness': 25, 'Durability': 40, 'Workability': 70, 'Electrical': 10, 'Thermal': 15, 'Physical': 25, 'Ductility': 80, 'Capacity': 30, 'Density': 7, 'Value': 125},
-        'Covellite': { 'Hardness': 35, 'Durability': 80, 'Workability': 65, 'Electrical': 25, 'Thermal': 85, 'Physical': 80, 'Ductility': 80, 'Capacity': 30, 'Density': 2, 'Value': 62.5},
-        'Iron': { 'Hardness': 70, 'Durability': 40, 'Workability': 50, 'Electrical': 30, 'Thermal': 50, 'Physical': 75, 'Ductility': 50, 'Capacity': 25, 'Density': 5, 'Value': 125},
-        'Lead': { 'Hardness': 20, 'Durability': 30, 'Workability': 80, 'Electrical': 40, 'Thermal': 70, 'Physical': 20, 'Ductility': 75, 'Capacity': 30, 'Density': 8, 'Value': 50},
-        'Nickel': { 'Hardness': 25, 'Durability': 15, 'Workability': 50, 'Electrical': 30, 'Thermal': 25, 'Physical': 25, 'Ductility': 90, 'Capacity': 30, 'Density': 6, 'Value': 100},
-        'Oravir': { 'Hardness': 40, 'Durability': 20, 'Workability': 70, 'Electrical': 95, 'Thermal': 15, 'Physical': 25, 'Ductility': 15, 'Capacity': 50, 'Density': 1, 'Value': 50},
-        'Pewter': { 'Hardness': 25, 'Durability': 45, 'Workability': 70, 'Electrical': 40, 'Thermal': 70, 'Physical': 25, 'Ductility': 30, 'Capacity': 50, 'Density': 5.0, 'Value': 275},
-        'Platinum': { 'Hardness': 20, 'Durability': 15, 'Workability': 20, 'Electrical': 30, 'Thermal': 10, 'Physical': 20, 'Ductility': 85, 'Capacity': 50, 'Density': 9, 'Value': 12500},
-        'Silver': { 'Hardness': 15, 'Durability': 25, 'Workability': 50, 'Electrical': 5, 'Thermal': 10, 'Physical': 15, 'Ductility': 75, 'Capacity': 50, 'Density': 8, 'Value': 2500},
-        'Steel (HCS)': { 'Hardness': 90, 'Durability': 25, 'Workability': 35, 'Electrical': 30, 'Thermal': 50, 'Physical': 90, 'Ductility': 20, 'Capacity': 5, 'Density': 5, 'Value': 250},
-        'Steel (LCS)': { 'Hardness': 80, 'Durability': 80, 'Workability': 40, 'Electrical': 30, 'Thermal': 50, 'Physical': 80, 'Ductility': 75, 'Capacity': 10, 'Density': 5, 'Value': 250},
-        'Steel (MCS)': { 'Hardness': 85, 'Durability': 60, 'Workability': 50, 'Electrical': 30, 'Thermal': 50, 'Physical': 85, 'Ductility': 70, 'Capacity': 20, 'Density': 5, 'Value': 187},
-        'Tin': { 'Hardness': 25, 'Durability': 75, 'Workability': 40, 'Electrical': 35, 'Thermal': 25, 'Physical': 25, 'Ductility': 80, 'Capacity': 50, 'Density': 3, 'Value': 37.5},
-        'Gold': { 'Hardness': 10, 'Durability': 20, 'Workability': 40, 'Electrical': 15, 'Thermal': 15, 'Physical': 10, 'Ductility': 80, 'Capacity': 50, 'Density': 9, 'Value': 6250},
-        'Zinc': { 'Hardness': 25, 'Durability': 20, 'Workability': 60, 'Electrical': 50, 'Thermal': 25, 'Physical': 25, 'Ductility': 75, 'Capacity': 45, 'Density': 4, 'Value': 87.5},
-        'Animite': { 'Hardness': 15, 'Durability': 10, 'Workability': 10, 'Electrical': 65, 'Thermal': 65, 'Physical': 15, 'Ductility': 90, 'Capacity': 50, 'Density': 4, 'Value': 43750},
-        'Audrualm': { 'Hardness': 92, 'Durability': 40, 'Workability': 5, 'Electrical': 55, 'Thermal': 90, 'Physical': 95, 'Ductility': 85, 'Capacity': 7, 'Density': 3, 'Value': 15000},
-        'Coralite': { 'Hardness': 99, 'Durability': 65, 'Workability': 40, 'Electrical': 40, 'Thermal': 99, 'Physical': 99, 'Ductility': 35, 'Capacity': 6, 'Density': 5.9, 'Value': 77500},
-        'Damite': { 'Hardness': 80, 'Durability': 70, 'Workability': 10, 'Electrical': 90, 'Thermal': 40, 'Physical': 95, 'Ductility': 25, 'Capacity': 4, 'Density': 6, 'Value': 13750},
-        'Darkstone': { 'Hardness': 85, 'Durability': 50, 'Workability': 75, 'Electrical': 70, 'Thermal': 35, 'Physical': 75, 'Ductility': 20, 'Capacity': 50, 'Density': 5.1, 'Value': 875},
-        'Electrum': { 'Hardness': 20, 'Durability': 20, 'Workability': 30, 'Electrical': 20, 'Thermal': 20, 'Physical': 20, 'Ductility': 80, 'Capacity': 55, 'Density': 8, 'Value': 5625},
-        'Glaes': { 'Hardness': 95, 'Durability': 50, 'Workability': 10, 'Electrical': 60, 'Thermal': 40, 'Physical': 75, 'Ductility': 95, 'Capacity': 10, 'Density': 4, 'Value': 16250},
-        'Haralun': { 'Hardness': 95, 'Durability': 60, 'Workability': 20, 'Electrical': 70, 'Thermal': 75, 'Physical': 80, 'Ductility': 90, 'Capacity': 5, 'Density': 8, 'Value': 13750},
-        'Icesteel': { 'Hardness': 90, 'Durability': 75, 'Workability': 20, 'Electrical': 80, 'Thermal': 95, 'Physical': 85, 'Ductility': 95, 'Capacity': 40, 'Density': 4.5, 'Value': 25000},
-        'Kelpzyte': { 'Hardness': 99, 'Durability': 75, 'Workability': 38, 'Electrical': 60, 'Thermal': 80, 'Physical': 99, 'Ductility': 35, 'Capacity': 5, 'Density': 3.6, 'Value': 63750},
-        'Kertig': { 'Hardness': 95, 'Durability': 70, 'Workability': 5, 'Electrical': 40, 'Thermal': 55, 'Physical': 90, 'Ductility': 90, 'Capacity': 6, 'Density': 7, 'Value': 18750},
-        'Krakenite': { 'Hardness': 99, 'Durability': 85, 'Workability': 30, 'Electrical': 65, 'Thermal': 75, 'Physical': 99, 'Ductility': 60, 'Capacity': 35, 'Density': 6.3, 'Value': 87500},
-        'Loimic': { 'Hardness': 99, 'Durability': 70, 'Workability': 35, 'Electrical': 99, 'Thermal': 40, 'Physical': 99, 'Ductility': 20, 'Capacity': 7, 'Density': 3.5, 'Value': 81250},
-        'Lumium': { 'Hardness': 75, 'Durability': 50, 'Workability': 15, 'Electrical': 60, 'Thermal': 75, 'Physical': 90, 'Ductility': 90, 'Capacity': 12, 'Density': 3, 'Value': 6500},
-        'Muracite': { 'Hardness': 70, 'Durability': 55, 'Workability': 70, 'Electrical': 55, 'Thermal': 55, 'Physical': 85, 'Ductility': 85, 'Capacity': 50, 'Density': 4.7, 'Value': 1125},
-        'Niello': { 'Hardness': 5, 'Durability': 5, 'Workability': 15, 'Electrical': 85, 'Thermal': 25, 'Physical': 25, 'Ductility': 40, 'Capacity': 60, 'Density': 8, 'Value': 22500},
-        'Niniam': { 'Hardness': 80, 'Durability': 70, 'Workability': 20, 'Electrical': 75, 'Thermal': 75, 'Physical': 70, 'Ductility': 90, 'Capacity': 60, 'Density': 5, 'Value': 6250},
-        'Orichalcum': { 'Hardness': 30, 'Durability': 50, 'Workability': 10, 'Electrical': 40, 'Thermal': 40, 'Physical': 30, 'Ductility': 35, 'Capacity': 80, 'Density': 6, 'Value': 17500},
-        'Silversteel': { 'Hardness': 95, 'Durability': 90, 'Workability': 2, 'Electrical': 20, 'Thermal': 80, 'Physical': 95, 'Ductility': 90, 'Capacity': 10, 'Density': 2.2, 'Value': 27500},
-        'Tomiek': { 'Hardness': 80, 'Durability': 45, 'Workability': 40, 'Electrical': 35, 'Thermal': 55, 'Physical': 70, 'Ductility': 80, 'Capacity': 75, 'Density': 5, 'Value': 25000},
-        'Tyrium': { 'Hardness': 99, 'Durability': 80, 'Workability': 40, 'Electrical': 70, 'Thermal': 70, 'Physical': 99, 'Ductility': 40, 'Capacity': 4, 'Density': 6, 'Value': 62500},
-        'Agonite': { 'Hardness': 95, 'Durability': 65, 'Workability': 75, 'Electrical': 20, 'Thermal': 99, 'Physical': 85, 'Ductility': 90, 'Capacity': 5, 'Density': 7.5, 'Value': 25000},
-        'Atheldalm': { 'Hardness': 90, 'Durability': 75, 'Workability': 20, 'Electrical': 80, 'Thermal': 95, 'Physical': 85, 'Ductility': 95, 'Capacity': 40, 'Density': 4.5, 'Value': 21875},
-        'Haledroth': { 'Hardness': 96, 'Durability': 75, 'Workability': 35, 'Electrical': 15, 'Thermal': 20, 'Physical': 97, 'Ductility': 95, 'Capacity': 6, 'Density': 6.2, 'Value': 35000},
-        'Indurium': { 'Hardness': 82, 'Durability': 64, 'Workability': 50, 'Electrical': 12, 'Thermal': 34, 'Physical': 22, 'Ductility': 20, 'Capacity': 70, 'Density': 3.9, 'Value': 47500},
-        'Kadepa': { 'Hardness': 85, 'Durability': 80, 'Workability': 95, 'Electrical': 40, 'Thermal': 80, 'Physical': 94, 'Ductility': 90, 'Capacity': 12, 'Density': 5.2, 'Value': 20625},
-        'Kiralan': { 'Hardness': 70, 'Durability': 80, 'Workability': 35, 'Electrical': 90, 'Thermal': 80, 'Physical': 99, 'Ductility': 12, 'Capacity': 4, 'Density': 7, 'Value': 93750},
-        'Quelium': { 'Hardness': 92, 'Durability': 20, 'Workability': 45, 'Electrical': 65, 'Thermal': 65, 'Physical': 92, 'Ductility': 90, 'Capacity': 20, 'Density': 7.2, 'Value': 18750},
-        'Selatila': { 'Hardness': 15, 'Durability': 10, 'Workability': 10, 'Electrical': 65, 'Thermal': 65, 'Physical': 15, 'Ductility': 90, 'Capacity': 60, 'Density': 4, 'Value': 25000},
-        'Telothian': { 'Hardness': 104, 'Durability': 80, 'Workability': 25, 'Electrical': 90, 'Thermal': 70, 'Physical': 45, 'Ductility': 90, 'Capacity': 5, 'Density': 6.4, 'Value': 87500},
-        'Vardite': { 'Hardness': 88, 'Durability': 75, 'Workability': 45, 'Electrical': 80, 'Thermal': 45, 'Physical': 99, 'Ductility': 30, 'Capacity': 4, 'Density': 6.1, 'Value': 27500}
-    };
-
-    // Generate the 5 distinct rows in the UI
+// Read metal statistics from the visible Metal Properties tables. Both calculators use this data.
+const METAL_DATA = (() => {
+  const data = { None: {} };
+  const rows = document.querySelectorAll('#metals .metal-properties-table tbody tr');
+  rows.forEach(row => {
+    const cells = Array.from(row.cells, cell => cell.textContent.trim());
+    if (cells.length < 11) return;
+    const [name, Hardness, Durability, Workability, Electrical, Thermal, Physical, Ductility, Capacity, Density, Value] = cells;
+    data[name] = { Hardness:Number(Hardness), Durability:Number(Durability), Workability:Number(Workability), Electrical:Number(Electrical), Thermal:Number(Thermal), Physical:Number(Physical), Ductility:Number(Ductility), Capacity:Number(Capacity), Density:Number(Density), Value:Number(Value.replace(/,/g, '')) };
+  });
+  return data;
+})();
+</script>
+<script>
+document.querySelectorAll('.app-nav [role="tab"]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const panelId = tab.dataset.panel;
+    document.querySelectorAll('.app-nav [role="tab"]').forEach((button) => {
+      button.setAttribute('aria-selected', String(button === tab));
+    });
+    document.querySelectorAll('.tab-panel').forEach((panel) => {
+      const isActive = panel.id === panelId;
+      panel.classList.toggle('active', isActive);
+      panel.hidden = !isActive;
+    });
+  });
+});
+// Keep the inactive panels out of layout and the accessibility tree.
+document.querySelectorAll('.tab-panel:not(.active)').forEach((panel) => { panel.hidden = true; });
+</script>
+<script>
+(() => {
+// Generate the 5 distinct rows in the UI
     function buildQueueUI() {
         const container = document.getElementById('queue-container');
 
@@ -1098,8 +1422,8 @@
             select.addEventListener('change', calculateTotalQueue);
             
             // Populate select item options
-            for (const item in recipes) {
-                if (Object.keys(recipes[item]).length > 0 || item === 'None') {
+            for (const item in METAL_DATA) {
+                if (Object.keys(METAL_DATA[item]).length > 0 || item === 'None') {
                     const opt = document.createElement('option');
                     opt.value = item;
                     opt.textContent = item;
@@ -1111,7 +1435,7 @@
             const input = document.createElement('input');
             input.type = 'number';
             input.id = `item-qty-${i}`;
-            input.value = i === 1 ? '0' : '0'; // Default first item to 1, rest to 0
+            input.value = i === 1 ? '0' : '0'; // Default first item to 0, rest to 0
             input.min = '0';
             input.addEventListener('input', calculateTotalQueue);
 
@@ -1167,7 +1491,7 @@ const propertyTotals = Object.fromEntries(
             continue;
         }
 
-        const metal = recipes[metalName];
+        const metal = METAL_DATA[metalName];
 
         if (!metal || typeof metal.Density !== 'number') {
             continue;
@@ -1239,7 +1563,9 @@ alloyWarning.style.display =
 const materialWarning = document.getElementById('material-warning');
 
 materialWarning.style.display =
-    totalVolume < targetVolume ? 'block' : 'none';
+    targetVolume > 0 && totalVolume < targetVolume
+        ? 'block'
+        : 'none';
 
 const targetWeight = targetVolume * averageDensity;
 
@@ -1292,7 +1618,7 @@ for (const property of propertyNames) {
 
 if (Math.round(dominantShare * 1e9) >= 670000000) {
         // One metal makes up at least 67% of the ingot.
-        result = recipes[dominantMetal][property];
+        result = METAL_DATA[dominantMetal][property];
     } else {
         // Otherwise, use the quantity-weighted average.
         result = totalVolume > 0
@@ -1371,283 +1697,22 @@ function getTargetVolume() {
 }
 
 
-    // Run layout build hooks on launch
+    document.getElementById('clear-all-queue').addEventListener('click', clearAllQueue);
+
+    // Build the input rows and calculate the initial state.
     buildQueueUI();
     calculateTotalQueue();
-
+})();
 </script>
-
-
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gavinne's Reverse Ingot Calculator</title>
-<style>
-:root {
-    --bg-dark: #0f172a;
-    --panel-bg: #1e293b;
-    --accent: #3b82f6;
-    --text: #f8fafc;
-    --muted: #94a3b8;
-    --border: #334155;
-    --green: #10b981;
-    --red: #ef4444;
-}
-* { box-sizing: border-box; }
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg-dark);
-    color: var(--text);
-    margin: 0;
-    padding: 2rem 1rem;
-    display: flex;
-    justify-content: center;
-}
-.container {
-    width: 100%;
-    max-width: 1000px;
-    background: var(--panel-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem;
-}
-h1 { margin-top: 0; font-size: 1.7rem; }
-.subtitle { color: var(--muted); margin-bottom: 1.5rem; }
-label, .field-label {
-    display: block;
-    color: var(--muted);
-    font-size: .9rem;
-    margin-bottom: .45rem;
-}
-input, select {
-    width: 100%;
-    min-width: 0;
-    padding: .75rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--bg-dark);
-    color: var(--text);
-    font-size: 1rem;
-}
-input:focus, select:focus { outline: 2px solid var(--accent); }
-.target { margin-bottom: 1.5rem; }
-.queue-heading, .metal-row {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(85px, 1fr);
-    gap: .75rem;
-}
-.queue-heading { margin: 0 .5rem .5rem; }
-.queue-heading span {
-    color: var(--muted);
-    font-size: .75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-#metal-rows { display: flex; flex-direction: column; gap: .75rem; }
-.metal-row {
-    padding: .75rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: rgba(15, 23, 42, .4);
-}
-.percentage-field { position: relative; }
-.percentage-field input { padding-right: 2rem; }
-.percent-symbol {
-    position: absolute;
-    right: .75rem;
-    top: .8rem;
-    color: var(--muted);
-    pointer-events: none;
-}
-.results {
-    margin-top: 1.5rem;
-    padding: 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: rgba(15, 23, 42, .55);
-}
-.results h2 { margin-top: 0; font-size: 1.15rem; }
-.summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-    gap: .75rem;
-}
-.stat {
-    background: var(--bg-dark);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-}
-.stat span { display: block; color: var(--muted); font-size: .8rem; }
-.stat strong { display: block; margin-top: .4rem; font-size: 1.35rem; }
-#percentage-status { margin: 1rem 0 0; font-weight: 600; }
-.good { color: var(--green); }
-.warning { color: #fbbf24; }
-.error { color: #f87171; }
-#breakdown { list-style: none; padding: 0; margin: 1rem 0 0; }
-#breakdown li {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: .75rem;
-    margin-top: .5rem;
-    background: var(--bg-dark);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-}
-button {
-    padding: .7rem 1.1rem;
-    border-radius: 6px;
-    font-size: .95rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-.clear-button {
-    color: var(--red);
-    background: transparent;
-    border: 1px solid var(--red);
-}
-.actions { display: flex; justify-content: flex-end; margin-top: 1rem; }
-@media (max-width: 480px) {
-    .container { padding: 1rem; }
-    body { padding: 1rem .5rem; }
-    .metal-row { gap: .5rem; padding: .5rem; }
-}
-</style>
-</head>
-<body>
-<div class="container">
-    <h1>Gavinne's Reverse Ingot Calculator</h1>
-    <div class="subtitle">
-        Enter an ingot volume and the percentage of each metal.
-    </div>
-
-    <div class="target">
-        <label for="reverse-volume">Total Ingot Volume</label>
-        <input id="reverse-volume" type="number" min="0" step="any" value="0">
-    </div>
-
-    <div class="queue-heading">
-        <span>Metal</span>
-        <span>Percentage</span>
-    </div>
-    <div id="metal-rows"></div>
-
-    <div class="actions">
-        <button class="clear-button" id="clear-button" type="button">
-            Clear All
-        </button>
-    </div>
-
-    <section class="results">
-        <h2>Ingot Composition Breakdown</h2>
-        <div class="summary-grid">
-            <div class="stat">
-                <span>Total Ingot Volume</span>
-                <strong id="display-volume">100.00</strong>
-            </div>
-            <div class="stat">
-                <span>Total Percentage</span>
-                <strong id="display-percentage">0.00%</strong>
-            </div>
-            <div class="stat">
-                <span>Unallocated Volume</span>
-                <strong id="remaining-volume">100.00</strong>
-            </div>
-
-<div class="stat">
-    <span>Total Ingot Weight</span>
-    <strong id="display-weight">0.00</strong>
-</div>
-
-<div class="stat">
-    <span>Overall Ingot Density</span>
-    <strong id="display-density">0.00</strong>
-</div>
-            
-        </div>
-        <p id="percentage-status" class="warning" role="status">
-            Enter metal percentages.
-        </p>
-        <ul id="breakdown"></ul>
-    </section>
-</div>
-
 <script>
-const metalNames = [
-    'None',
-    'Acenite', 'Brass', 'Bronze', 'Copper', 'Covellite',
-    'Iron', 'Lead', 'Nickel', 'Oravir', 'Pewter', 'Platinum',
-    'Silver', 'Steel (HCS)', 'Steel (LCS)', 'Steel (MCS)',
-    'Tin', 'Gold', 'Zinc', 'Animite', 'Audrualm', 'Coralite',
-    'Damite', 'Darkstone', 'Electrum', 'Glaes', 'Haralun',
-    'Icesteel', 'Kelpzyte', 'Kertig', 'Krakenite', 'Loimic',
-    'Lumium', 'Muracite', 'Niello', 'Niniam', 'Orichalcum',
-    'Silversteel', 'Tomiek', 'Tyrium', 'Agonite', 'Atheldalm',
-    'Haledroth', 'Indurium', 'Kadepa', 'Kiralan', 'Quelium',
-    'Selatila', 'Telothian', 'Vardite'
-];
+(() => {
+const metalNames = Object.keys(METAL_DATA);
 
-
-const metalDensities = {
-    'Acenite': 6,
-    'Brass': 5.8,
-    'Bronze': 6.2,
-    'Copper': 7,
-    'Covellite': 2,
-    'Iron': 5,
-    'Lead': 8,
-    'Nickel': 6,
-    'Oravir': 1,
-    'Pewter': 5,
-    'Platinum': 9,
-    'Silver': 8,
-    'Steel (HCS)': 5,
-    'Steel (LCS)': 5,
-    'Steel (MCS)': 5,
-    'Tin': 3,
-    'Gold': 9,
-    'Zinc': 4,
-    'Animite': 4,
-    'Audrualm': 3,
-    'Coralite': 5.9,
-    'Damite': 6,
-    'Darkstone': 5.1,
-    'Electrum': 8,
-    'Glaes': 4,
-    'Haralun': 8,
-    'Icesteel': 4.5,
-    'Kelpzyte': 3.6,
-    'Kertig': 7,
-    'Krakenite': 6.3,
-    'Loimic': 3.5,
-    'Lumium': 3,
-    'Muracite': 4.7,
-    'Niello': 8,
-    'Niniam': 5,
-    'Orichalcum': 6,
-    'Silversteel': 2.2,
-    'Tomiek': 5,
-    'Tyrium': 6,
-    'Agonite': 7.5,
-    'Atheldalm': 4.5,
-    'Haledroth': 6.2,
-    'Indurium': 3.9,
-    'Kadepa': 5.2,
-    'Kiralan': 7,
-    'Quelium': 7.2,
-    'Selatila': 4,
-    'Telothian': 6.4,
-    'Vardite': 6.1
-};
-
+const metalDensities = Object.fromEntries(
+    Object.entries(METAL_DATA)
+        .filter(([name]) => name !== 'None')
+        .map(([name, metal]) => [name, metal.Density])
+);
 
 const rowContainer = document.getElementById('metal-rows');
 const volumeInput = document.getElementById('reverse-volume');
@@ -1756,7 +1821,7 @@ document.getElementById('display-density').textContent =
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
     } else if (Math.abs(totalPercentage - 100) < 1e-9) {
-        status.textContent = 'Percentages total 100% — ready to craft.';
+        status.textContent = 'Percentages total 100% â€” ready to craft.';
         status.className = 'good';
     } else if (totalPercentage > 0) {
         status.textContent = 'Percentages must total 100%. Some volume is unallocated.';
@@ -1802,210 +1867,7 @@ document.getElementById('clear-button').addEventListener('click', () => {
 
 buildRows();
 calculate();
-</script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metal Properties</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    margin: 0;
-    background: #000000;
-    color: #ffffff;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 30px;
-}
-
-h2 {
-    margin-top: 30px;
-    background: #000000;
-    color: #ffffff;
-    padding: 12px;
-    border-radius: 5px;
-}
-
-.table-container {
-    width: 100%;
-    overflow-x: hidden;
-    margin-bottom: 25px;
-    background: #000000;
-    border-radius: 5px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    table-layout: fixed;
-    background: #000000;
-    color: #ffffff;
-}
-
-/* Table cells */
-th, td {
-    border: 1px solid #555555;
-    padding: 4px 2px;
-    text-align: center;
-    font-size: 12px;
-    color: #ffffff;
-    overflow-wrap: anywhere;
-}
-
-/* Column headings */
-th {
-    background: #000000;
-    color: #ffffff;
-}
-
-/* Dark grey rows */
-tbody tr:nth-child(odd) td {
-    background: #333333;
-}
-
-/* Lighter grey rows */
-tbody tr:nth-child(even) td {
-    background: #505050;
-}
-
-/* Highlight when hovering over a row */
-tbody tr:hover td {
-    background: #777777;
-}
-
-    .note {
-        font-size: 0.9em;
-        font-style: italic;
-        margin-top: 10px;
-    }
-</style>
-</head>
-
-<body>
-
-<h1>Metal Properties Reference</h1>
-
-<div id="metals"></div>
-
-<p class="note">* Value is per volume, at 99 purity.</p>
-
-<script>
-const columns = [
-    "Metal", "Hardness", "Durability", "Workability",
-    "Electrical", "Thermal", "Physical", "Ductility",
-    "Capacity", "Density", "Kronar Value"
-];
-
-const categories = {
-    "Common Metals": [
-        ["Acenite",25,15,50,30,25,25,90,50,6,"3,750"],
-        ["Brass",40,25,60,30,40,40,90,28,5.8,"150"],
-        ["Bronze",80,65,70,35,55,80,85,40,6.2,"125"],
-        ["Copper",25,40,70,10,15,25,80,30,7,"125"],
-        ["Covellite",35,80,65,25,85,80,80,30,2,"62.5"],
-        ["Iron",70,40,50,30,50,75,50,25,5,"125"],
-        ["Lead",20,30,80,40,70,20,75,30,8,"50"],
-        ["Nickel",25,15,50,30,25,25,90,30,6,"100"],
-        ["Oravir",40,20,70,95,15,25,15,50,1,"50"],
-        ["Pewter",25,45,70,40,70,25,30,50,5.0,"275"],
-        ["Platinum",20,15,20,30,10,20,85,50,9,"12,500"],
-        ["Silver",15,25,50,5,10,15,75,50,8,"2,500"],
-        ["Steel (HCS)",90,25,35,30,50,90,20,5,5,"250"],
-        ["Steel (LCS)",80,80,40,30,50,80,75,10,5,"250"],
-        ["Steel (MCS)",85,60,50,30,50,85,70,20,5,"187"],
-        ["Tin",25,75,40,35,25,25,80,50,3,"37.5"],
-        ["Gold",10,20,40,15,15,10,80,50,9,"6,250"],
-        ["Zinc",25,20,60,50,25,25,75,45,4,"87.5"]
-    ],
-
-    "Rare Metals": [
-        ["Animite",15,10,10,65,65,15,90,50,4,"43,750"],
-        ["Audrualm",92,40,5,55,90,95,85,7,3,"15,000"],
-        ["Coralite",99,65,40,40,99,99,35,6,5.9,"77,500"],
-        ["Damite",80,70,10,90,40,95,25,4,6,"13,750"],
-        ["Darkstone",85,50,75,70,35,75,20,50,5.1,"875"],
-        ["Electrum",20,20,30,20,20,20,80,55,8,"5,625"],
-        ["Glaes",95,50,10,60,40,75,95,10,4,"16,250"],
-        ["Haralun",95,60,20,70,75,80,90,5,8,"13,750"],
-        ["Icesteel",90,75,20,80,95,85,95,40,4.5,"25,000"],
-        ["Kelpzyte",99,75,38,60,80,99,35,5,3.6,"63,750"],
-        ["Kertig",95,70,5,40,55,90,90,6,7,"18,750"],
-        ["Krakenite",99,85,30,65,75,99,60,35,6.3,"87,500"],
-        ["Loimic",99,70,35,99,40,99,20,7,3.5,"81,250"],
-        ["Lumium",75,50,15,60,75,90,90,12,3,"6,500"],
-        ["Muracite",70,55,70,55,55,85,85,50,4.7,"1,125"],
-        ["Niello",5,5,15,85,25,25,40,60,8,"22,500"],
-        ["Niniam",80,70,20,75,75,70,90,60,5,"6,250"],
-        ["Orichalcum",30,50,10,40,40,30,35,80,6,"17,500"],
-        ["Silversteel",95,90,2,20,80,95,90,10,2.2,"27,500"],
-        ["Tomiek",80,45,40,35,55,70,80,75,5,"25,000"],
-        ["Tyrium",99,80,40,70,70,99,40,4,6,"62,500"]
-    ],
-
-    "Special Metals": [
-        ["Agonite",95,65,75,20,99,85,90,5,7.5,"25,000"],
-        ["Atheldalm",90,75,20,80,95,85,95,40,4.5,"21,875"],
-        ["Haledroth",96,75,35,15,20,97,95,6,6.2,"35,000"],
-        ["Indurium",82,64,50,12,34,22,20,70,3.9,"47,500"],
-        ["Kadepa",85,80,95,40,80,94,90,12,5.2,"20,625"],
-        ["Kiralan",70,80,35,90,80,99,12,4,7,"93,750"],
-        ["Quelium",92,20,45,65,65,92,90,20,7.2,"18,750"],
-        ["Selatila",15,10,10,65,65,15,90,60,4,"25,000"],
-        ["Telothian",104,80,25,90,70,45,90,5,6.4,"87,500"],
-        ["Vardite",88,75,45,80,45,99,30,4,6.1,"27,500"]
-    ]
-};
-
-const container = document.getElementById("metals");
-
-for (const [category, metals] of Object.entries(categories)) {
-    const heading = document.createElement("h2");
-    heading.textContent = category;
-    container.appendChild(heading);
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "table-container";
-
-    const table = document.createElement("table");
-    const thead = document.createElement("thead");
-    const headerRow = document.createElement("tr");
-
-    columns.forEach(column => {
-        const th = document.createElement("th");
-        th.textContent = column;
-        headerRow.appendChild(th);
-    });
-
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    const tbody = document.createElement("tbody");
-
-    metals.forEach(metal => {
-        const row = document.createElement("tr");
-
-        metal.forEach(value => {
-            const td = document.createElement("td");
-            td.textContent = value;
-            row.appendChild(td);
-        });
-
-        tbody.appendChild(row);
-    });
-
-    table.appendChild(tbody);
-    wrapper.appendChild(table);
-    container.appendChild(wrapper);
-}
+})();
 </script>
 
 </body>
