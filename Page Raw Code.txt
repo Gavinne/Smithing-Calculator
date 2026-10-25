@@ -1289,12 +1289,12 @@ tbody tr:hover td {
                 <strong id="remaining-volume">100.00</strong>
             </div>
 
-<div class="stat">
+<div class="stat" id="weight-stat" hidden>
     <span>Total Ingot Weight</span>
     <strong id="display-weight">0.00</strong>
 </div>
 
-<div class="stat">
+<div class="stat" id="density-stat" hidden>
     <span>Overall Ingot Density</span>
     <strong id="display-density">0.00</strong>
 </div>
@@ -1808,6 +1808,11 @@ document.getElementById('display-weight').textContent =
 document.getElementById('display-density').textContent =
     overallDensity.toFixed(2);
 
+// Show weight and density only when all ingot volume is allocated.
+const isFullyAllocated = Math.abs(totalPercentage - 100) < 1e-9;
+document.getElementById('weight-stat').hidden = !isFullyAllocated;
+document.getElementById('density-stat').hidden = !isFullyAllocated;
+
 // Existing code continues below        
     const status = document.getElementById('percentage-status');
     const anyInvalid = Array.from(
@@ -1821,7 +1826,7 @@ document.getElementById('display-density').textContent =
         status.textContent = 'Percentages exceed the allowed total. Please check your entries.';
         status.className = 'error';
     } else if (Math.abs(totalPercentage - 100) < 1e-9) {
-        status.textContent = 'Percentages total 100% â€” ready to craft.';
+        status.textContent = 'Percentages total 100% Ã¢â‚¬â€ ready to craft.';
         status.className = 'good';
     } else if (totalPercentage > 0) {
         status.textContent = 'Percentages must total 100%. Some volume is unallocated.';
