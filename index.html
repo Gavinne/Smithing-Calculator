@@ -177,7 +177,7 @@
 
 
 
-/* Give the stats area the full available page width */
+/* Stats layout */
 .stats-grid {
     display: flex;
     flex-direction: column;
@@ -187,7 +187,6 @@
     box-sizing: border-box;
 }
 
-/* Each row gets its own separate box */
 .stats-row {
     display: grid;
     width: 100%;
@@ -199,45 +198,33 @@
     border-radius: 10px;
 }
 
-/* Row 1: five stats */
 .stats-row-1 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-/* Row 2: three stats */
 .stats-row-2 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-
-/* Row 3: four stats per line, two lines total */
 .stats-row-3 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-
-/* Prevent individual stat boxes from overflowing */
 .stat-box {
     min-width: 0;
     box-sizing: border-box;
 }
 
-/* Adjust the layout for smaller screens */
-
+/* Tablets and smaller screens */
 @media (max-width: 700px) {
-    .stats-row-1 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .stats-row-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .stats-row-1,
+    .stats-row-2,
     .stats-row-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
-
+/* Small mobile screens */
 @media (max-width: 400px) {
     .stats-row {
         padding: 0.5rem;
@@ -249,9 +236,6 @@
     .stats-row-3 {
         grid-template-columns: minmax(0, 1fr);
     }
-}
-
-
 }
     </style>
 </head>
