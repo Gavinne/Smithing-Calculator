@@ -77,14 +77,19 @@
 
         .queue-row {
             display: grid;
-            grid-template-columns: 3fr 1fr;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
             gap: 1rem;
             background-color: rgba(15, 23, 42, 0.4);
             padding: 0.5rem;
             border-radius: 8px;
             border: 1px solid rgba(51, 65, 85, 0.5);
         }
-
+.queue-row select,
+.queue-row input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
         select, input {
             background-color: var(--bg-dark);
             border: 1px solid var(--border-color);
@@ -231,7 +236,6 @@
     .stats-row-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-}
 
 
 @media (max-width: 400px) {
@@ -1111,7 +1115,7 @@
             const input = document.createElement('input');
             input.type = 'number';
             input.id = `item-qty-${i}`;
-            input.value = i === 1 ? '0' : '0'; // Default first item to 1, rest to 0
+            input.value = i === 1 ? '0' : '0'; // Default first item to 0, rest to 0
             input.min = '0';
             input.addEventListener('input', calculateTotalQueue);
 
@@ -1239,7 +1243,9 @@ alloyWarning.style.display =
 const materialWarning = document.getElementById('material-warning');
 
 materialWarning.style.display =
-    totalVolume < targetVolume ? 'block' : 'none';
+    targetVolume > 0 && totalVolume < targetVolume
+        ? 'block'
+        : 'none';
 
 const targetWeight = targetVolume * averageDensity;
 
