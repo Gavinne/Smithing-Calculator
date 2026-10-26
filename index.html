@@ -1535,21 +1535,29 @@ const FINISHED_ITEM_STATS = [{"Target Item Name":"Briquet","URL":"https://elanth
             results.appendChild(empty);
             return;
         }
-        const columns = ['Difficulty','Hard','Pierce','Slice','Impact','FOI','Balance','Suit','WT'];
+        const columns = [
+            { key: 'Difficulty', label: 'Crafting Difficulty' },
+            { key: 'Pierce', label: 'Pierce' },
+            { key: 'Slice', label: 'Slice' },
+            { key: 'Impact', label: 'Impact' },
+            { key: 'FOI', label: 'FOI' },
+            { key: 'Balance', label: 'Balance' },
+            { key: 'Suit', label: 'Suit' }
+        ];
         const wrap = document.createElement('div');
         wrap.className = 'finished-item-table-wrap';
         const table = document.createElement('table');
         table.className = 'finished-item-table';
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
-        for (const label of ['Item Name', ...columns, 'Source']) {
+        for (const label of ['Item Name', ...columns.map(column => column.label), 'Source']) {
             const th = document.createElement('th'); th.textContent = label; headerRow.appendChild(th);
         }
         thead.appendChild(headerRow); table.appendChild(thead);
         const tbody = document.createElement('tbody');
         for (const row of matches) {
             const tr = document.createElement('tr');
-            for (const key of ['Target Item Name', ...columns]) {
+            for (const key of ['Target Item Name', ...columns.map(column => column.key)]) {
                 const td = document.createElement('td');
                 td.textContent = row[key] === null || row[key] === '' || row[key] === undefined ? 'â€”' : String(row[key]);
                 tr.appendChild(td);
